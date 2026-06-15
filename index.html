@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kênh Giáo Dục Phòng Tránh Đuối Nước - Nova News</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header>
+    <div class="brand">
+      <div class="logo-badge">NOVA NEWS</div>
+      <div class="brand-title">Phóng Sự Học Đường: Phòng Tránh Đuối Nước</div>
+    </div>
+    <div class="live-badge">
+      <div class="live-dot"></div>
+      <span>LIVE</span>
+    </div>
+  </header>
+
+  <!-- Dashboard / Main Hub -->
+  <main class="dashboard-container" id="dashboard-view">
+    <!-- Animated particle background -->
+    <canvas id="dashboard-bg-canvas" style="position:fixed;top:0;left:0;pointer-events:none;z-index:0;opacity:0.35;"></canvas>
+    
+    <section class="dashboard-hero" style="position:relative;z-index:1;">
+      <div style="display:flex;justify-content:center;align-items:center;gap:10px;margin-bottom:15px;">
+        <span style="background:rgba(211,47,47,0.15);border:1px solid rgba(211,47,47,0.4);color:#ff1744;padding:4px 14px;border-radius:20px;font-family:var(--font-header);font-size:0.8rem;font-weight:800;letter-spacing:0.1em;">● NOVA NEWS EDUCATION</span>
+      </div>
+      <h2>HỌC ĐƯỜNG AN TOÀN</h2>
+      <p>Nhập vai phóng sự điều tra và xây dựng cẩm nang kỹ năng sống bảo vệ bản thân dưới nước.</p>
+      
+      <!-- Stats bar -->
+      <div style="display:flex;justify-content:center;gap:40px;margin-top:30px;">
+        <div style="text-align:center;">
+          <div style="font-size:2rem;font-weight:900;font-family:var(--font-header);color:var(--color-cyan);">3</div>
+          <div style="font-size:0.8rem;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.05em;">Tiết học</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,0.1);"></div>
+        <div style="text-align:center;">
+          <div style="font-size:2rem;font-weight:900;font-family:var(--font-header);color:var(--color-gold);">8</div>
+          <div style="font-size:0.8rem;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.05em;">Hoạt động</div>
+        </div>
+        <div style="width:1px;background:rgba(255,255,255,0.1);"></div>
+        <div style="text-align:center;">
+          <div style="font-size:2rem;font-weight:900;font-family:var(--font-header);color:var(--color-success);">30</div>
+          <div style="font-size:0.8rem;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.05em;">Slide</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="lesson-grid" style="position:relative;z-index:1;">
+      <!-- Lesson 1 (Active) -->
+      <article class="lesson-card active" id="lesson-card-1" style="background:linear-gradient(135deg,rgba(12,25,50,0.85) 0%,rgba(6,13,29,0.95) 100%);">
+        <!-- Animated top border -->
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--color-cyan),#00e5ff,var(--color-cyan));background-size:200%;animation:bgShift 3s linear infinite;"></div>
+        <div>
+          <span class="lesson-badge">Tiết 1 • Nhập vai phóng viên</span>
+          <h3 class="lesson-title">Khám phá câu chuyện</h3>
+          <p class="lesson-desc">
+            Đóng vai phóng viên tòa soạn <strong style="color:var(--color-cyan);">Nova News</strong> điều tra các nguy cơ đuối nước, phỏng vấn nhân chứng và lập Sổ tay An toàn dưới nước.
+          </p>
+        </div>
+        <div>
+          <div style="display:flex;gap:8px;margin-bottom:15px;flex-wrap:wrap;">
+            <span style="background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);color:var(--color-cyan);padding:3px 10px;border-radius:10px;font-size:0.75rem;font-weight:600;">🎙 Phỏng vấn nhân chứng</span>
+            <span style="background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);color:var(--color-cyan);padding:3px 10px;border-radius:10px;font-size:0.75rem;font-weight:600;">🧩 Ghép nối tương tác</span>
+            <span style="background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);color:var(--color-cyan);padding:3px 10px;border-radius:10px;font-size:0.75rem;font-weight:600;">📔 Sổ tay phóng viên</span>
+          </div>
+          <div class="lesson-footer">
+            <div class="lesson-meta">
+              <span>⏱ 45 Phút</span>
+              <span>• ✦ Tương tác cao</span>
+            </div>
+            <button class="btn-start">BẮT ĐẦU ĐIỀU TRA ➔</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Lesson 2 (Locked) -->
+      <article class="lesson-card locked">
+        <span class="lesson-badge">Tiết 2 • Kỹ năng</span>
+        <h3 class="lesson-title">Biện pháp phòng ngừa</h3>
+        <p class="lesson-desc">
+          Thu thập và huấn luyện kỹ năng phòng vệ chủ động, kỹ thuật khởi động đúng cách, quy tắc bơi an toàn và cách sử dụng áo phao tiêu chuẩn.
+        </p>
+        <div class="locked-overlay">
+          <div class="lock-icon">🔒</div>
+          <div class="lock-badge">Sắp ra mắt</div>
+        </div>
+        <div class="lesson-footer">
+          <div class="lesson-meta">
+            <span>⏱ 45 Phút</span>
+            <span>• Khóa</span>
+          </div>
+          <button class="btn-start" disabled style="opacity: 0.3;">KHÓA</button>
+        </div>
+      </article>
+
+      <!-- Lesson 3 (Locked) -->
+      <article class="lesson-card locked">
+        <span class="lesson-badge">Tiết 3 • Ứng phó</span>
+        <h3 class="lesson-title">Cứu hộ & Sơ cứu</h3>
+        <p class="lesson-desc">
+          Tìm hiểu quy tắc cứu hộ gián tiếp an toàn cho bản thân khi thấy người gặp nạn, cách hô hoán cứu trợ và các bước sơ cứu đuối nước căn bản.
+        </p>
+        <div class="locked-overlay">
+          <div class="lock-icon">🔒</div>
+          <div class="lock-badge">Sắp ra mắt</div>
+        </div>
+        <div class="lesson-footer">
+          <div class="lesson-meta">
+            <span>⏱ 45 Phút</span>
+            <span>• Khóa</span>
+          </div>
+          <button class="btn-start" disabled style="opacity: 0.3;">KHÓA</button>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Live Viewer View / Slide Area -->
+  <main class="viewer-container" id="viewer-view">
+    <div class="live-broadcast-frame">
+      <!-- Camera Viewfinder markings -->
+      <div class="viewfinder-indicator">
+        <div class="rec-indicator">
+          <div class="rec-dot"></div>
+          <span>REC</span>
+        </div>
+        <div>RAW 1080p 60fps</div>
+        <div>TC 12:43:00:26</div>
+      </div>
+      <div class="battery-indicator">
+        <span>80%</span>
+        <div class="battery-icon">
+          <div class="battery-level"></div>
+        </div>
+      </div>
+      <div class="corner-markers">
+        <div class="corner-marker top-left"></div>
+        <div class="corner-marker top-right"></div>
+        <div class="corner-marker bottom-left"></div>
+        <div class="corner-marker bottom-right"></div>
+      </div>
+
+      <!-- Slides wrappers -->
+      <div class="slides-wrapper">
+        
+        <!-- P0-01 Welcome / Cover -->
+        <section class="slide" id="cover-slide">
+          <div class="slide-cover">
+            <span class="news-badge">PHÓNG SỰ ĐẶC BIỆT</span>
+            <h3>Phòng tránh đuối nước</h3>
+            <div class="sub-title">Tiết 1 – Khám phá câu chuyện</div>
+            
+            <div class="cover-meta-grid">
+              <div class="cover-meta-item">
+                <span class="label">Chủ đề điều tra</span>
+                <span class="val">An toàn cá nhân</span>
+              </div>
+              <div class="cover-meta-item">
+                <span class="label">Tòa soạn tác nghiệp</span>
+                <span class="val">Nova News Agency</span>
+              </div>
+            </div>
+            
+            <button class="btn-action" onclick="playSound('click'); state.currentSlide++; updateSlideView();">
+              TIẾP NHẬN ĐIỀU TRA ➔
+            </button>
+          </div>
+        </section>
+
+        <!-- P0-02 Big Question & Role Mission -->
+        <section class="slide" id="mission-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">CÂU HỎI LỚN & NHIỆM VỤ</div>
+                <h3>Mục tiêu Điều tra</h3>
+              </div>
+              <div class="slide-content">
+                <p><strong>Big Question:</strong> Làm thế nào để phòng tránh đuối nước và giúp người khác an toàn hơn?</p>
+                <p><strong>Nhiệm vụ của bạn (Phóng viên):</strong></p>
+                <ul>
+                  <li>Điều tra các nguy cơ đuối nước phổ biến trong cuộc sống.</li>
+                  <li>Tìm kiếm và kiểm chứng giải pháp phòng tránh.</li>
+                  <li>Thu thập thông tin để xuất bản <strong>"Sổ tay Phóng viên"</strong> giúp trẻ em an toàn hơn.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <!-- Visual of reporter desk -->
+              <svg viewBox="0 0 200 200" width="100%" height="auto" style="padding: 20px; fill: var(--color-cyan);">
+                <rect x="20" y="30" width="160" height="120" rx="10" fill="none" stroke="currentColor" stroke-width="4"/>
+                <path d="M50,40 L150,40 M50,60 L150,60 M50,80 L120,80" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="100" cy="120" r="15" fill="none" stroke="currentColor" stroke-dasharray="4" stroke-width="2"/>
+                <path d="M100,105 L100,135 M85,120 L115,120" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <div class="graphic-caption">Bản tin phân công nhiệm vụ Nova News</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S1-01 Tin nóng -->
+        <section class="slide" id="hotnews-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 1 • KHỞI ĐỘNG</div>
+                <h3 style="color: var(--color-red-bright);">🚨 TIN NÓNG KHẨN CẤP</h3>
+              </div>
+              <div class="slide-content">
+                <p>Tòa soạn vừa nhận được thông tin khẩn cấp từ hiện trường sông Hồng:</p>
+                <blockquote style="border-left: 4px solid var(--color-red); padding-left: 15px; margin: 15px 0; font-style: italic; color: #fff;">
+                  “Một nhóm học sinh đi chơi tự phát gần khu vực sông sâu. Một bạn trong nhóm bị trượt chân ngã xuống nước. Các bạn còn lại trên bờ hốt hoảng, bối rối không biết phải làm thế gì để cứu bạn...”
+                </blockquote>
+                <p>Hãy xem hình ảnh ghi nhận hiện trường và chuẩn bị trả lời các câu hỏi điều tra.</p>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <img src="assets/images/news_river_accident.png" alt="Hiện trường sông nguy hiểm">
+              <div class="graphic-caption">Ảnh chụp hiện trường sông sâu trơn trượt nguy hại</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S1-02 Câu hỏi nhanh (Interactive discussion) -->
+        <section class="slide" id="quicktalk-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 1 • THẢO LUẬN</div>
+                <h3>Góc Nhìn Phóng Viên</h3>
+              </div>
+              <div class="slide-content">
+                <p>Trước khi đi sâu điều tra, hãy nêu những suy đoán ban đầu của bạn:</p>
+                <div class="discussion-container">
+                  <div class="qa-card">
+                    <label for="input-q1">1. Theo bạn, chuyện nguy hiểm gì đang xảy ra trong bản tin?</label>
+                    <input type="text" id="input-q1" class="input-field" placeholder="Nhập câu trả lời...">
+                  </div>
+                  <div class="qa-card">
+                    <label for="input-q2">2. Nếu là bạn ở hiện trường lúc đó, bạn sẽ làm gì?</label>
+                    <input type="text" id="input-q2" class="input-field" placeholder="Nhập câu trả lời...">
+                  </div>
+                  <button id="btn-submit-qa" class="btn-submit-qa">GỬI BÁO CÁO NHANH</button>
+                  <div id="qa-success-msg" class="feedback-success">
+                    <span>✓ Ý kiến ban đầu đã được gửi về Tòa Soạn! Bấm nút "Tiếp theo" ở dưới để nhận đồ tác nghiệp.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <!-- Animated microphone visual -->
+              <svg viewBox="0 0 100 100" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
+                <rect x="42" y="50" width="16" height="30" rx="3"/>
+                <rect x="30" y="15" width="40" height="40" rx="20"/>
+                <path d="M25,35 A25,25 0 0,0 75,35" fill="none" stroke="var(--color-cyan)" stroke-width="5" stroke-linecap="round"/>
+                <line x1="50" y1="80" x2="50" y2="95" stroke="var(--color-cyan)" stroke-width="6"/>
+                <line x1="35" y1="95" x2="65" y2="95" stroke="var(--color-cyan)" stroke-width="6"/>
+              </svg>
+              <div class="graphic-caption">Bảng ghi chép phóng viên Nova News</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S1-03 Chốt vấn đề cần điều tra -->
+        <section class="slide" id="investigation-goal-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">KẾT LUẬN SƠ BỘ</div>
+                <h3>Nhận thức Nguy hại</h3>
+              </div>
+              <div class="slide-content" style="max-width: 700px; margin: 0 auto;">
+                <p style="font-size: 1.25rem; color: #fff;">
+                  “Một tình huống chơi gần sông, hồ, biển có thể trở nên cực kỳ nguy hiểm nếu chúng ta không nhận biết được các nguy cơ ẩn nấp và không biết cách ứng xử.”
+                </p>
+                <div class="success-banner" style="justify-content: center; margin: 30px 0;">
+                  <span>🔍 PHÓNG VIÊN NOVA NEWS CẦN NHẬN NHIỆM VỤ ĐIỀU TRA NGAY LẬP TỨC!</span>
+                </div>
+                <p>Chúng ta cần đi sâu tìm hiểu nguyên nhân cốt lõi gây đuối nước để cảnh báo học sinh cả nước.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S2-01 Nhiệm vụ từ tòa soạn (Interactive items collection) -->
+        <section class="slide" id="reporter-mission-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 2 • NHẬN NHIỆM VỤ</div>
+                <h3>Trang bị Đồ dùng Tác nghiệp</h3>
+              </div>
+              <div class="slide-content">
+                <p>Trước khi lên đường điều tra hiện trường, bạn cần thu thập đủ các trang thiết bị phóng viên trên bàn làm việc:</p>
+                <div class="desk-container">
+                  <div class="items-grid">
+                    <!-- Micro -->
+                    <div class="gear-item" data-gear="mic">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M12,2A3,3 0 0,0 9,5V11A3,3 0 0,0 12,14A3,3 0 0,0 15,11V5A3,3 0 0,0 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                      </svg>
+                      <span>Micro Nova News</span>
+                    </div>
+                    <!-- Camera -->
+                    <div class="gear-item" data-gear="camera">
+                      <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M20 4h-3.17L15 2H9L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 13c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+                      </svg>
+                      <span>Máy quay hiện trường</span>
+                    </div>
+                    <!-- Badge -->
+                    <div class="gear-item" data-gear="badge">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm0 3a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-2 4-3.1 6-3.1s5.97 1.1 6 3.1c-1.29 1.94-3.5 3.22-6 3.22z"/>
+                      </svg>
+                      <span>Thẻ Phóng viên</span>
+                    </div>
+                    <!-- Notebook -->
+                    <div class="gear-item" data-gear="notebook">
+                      <svg viewBox="0 0 24 24">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                      </svg>
+                      <span>Sổ ghi chép</span>
+                    </div>
+                  </div>
+                  <div id="gear-status-msg" class="gear-status-msg">Hãy click chọn từng vật dụng trên bàn để trang bị.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S2-02 Câu hỏi điều tra -->
+        <section class="slide" id="reporter-questions-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">CÂU HỎI TIÊU ĐIỂM</div>
+                <h3>Sổ tay Đề cương Điều tra</h3>
+              </div>
+              <div class="slide-content">
+                <p>Tòa soạn giao cho bạn 3 câu hỏi chính cần làm sáng tỏ:</p>
+                <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);">
+                  <ul class="question-list" style="list-style: none;">
+                    <li style="margin-bottom: 15px; font-size: 1.1rem; color: #fff;">
+                      <span style="color: var(--color-cyan); font-weight: bold; margin-right: 10px;">❓ Câu 1:</span>
+                      Những nguy cơ đuối nước nào thường gặp nhất?
+                    </li>
+                    <li style="margin-bottom: 15px; font-size: 1.1rem; color: #fff;">
+                      <span style="color: var(--color-cyan); font-weight: bold; margin-right: 10px;">❓ Câu 2:</span>
+                      Vì sao những nguy cơ này cực kỳ nguy hiểm?
+                    </li>
+                    <li style="margin-bottom: 0; font-size: 1.1rem; color: #fff;">
+                      <span style="color: var(--color-cyan); font-weight: bold; margin-right: 10px;">❓ Câu 3:</span>
+                      Làm thế nào để phòng tránh hiệu quả?
+                    </li>
+                  </ul>
+                </div>
+                <p style="margin-top: 20px;">Hãy bước vào hồ sơ nhân chứng thực tế để tìm câu trả lời.</p>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <!-- Magnifying glass looking at paper -->
+              <svg viewBox="0 0 100 100" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
+                <path d="M35 15 H75 V85 H25 V25 Z" fill="none" stroke="var(--color-cyan)" stroke-width="4"/>
+                <circle cx="35" cy="35" r="15" fill="none" stroke="var(--color-gold)" stroke-width="5"/>
+                <line x1="45" x1="45" y1="45" x2="65" y2="65" stroke="var(--color-gold)" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+              <div class="graphic-caption">Kế hoạch lấy tin của phóng viên</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S3-01 Nhiệm vụ thu thập dữ kiện -->
+        <section class="slide" id="investigation-intro-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 3 • THU THẬP DỮ KIỆN</div>
+                <h3>Phỏng vấn Nhân chứng</h3>
+              </div>
+              <div class="slide-content">
+                <p>Tòa soạn đã liên hệ được 3 nhân chứng đã từng trải qua các tình huống đuối nước nguy kịch.</p>
+                <p><strong>Nhiệm vụ của bạn:</strong></p>
+                <ul>
+                  <li>Mở từng hồ sơ vụ việc của nhân chứng.</li>
+                  <li>Lắng nghe câu chuyện của họ.</li>
+                  <li>Phân tích và xác định chính xác nguy cơ xuất hiện trong câu chuyện đó.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <!-- Group icon -->
+              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
+                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              </svg>
+              <div class="graphic-caption">Gặp gỡ nhân chứng để lấy tư liệu</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S3-02 HOW TO: Cách thu thập dữ kiện -->
+        <section class="slide" id="investigation-how-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">HƯỚNG DẪN TÁC NGHIỆP</div>
+                <h3>Quy trình Đọc và Khai thác Hồ sơ</h3>
+              </div>
+              <div class="slide-content" style="max-width: 650px; margin: 0 auto; text-align: left;">
+                <div style="background: rgba(0, 242, 254, 0.05); padding: 25px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                  <p><strong>Bước 1:</strong> Nhấp vào từng bìa hồ sơ ghim trên bảng điều tra ở trang sau.</p>
+                  <p><strong>Bước 2:</strong> Đọc nội dung tường trình tình huống nguy hiểm của nhân chứng.</p>
+                  <p><strong>Bước 3:</strong> Chọn câu trả lời đúng nhất để phân tích nguy cơ.</p>
+                  <p><strong>Bước 4:</strong> Hoàn thành toàn bộ 3 hồ sơ để tiếp tục.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S3-03 to S3-05 Witness Corkboard (Combined slide) -->
+        <section class="slide" id="witnesses-corkboard-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">BẢN ĐỒ ĐIỀU TRA HIỆN TRƯỜNG</div>
+                <h3>Bảng Hồ sơ Nhân chứng</h3>
+              </div>
+              <div class="slide-content" style="width: 100%;">
+                <p style="margin-bottom: 20px;">Nhấp chọn mở từng thư mục hồ sơ để bắt đầu điều tra:</p>
+                <div class="corkboard">
+                  <!-- Dossier 1 -->
+                  <div class="dossier-card" data-witness="w1" style="--rot: -3deg;">
+                    <div class="dossier-title">HỒ SƠ 01</div>
+                    <div style="font-size: 0.8rem; color: #555;">Chuột rút bắp cơ</div>
+                    <div class="dossier-status">CHƯA XEM</div>
+                  </div>
+                  <!-- Dossier 2 -->
+                  <div class="dossier-card" data-witness="w2" style="--rot: 2deg;">
+                    <div class="dossier-title">HỒ SƠ 02</div>
+                    <div style="font-size: 0.8rem; color: #555;">Sông chảy xiết</div>
+                    <div class="dossier-status">CHƯA XEM</div>
+                  </div>
+                  <!-- Dossier 3 -->
+                  <div class="dossier-card" data-witness="w3" style="--rot: -1deg;">
+                    <div class="dossier-title">HỒ SƠ 03</div>
+                    <div style="font-size: 0.8rem; color: #555;">Tai nạn lật thuyền</div>
+                    <div class="dossier-status">CHƯA XEM</div>
+                  </div>
+                </div>
+                <div id="witness-corkboard-status" class="gear-status-msg" style="margin-top: 20px;">
+                  Hãy đọc và phân tích đủ 3 hồ sơ vụ việc của nhân chứng.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S3-06 Tổng hợp dữ kiện ban đầu -->
+        <section class="slide" id="witness-summary-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">KẾT QUẢ ĐIỀU TRA BƯỚC ĐẦU</div>
+                <h3>Danh mục Nguy cơ Đuối nước</h3>
+              </div>
+              <div class="slide-content">
+                <p>Chúc mừng phóng viên, cuộc phỏng vấn nhân chứng đã làm sáng tỏ 3 nguy cơ đuối nước phổ biến:</p>
+                <div class="success-banner" style="margin-bottom: 20px;">
+                  <span style="font-size: 1.1rem; font-weight: 700;">🚨 BA NGUY CƠ ĐƯỢC XÁC ĐỊNH:</span>
+                </div>
+                <ul style="list-style: none;">
+                  <li style="margin-bottom: 12px; font-size: 1.1rem; color: #fff;">
+                    <strong style="color: var(--color-red-bright);">1. Chuột rút cơ thể khi bơi:</strong> Co rút cơ ngoài ý muốn làm mất khả năng cử động.
+                  </li>
+                  <li style="margin-bottom: 12px; font-size: 1.1rem; color: #fff;">
+                    <strong style="color: var(--color-red-bright);">2. Gặp dòng nước xoáy:</strong> Dòng nước ngầm xoáy mạnh cuốn chìm người xuống đáy.
+                  </li>
+                  <li style="margin-bottom: 12px; font-size: 1.1rem; color: #fff;">
+                    <strong style="color: var(--color-red-bright);">3. Sự cố lật thuyền:</strong> Thuyền chở quá tải hoặc gặp sóng ngầm úp lật đột ngột.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <!-- Checklist icon -->
+              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-success)" style="margin: 30px auto;">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              <div class="graphic-caption">Bảng tổng kết nguy cơ ban đầu</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S4-01 Nhiệm vụ phân tích góc nhìn -->
+        <section class="slide" id="analysis-intro-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 4 • PHÂN TÍCH CHUYÊN SÂU</div>
+                <h3>Tại sao lại Nguy hiểm?</h3>
+              </div>
+              <div class="slide-content">
+                <p>Một phóng viên giỏi không chỉ liệt kê nguy cơ, mà phải hiểu rõ <strong>bản chất nguy hại</strong> của từng tình huống đối với cơ thể người.</p>
+                <p>Chúng ta sẽ tiến hành phân tích sự biến đổi của cơ thể nạn nhân trong từng trường hợp gặp nạn để tìm ra nguyên nhân gây tử vong.</p>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/>
+              </svg>
+              <div class="graphic-caption">Bảng phân tích cơ chế nguy hiểm</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S4-02 HOW TO: Cách phân tích góc nhìn -->
+        <section class="slide" id="analysis-how-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">HƯỚNG DẪN PHÂN TÍCH</div>
+                <h3>Cách ghép nối dữ kiện trên bảng ghim</h3>
+              </div>
+              <div class="slide-content" style="max-width: 650px; margin: 0 auto; text-align: left;">
+                <div style="background: rgba(0, 242, 254, 0.05); padding: 25px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                  <p><strong>Bước 1:</strong> Nhấp chọn một <strong>Nguy cơ</strong> cột bên trái (ô sẽ chuyển sang màu xanh dương).</p>
+                  <p><strong>Bước 2:</strong> Nhấp chọn một <strong>Hậu quả tương ứng</strong> ở cột bên phải.</p>
+                  <p><strong>Bước 3:</strong> Nếu chính xác, một đường nối nét đứt sẽ nối hai ô lại với nhau và chúng sẽ đổi sang màu xanh lá cây.</p>
+                  <p><strong>Bước 4:</strong> Hãy kết nối chính xác tất cả các nguy cơ để mở khóa dữ liệu tòa soạn.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S4-03 Workspace phân tích (Interactive match danger consequence) -->
+        <section class="slide" id="analysis-workspace-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">BẢN ĐIỀU TRA TOÀ SOẠN</div>
+                <h3>Ghép nối Nguy cơ & Hậu quả</h3>
+              </div>
+              <div class="slide-content" style="width: 100%; text-align: left;">
+                <div class="matching-game" id="matching-danger-consequence">
+                  <!-- SVG drawing canvas for lines -->
+                  <svg class="matching-canvas-svg"></svg>
+
+                  <!-- Left: Dangers -->
+                  <div class="matching-column left">
+                    <h4>Nguy cơ thu thập</h4>
+                    <div class="match-item" data-item="cramp">
+                      <span>Chuột rút khi bơi</span>
+                      <div class="match-dot"></div>
+                    </div>
+                    <div class="match-item" data-item="vortex">
+                      <span>Gặp dòng nước xoáy</span>
+                      <div class="match-dot"></div>
+                    </div>
+                    <div class="match-item" data-item="capsize">
+                      <span>Sự cố lật thuyền</span>
+                      <div class="match-dot"></div>
+                    </div>
+                  </div>
+
+                  <!-- Right: Consequences -->
+                  <div class="matching-column right">
+                    <h4>Điều có thể xảy ra</h4>
+                    <div class="match-item" data-match="boat-capsize">
+                      <div class="match-dot"></div>
+                      <span>Rơi xuống vùng nước sâu đột ngột, có thể không biết bơi hoặc hoảng loạn</span>
+                    </div>
+                    <div class="match-item" data-match="body-cramp">
+                      <div class="match-dot"></div>
+                      <span>Mất hoàn toàn khả năng co duỗi cơ chân tay và chìm dần xuống nước</span>
+                    </div>
+                    <div class="match-item" data-match="whirlpool">
+                      <div class="match-dot"></div>
+                      <span>Bị hút chặt và cuốn thẳng xuống lòng sông sâu, không thể ngoi lên thở</span>
+                    </div>
+                  </div>
+                </div>
+                <div id="matching-danger-consequence-status" class="gear-status-msg" style="text-align: center;">
+                  Hãy kết nối 3 nguy cơ với các hậu quả thích hợp.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S4-04 Chốt góc nhìn nhân chứng -->
+        <section class="slide" id="analysis-summary-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">PHÂN TÍCH CHUYÊN MÔN</div>
+                <h3>Kết luận về tính Nguy hại</h3>
+              </div>
+              <div class="slide-content" style="max-width: 700px; margin: 0 auto;">
+                <p style="font-size: 1.3rem; color: #fff; line-height: 1.5;">
+                  “Điểm chung của các nguy cơ này là gì? Chúng đều tước đoạt khả năng tự bảo vệ cơ thể dưới nước của nạn nhân, dẫn đến ngạt nước cực nhanh.”
+                </p>
+                <div class="success-banner" style="background: rgba(255, 23, 68, 0.1); border-color: rgba(255, 23, 68, 0.4); justify-content: center; margin: 30px 0;">
+                  <span style="color: var(--color-red-bright); font-weight: 700;">⚠ CẢNH BÁO: Đuối nước có thể xảy ra ngay cả khi bạn biết bơi nếu gặp tai nạn mất kiểm soát cơ thể.</span>
+                </div>
+                <p>Vì thế, biết cách phòng vệ trước khi sự việc xảy ra là lá chắn bảo vệ tốt nhất.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S5-01 Nhiệm vụ chọn điều quan trọng -->
+        <section class="slide" id="solution-intro-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 5 • TÌM KIẾM GIẢI PHÁP</div>
+                <h3>Xây dựng rào chắn An toàn</h3>
+              </div>
+              <div class="slide-content">
+                <p>Nhiệm vụ tiếp theo của ban biên tập Nova News:</p>
+                <p>Từ các nguy cơ đã tìm hiểu, nhóm nghiên cứu cần chỉ ra:</p>
+                <ul>
+                  <li><strong>Cách phòng tránh cụ thể</strong> cho từng nguy cơ nhằm ngăn chặn tai nạn xảy ra.</li>
+                  <li><strong>Các vật dụng có thể hỗ trợ nổi</strong> trên mặt nước để duy trì sự sống trong lúc chờ cứu hộ.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <!-- Lifebuoy icon -->
+              <svg viewBox="0 0 100 100" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-cyan)" stroke-width="8"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="var(--color-cyan)" stroke-width="4"/>
+                <path d="M50,10 L50,30 M50,70 L50,90 M10,50 L30,50 M70,50 L90,50" stroke="var(--color-cyan)" stroke-width="8"/>
+              </svg>
+              <div class="graphic-caption">Nghiên cứu giải pháp sinh tồn</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S5-02 HOW TO: Cách tìm giải pháp và phân loại vật hỗ trợ -->
+        <section class="slide" id="solution-how-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">QUY TRÌNH BIÊN TẬP</div>
+                <h3>Giải pháp & Phân loại Vật hỗ trợ nổi</h3>
+              </div>
+              <div class="slide-content" style="max-width: 650px; margin: 0 auto; text-align: left;">
+                <div style="background: rgba(0, 242, 254, 0.05); padding: 25px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                  <p><strong>Phần A: Tìm giải pháp</strong><br>Ghép nối nguy cơ với biện pháp phòng tránh thích hợp để xây dựng cẩm nang kỹ năng.</p>
+                  <p style="margin-top: 15px;"><strong>Phần B: Vật nổi cứu sinh</strong><br>Phân loại các vật dụng thường thấy xung quanh nguồn nước vào nhóm <strong>Giúp nổi</strong> hoặc <strong>Không giúp nổi</strong>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S5-03 Workspace: Tìm giải pháp (Interactive danger prevention match) -->
+        <section class="slide" id="solution-prevention-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">BẢN BIÊN TẬP NOVA NEWS</div>
+                <h3>Nối Nguy cơ & Biện pháp phòng tránh</h3>
+              </div>
+              <div class="slide-content" style="width: 100%; text-align: left;">
+                <div class="matching-game" id="matching-danger-prevention">
+                  <svg class="matching-canvas-svg"></svg>
+                  
+                  <div class="matching-column left">
+                    <h4>Nguy cơ nguy hại</h4>
+                    <div class="match-item" data-item="cramp">
+                      <span>Chuột rút khi bơi</span>
+                      <div class="match-dot"></div>
+                    </div>
+                    <div class="match-item" data-item="vortex">
+                      <span>Gặp dòng nước xoáy</span>
+                      <div class="match-dot"></div>
+                    </div>
+                    <div class="match-item" data-item="capsize">
+                      <span>Sự cố lật thuyền</span>
+                      <div class="match-dot"></div>
+                    </div>
+                  </div>
+
+                  <div class="matching-column right">
+                    <h4>Giải pháp phòng ngừa</h4>
+                    <div class="match-item" data-match="stay-away">
+                      <div class="match-dot"></div>
+                      <span>Không chơi gần vùng nước sâu, chảy xiết hoặc có biển cảnh báo nguy hiểm</span>
+                    </div>
+                    <div class="match-item" data-match="jacket">
+                      <div class="match-dot"></div>
+                      <span>Luôn mặc áo phao đúng quy chuẩn và không đùa nghịch khi ngồi trên thuyền</span>
+                    </div>
+                    <div class="match-item" data-match="warm-up">
+                      <div class="match-dot"></div>
+                      <span>Khởi động kỹ bắp cơ bắp thịt chân tay trước khi bước xuống bơi lội</span>
+                    </div>
+                  </div>
+                </div>
+                <div id="matching-danger-prevention-status" class="gear-status-msg" style="text-align: center;">
+                  Hãy kết nối 3 nguy cơ với giải pháp phòng ngừa hợp lý.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S5-04 Workspace: Vật nào giúp mình nổi? (Interactive sorting game) -->
+        <section class="slide" id="solution-float-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">PHÒNG THÍ NGHIỆM AN TOÀN</div>
+                <h3>Thử nghiệm Sức nổi của Vật dụng</h3>
+              </div>
+              <div class="slide-content" style="width: 100%; text-align: left;">
+                <p style="text-align: center; margin-bottom: 15px;">Kéo thả (hoặc click rồi click vào giỏ) các vật dụng vào nhóm chính xác:</p>
+                
+                <div class="sorting-game">
+                  <!-- Pool of items to drag -->
+                  <div class="sorting-pool">
+                    <div class="sortable-card" data-item="jacket">🦺 Áo phao</div>
+                    <div class="sortable-card" data-item="can">🛢️ Can nhựa rỗng</div>
+                    <div class="sortable-card" data-item="log">🪵 Khúc cây nổi</div>
+                    <div class="sortable-card" data-item="stone">🪨 Cục đá nặng</div>
+                    <div class="sortable-card" data-item="branch">🌿 Cành cây chìa ra bờ</div>
+                  </div>
+
+                  <!-- Buckets -->
+                  <div class="sorting-buckets">
+                    <div class="sorting-bucket bucket-float" data-bucket="float">
+                      <div class="bucket-title">🟢 GIÚP NỔI / HỖ TRỢ NỔI</div>
+                      <!-- Target items go here -->
+                    </div>
+                    <div class="sorting-bucket bucket-sink" data-bucket="sink">
+                      <div class="bucket-title">🔴 KHÔNG GIÚP NỔI</div>
+                      <!-- Target items go here -->
+                    </div>
+                  </div>
+                </div>
+
+                <div id="sorting-status" class="gear-status-msg" style="text-align: center;">
+                  Phân loại đúng cả 5 vật dụng để tiếp tục.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S5-05 Chốt điều quan trọng -->
+        <section class="slide" id="solution-summary-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">KẾT LUẬN KHOA HỌC</div>
+                <h3>Bản chất của các vật giúp nổi</h3>
+              </div>
+              <div class="slide-content">
+                <p>Báo cáo điều tra cho thấy:</p>
+                <ul>
+                  <li><strong>Nhóm giúp nổi (Áo phao, Can rỗng, Khúc cây, Cành cây):</strong> Đều có đặc tính nhẹ hơn nước, có thể bám vào để cơ thể duy trì sức nổi tự nhiên hoặc có khả năng nâng đỡ cơ thể nổi lên trên.</li>
+                  <li><strong>Vật dụng hỗ trợ khẩn cấp:</strong> Khi có người gặp nạn, ném áo phao, can rỗng hoặc chìa cành cây/khúc cây dài chính là phao cứu sinh gián tiếp cực kỳ an toàn.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <!-- Shield check icon -->
+              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-success)" style="margin: 30px auto;">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <div class="graphic-caption">Bảng kiểm chứng khoa học an toàn</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S6-01 Nhiệm vụ sản phẩm -->
+        <section class="slide" id="notebook-intro-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 6 • XUẤT BẢN SẢN PHẨM</div>
+                <h3>Biên tập Sổ tay Phóng viên</h3>
+              </div>
+              <div class="slide-content">
+                <p>Đã đến lúc chuyển các thông tin thu thập được từ thực tế nhân chứng thành sản phẩm truyền thông hữu ích giúp ích cho gia đình và nhà trường.</p>
+                <p>Bạn sẽ tiến hành <strong>thiết kế và in ấn Sổ tay Phóng viên</strong>, lưu lại các nguy cơ, cách phòng tránh và vật hỗ trợ nổi.</p>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <!-- Book icon -->
+              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
+                <path d="M19 2H6c-1.2 0-2 .8-2 2v16c0 1.2.8 2 2 2h13c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 2v11l-2.5-1.5L13 15V4h5z"/>
+              </svg>
+              <div class="graphic-caption">Xuất bản tài liệu tuyên truyền</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S6-02 HOW TO: Cách hoàn thiện sổ tay -->
+        <section class="slide" id="notebook-how-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">HƯỚNG DẪN BIÊN TẬP</div>
+                <h3>Cách Thiết Kế Sổ Tay Phóng Viên</h3>
+              </div>
+              <div class="slide-content" style="max-width: 650px; margin: 0 auto; text-align: left;">
+                <div style="background: rgba(0, 242, 254, 0.05); padding: 25px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                  <p><strong>Bước 1:</strong> Nhập Tên của bạn làm tác giả biên soạn sổ tay.</p>
+                  <p><strong>Bước 2:</strong> Thay đổi tiêu đề sổ tay theo phong cách riêng nếu muốn.</p>
+                  <p><strong>Bước 3:</strong> Chọn màu sắc bìa cẩm nang (Xanh dương, Đỏ, Cam) phù hợp với thẩm mỹ của bạn.</p>
+                  <p><strong>Bước 4:</strong> Kiểm tra bản preview nội dung đã tự động tổng hợp rồi nhấp nút <strong>"In Sổ Tay"</strong>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S6-03 Workspace hoàn thiện sổ tay (Interactive notebook builder) -->
+        <section class="slide" id="notebook-compiler-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">BÀN BIÊN TẬP THIẾT KẾ</div>
+                <h3>Xuất bản Sổ tay Phóng viên</h3>
+              </div>
+              <div class="slide-content" style="width: 100%; text-align: left;">
+                <div class="notebook-compiler">
+                  <!-- Live Preview Left -->
+                  <div class="notebook-preview" id="notebook-preview-card">
+                    <div class="notebook-inner">
+                      <div class="notebook-header-line">
+                        <h4 id="nb-preview-title">SỔ TAY PHÒNG TRÁNH ĐUỐI NƯỚC</h4>
+                        <span>NOVA NEWS ED.</span>
+                      </div>
+                      <div class="notebook-section">
+                        <h5>1. Danh mục nguy cơ và cách phòng tránh</h5>
+                        <ul class="notebook-list">
+                          <li>• <strong>Chuột rút:</strong> Khởi động kỹ trước khi xuống nước bơi lội.</li>
+                          <li>• <strong>Nước xoáy:</strong> Tránh xa vùng nước sâu, chảy xiết, nguy hiểm.</li>
+                          <li>• <strong>Lật thuyền:</strong> Luôn mặc áo phao đúng cách khi ngồi thuyền.</li>
+                        </ul>
+                      </div>
+                      <div class="notebook-section">
+                        <h5>2. Các vật hỗ trợ nổi khẩn cấp</h5>
+                        <ul class="notebook-list">
+                          <li>• Áo phao cứu hộ chuyên dụng.</li>
+                          <li>• Can nhựa rỗng có nắp bám giữ.</li>
+                          <li>• Khúc cây khô nổi trên dòng nước.</li>
+                          <li>• Cành cây xanh dài chìa từ trên bờ.</li>
+                        </ul>
+                      </div>
+                      <div class="notebook-section" id="nb-preview-briefing">
+                        <!-- Disk discussion answers populated dynamically -->
+                      </div>
+                      <div class="notebook-author">
+                        Biên soạn Phóng viên: <span id="nb-preview-author">.......................</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Controls Right -->
+                  <div class="notebook-controls">
+                    <div class="qa-card">
+                      <label for="reporter-name-input">Tên phóng viên tác giả:</label>
+                      <input type="text" id="reporter-name-input" class="input-field" placeholder="Nhập tên của em...">
+                    </div>
+                    <div class="qa-card">
+                      <label for="notebook-title-input">Tiêu đề sổ tay:</label>
+                      <input type="text" id="notebook-title-input" class="input-field" placeholder="SỔ TAY PHÒNG TRÁNH ĐUỐI NƯỚC">
+                    </div>
+                    <div class="qa-card">
+                      <label>Màu sắc bìa sổ tay:</label>
+                      <div class="theme-selector">
+                        <div class="theme-dot theme-blue active" data-color="blue"></div>
+                        <div class="theme-dot theme-red" data-color="red"></div>
+                        <div class="theme-dot theme-orange" data-color="orange"></div>
+                      </div>
+                    </div>
+                    <button class="btn-print" id="btn-print-notebook">🖨️ IN SỔ TAY RA GIẤY</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S6-04 Chia sẻ và chốt giá trị sản phẩm -->
+        <section class="slide" id="notebook-summary-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIÁ TRỊ CỘNG ĐỒNG</div>
+                <h3>Sức mạnh của thông tin</h3>
+              </div>
+              <div class="slide-content">
+                <p>Một cuốn sổ tay hoàn chỉnh không chỉ là bài tập, nó là cẩm nang có thể cứu sống nhiều người xung quanh.</p>
+                <div style="background: rgba(0, 230, 118, 0.05); border: 1px solid var(--color-success); padding: 20px; border-radius: 8px;">
+                  <p style="color: #fff; margin-bottom: 0;">
+                    “Thông tin điều tra cần được chuyển thành sản phẩm dễ hiểu, dễ đọc để tuyên truyền, giúp cảnh báo kịp thời và hỗ trợ người khác phòng tránh tai nạn thương tâm.”
+                  </p>
+                </div>
+                <p style="margin-top: 15px;">Hãy chia sẻ cuốn sổ tay này với bạn bè và người thân của bạn.</p>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <!-- Share icon -->
+              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
+                <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+              </svg>
+              <div class="graphic-caption">Lan tỏa thông điệp an toàn trường học</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S7-01 Nhật ký phóng viên (Interactive Reflection) -->
+        <section class="slide" id="reflection-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 7 • NHẬT KÝ PHÓNG VIÊN</div>
+                <h3>Nhật ký Tác nghiệp cá nhân</h3>
+              </div>
+              <div class="slide-content">
+                <p>Hãy tự nhìn nhận lại hành trình điều tra vừa qua bằng cách điền vào nhật ký phản tư:</p>
+                <div class="discussion-container">
+                  <div class="qa-card" style="padding: 12px;">
+                    <label>1. Điều làm em bất ngờ nhất trong bài học này là...</label>
+                    <textarea class="input-field reflection-textarea" data-field="q1" rows="2" placeholder="Ghi chép suy nghĩ..."></textarea>
+                  </div>
+                  <div class="qa-card" style="padding: 12px;">
+                    <label>2. Nguy cơ đuối nước nào em chưa từng nghĩ tới là...</label>
+                    <textarea class="input-field reflection-textarea" data-field="q2" rows="2" placeholder="Ghi chép suy nghĩ..."></textarea>
+                  </div>
+                  <div class="qa-card" style="padding: 12px;">
+                    <label>3. Bài học quan trọng nhất em muốn ghi nhớ lâu dài là...</label>
+                    <textarea class="input-field reflection-textarea" data-field="q3" rows="2" placeholder="Ghi chép suy nghĩ..."></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <!-- Quill/pen icon -->
+              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
+                <path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/>
+              </svg>
+              <div class="graphic-caption">Bảng nhật ký phản tư phóng viên</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S7-02 Điều phóng viên rút ra -->
+        <section class="slide" id="reflection-summary-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">THÔNG ĐIỆP HỒ SƠ CHUYÊN ĐỀ</div>
+                <h3>Vai trò phản tư trong học tập</h3>
+              </div>
+              <div class="slide-content">
+                <p>Nghiên cứu giáo dục chỉ ra:</p>
+                <div style="background: rgba(0, 242, 254, 0.05); padding: 20px; border-radius: 8px; border: 1px solid var(--border-glass); margin-bottom: 20px;">
+                  <p style="color: #fff; margin-bottom: 0;">
+                    “Hoạt động viết nhật ký giúp chúng ta nhận ra rằng: Rất nhiều nguy cơ đuối nước ẩn chứa ngay bên cạnh cuộc sống hàng ngày mà thường ngày ta vô tình bỏ qua.”
+                  </p>
+                </div>
+                <p><strong>Câu hỏi vai trò phóng viên:</strong></p>
+                <p>Nếu là phóng viên kênh tin tức lớn, bạn muốn gửi lời cảnh báo đặc biệt nào nhất đến với các bậc phụ huynh học sinh hiện nay? Vì sao?</p>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <!-- Megaphone icon -->
+              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
+                <path d="M12 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h3l5 4V4l-5 4zm6 1a5 5 0 0 1 0 6M20 6a8 8 0 0 1 0 12"/>
+              </svg>
+              <div class="graphic-caption">Phát thanh chuyên luận Nova News</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S8-01 Cam kết an toàn (Interactive Signature Pad Canvas) -->
+        <section class="slide" id="pledge-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 8 • CAM KẾT HÀNH ĐỘNG</div>
+                <h3>Bản cam kết An toàn dưới nước</h3>
+              </div>
+              <div class="slide-content" style="width: 100%;">
+                <p style="text-align: center; margin-bottom: 20px;">Hãy đọc kỹ nội dung và dùng chuột hoặc ngón tay để ký cam kết an toàn dưới đây:</p>
+                
+                <div class="pledge-card">
+                  <div class="pledge-text">
+                    <p>Hôm nay, dưới tư cách phóng viên danh dự, tôi cam kết:</p>
+                    <p>1. Luôn <strong>quan sát kỹ nguy cơ</strong> xung quanh trước khi đến gần khu vực sông hồ.</p>
+                    <p>2. Luôn <strong>mặc áo phao chuẩn</strong> và tuyệt đối tuân thủ quy tắc khi đi thuyền bè.</p>
+                    <p>3. Luôn lập tức báo ngay cho người lớn khi phát hiện tình huống nước nguy hiểm.</p>
+                  </div>
+                  
+                  <div class="signature-container">
+                    <div class="signature-header">
+                      <label>Chữ ký số xác nhận của phóng viên:</label>
+                      <button id="btn-clear-signature" class="btn-clear-sig">Xóa và vẽ lại</button>
+                    </div>
+                    <canvas id="signature-canvas" class="signature-pad" width="540" height="120"></canvas>
+                  </div>
+
+                  <button id="btn-pledge-submit" class="btn-action" style="margin-top: 25px; width: 100%;">GỬI CAM KẾT & NHẬN HUY HIỆU</button>
+                  
+                  <div id="pledge-status-success" class="success-banner" style="display: none; justify-content: center; margin-top: 15px;">
+                    <span>✓ Cam kết đã được gửi lên hệ thống an toàn quốc gia thành công!</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- S8-02 Thông điệp hành động -->
+        <section class="slide" id="pledge-summary-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">HÀNH ĐỘNG THỰC TẾ</div>
+                <h3>Cam kết đi đôi với Hành động</h3>
+              </div>
+              <div class="slide-content">
+                <p>Một chữ ký cam kết mang lại trách nhiệm to lớn:</p>
+                <ul>
+                  <li><strong>Quan sát chủ động:</strong> Chú ý biển báo cấm, biển cảnh báo dòng nước xoáy sâu nguy hại.</li>
+                  <li><strong>Tuyên truyền:</strong> Mang theo "Sổ tay Phóng viên" bên mình để hướng dẫn và nhắc nhở bạn bè không tắm sông tự phát.</li>
+                </ul>
+                <div class="success-banner" style="margin-top: 20px;">
+                  <span style="font-size: 1.15rem; font-weight: 700;">“An toàn dưới nước bắt đầu từ sự chuẩn bị và hành động chuẩn mực của mỗi chúng ta.”</span>
+                </div>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <!-- Running character or badge visual -->
+              <svg viewBox="0 0 100 100" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
+                <polygon points="50,15 17,39 29,78 71,78 83,39" fill="none" stroke="var(--color-gold)" stroke-width="4"/>
+                <circle cx="50" cy="48" r="18" fill="none" stroke="var(--color-cyan)" stroke-width="3"/>
+                <path d="M45,48 L48,51 L55,44" fill="none" stroke="var(--color-success)" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+              <div class="graphic-caption">Hành động vì an toàn học đường</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- END-01 Nội dung cốt lõi -->
+        <section class="slide" id="final-cores-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">TỔNG KẾT BÀI HỌC</div>
+                <h3>Kiến thức Cốt lõi của Tiết 1</h3>
+              </div>
+              <div class="slide-content">
+                <p><strong>1. Kiến thức cốt lõi:</strong></p>
+                <ul>
+                  <li>Nhận diện 3 nguy cơ đuối nước hàng đầu (Chuột rút, Nước xoáy, Lật thuyền).</li>
+                  <li>Thu thập các biện pháp phòng vệ từ xa thích hợp.</li>
+                  <li>Cách nhận dạng các vật có thể hỗ trợ nổi cứu nạn khi có nguy cơ.</li>
+                </ul>
+                <p><strong>2. Kỹ năng đã luyện tập:</strong></p>
+                <ul>
+                  <li>Phân tích logic liên kết giữa Nguyên nhân - Hậu quả - Cách phòng chống.</li>
+                  <li>Tư duy sàng lọc thông tin và kỹ năng phản tư sự kiện thực tế.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="slide-graphic">
+              <!-- Brain/knowledge icon -->
+              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
+                <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.07 19.58 10.48 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+              </svg>
+              <div class="graphic-caption">Kiến thức tích lũy chuyên mục an toàn</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- END-02 Sản phẩm cuối & Big Question Revisit (Confetti animation overlay) -->
+        <section class="slide" id="final-products-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">CHÀO MỪNG PHÓNG VIÊN XUẤT SẮC</div>
+                <h3>Hoàn thành Nhiệm vụ Tác nghiệp!</h3>
+              </div>
+              <div class="slide-content" style="max-width: 700px; margin: 0 auto;">
+                <div style="margin: 20px auto; width: 120px; height: 120px; background: radial-gradient(circle, var(--color-gold) 0%, #ff8f00 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 25px rgba(255,179,0,0.6); border: 4px solid #fff;">
+                  <span style="font-size: 3.5rem;">🎖️</span>
+                </div>
+                <h4 style="color: var(--color-gold); font-size: 1.5rem; margin-bottom: 15px;">HUY HIỆU NOVA NEWS DÀNH CHO BẠN</h4>
+                <p style="font-size: 1.1rem; line-height: 1.6;">
+                  Em đã xuất sắc đóng vai phóng viên điều tra, thu thập thông tin hiện trường, hoàn thiện Sổ tay Phóng viên phòng tránh đuối nước và cam kết an toàn hành động!
+                </p>
+                <div class="success-banner" style="background: var(--color-success-bg); border-color: var(--color-success); justify-content: center; margin: 25px 0;">
+                  <span style="font-weight: 700; color: #fff;">💡 TRẢ LỜI BIG QUESTION: Phòng tránh đuối nước bắt đầu từ sự Nhận biết nguy cơ, Chuẩn bị giải pháp và Tuyên truyền chia sẻ cộng đồng.</span>
+                </div>
+                <button class="btn-action" onclick="playSound('click'); exitToDashboard();">TRỞ VỀ TRANG CHỦ NOVA NEWS</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Navigation bar (slide control panels) -->
+      <div class="navigation-bar">
+        <div class="nav-left">
+          <button class="btn-nav" id="btn-prev" aria-label="Slide trước">◀</button>
+          <div class="progress-container">
+            <div class="progress-track">
+              <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <span class="progress-text" id="progress-text">Slide 1 / 30</span>
+          </div>
+          <button class="btn-nav" id="btn-next" aria-label="Slide tiếp theo">▶</button>
+        </div>
+        <button class="btn-exit" id="btn-exit-lesson">THOÁT RA TRANG CHỦ</button>
+      </div>
+    </div>
+
+    <!-- Scrolling news banner (Bottom) -->
+    <div class="news-ticker-container">
+      <div class="ticker-title">TIN NÓNG MỚI NHẤT</div>
+      <div class="ticker-marquee">
+        <div class="ticker-track">
+          <!-- Text replicates twice for seamless infinite scroll -->
+          <div class="ticker-item">
+            <span class="highlight">🚨 CẢNH BÁO AN TOÀN HỌC ĐƯỜNG:</span> Hãy đề phòng các bến sông dốc đứng trơn trượt vào mùa hè.
+            <span class="ticker-divider">|</span>
+            <span class="highlight">🦺 KHUYẾN CÁO:</span> Luôn mặc áo phao đúng quy chuẩn khi tham gia giao thông đường thủy.
+            <span class="ticker-divider">|</span>
+            <span class="highlight">🌀 DÒNG NƯỚC XOÁY:</span> Tránh xa vùng nước có xoáy hoặc biển cảnh báo nguy hiểm chảy xiết.
+            <span class="ticker-divider">|</span>
+            <span class="highlight">📢 PHÓNG VIÊN NOVA NEWS:</span> Sổ tay an toàn dưới nước vừa được biên dịch thành công.
+          </div>
+          <div class="ticker-item">
+            <span class="highlight">🚨 CẢNH BÁO AN TOÀN HỌC ĐƯỜNG:</span> Hãy đề phòng các bến sông dốc đứng trơn trượt vào mùa hè.
+            <span class="ticker-divider">|</span>
+            <span class="highlight">🦺 KHUYẾN CÁO:</span> Luôn mặc áo phao đúng quy chuẩn khi tham gia giao thông đường thủy.
+            <span class="ticker-divider">|</span>
+            <span class="highlight">🌀 DÒNG NƯỚC XOÁY:</span> Tránh xa vùng nước có xoáy hoặc biển cảnh báo nguy hiểm chảy xiết.
+            <span class="ticker-divider">|</span>
+            <span class="highlight">📢 PHÓNG VIÊN NOVA NEWS:</span> Sổ tay an toàn dưới nước vừa được biên dịch thành công.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Confetti overlay -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Witness Folder popup detail -->
+  <div class="folder-modal" id="folder-modal">
+    <div class="folder-content">
+      <div class="folder-header">
+        <h4 id="modal-title">Hồ sơ Nhân chứng</h4>
+        <button class="btn-close-modal" id="btn-close-modal">✕</button>
+      </div>
+      <div class="folder-body">
+        <div class="folder-info">
+          <div class="witness-story" id="modal-story">Nội dung câu chuyện...</div>
+          <div class="folder-question">
+            <p id="modal-question">Câu hỏi phân tích nguy cơ?</p>
+            <div class="option-list" id="modal-options">
+              <!-- Interactive options go here -->
+            </div>
+          </div>
+        </div>
+        <div class="folder-image">
+          <img id="modal-img" src="" alt="Dossier Image">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
