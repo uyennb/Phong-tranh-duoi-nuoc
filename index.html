@@ -743,6 +743,83 @@
                 </div>
               </div>
             </div>
+            <div class="slide-graphic" id="gear-completion-graphic" style="background:#040d1c; padding:0; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="gc-s6" x="-40%" y="-40%" width="180%" height="180%">
+                    <feGaussianBlur stdDeviation="3" result="b"/>
+                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                  <radialGradient id="bg-s6" cx="50%" cy="50%" r="60%">
+                    <stop offset="0%" style="stop-color:#0a1a35"/>
+                    <stop offset="100%" style="stop-color:#020810"/>
+                  </radialGradient>
+                  <style>
+                    #gear-completion-graphic .state-incomplete { display: block; }
+                    #gear-completion-graphic .state-complete { display: none; }
+                    #gear-completion-graphic.complete .state-incomplete { display: none; }
+                    #gear-completion-graphic.complete .state-complete { display: block; }
+                    .s6-blink { animation: s6bk 1s ease-in-out infinite; }
+                    @keyframes s6bk { 0%,100%{opacity:1} 50%{opacity:.2} }
+                    .s6-pulse-red { animation: s6pr 2s infinite; }
+                    @keyframes s6pr { 0%{r:25;opacity:0.7} 100%{r:45;opacity:0} }
+                    .s6-pulse-green { animation: s6pg 2s infinite; }
+                    @keyframes s6pg { 0%{r:30;opacity:0.8} 100%{r:55;opacity:0} }
+                    .s6-float { animation: s6fl 3s ease-in-out infinite; }
+                    @keyframes s6fl { 0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)} }
+                    .s6-draw-check {
+                      stroke-dasharray: 50;
+                      stroke-dashoffset: 50;
+                      animation: s6draw .6s cubic-bezier(.175, .885, .32, 1.275) forwards;
+                      animation-delay: .2s;
+                    }
+                    @keyframes s6draw { to { stroke-dashoffset: 0; } }
+                    .s6-tick { animation: s6tick_run 10s linear infinite; }
+                    @keyframes s6tick_run { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+                    .s6-rotate { animation: s6rot 8s linear infinite; }
+                    @keyframes s6rot { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+                  </style>
+                </defs>
+                <rect width="260" height="220" fill="url(#bg-s6)"/>
+                <path d="M10,25 L10,10 L25,10" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                <path d="M250,25 L250,10 L235,10" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                <path d="M10,175 L10,190 L25,190" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                <path d="M250,175 L250,190 L235,190" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                <g class="state-incomplete s6-float" style="transform-box:fill-box;transform-origin:center;">
+                  <circle class="s6-pulse-red" cx="130" cy="95" r="25" fill="none" stroke="#ff1744" stroke-width="2" style="transform-box:fill-box;transform-origin:center;"/>
+                  <path d="M110,90 L110,65 A20,20 0 0,1 150,65 L150,90" fill="none" stroke="#ffb300" stroke-width="5" stroke-linecap="round"/>
+                  <rect x="98" y="82" width="64" height="46" rx="6" fill="#1e2230" stroke="#ffb300" stroke-width="3" filter="url(#gc-s6)"/>
+                  <circle cx="130" cy="100" r="4" fill="#020810"/>
+                  <polygon points="128,100 132,100 134,114 126,114" fill="#020810"/>
+                  <circle class="s6-blink" cx="130" cy="74" r="3" fill="#ff1744" filter="url(#gc-s6)"/>
+                  <rect x="40" y="146" width="180" height="24" rx="4" fill="rgba(255,23,68,0.1)" stroke="#ff1744" stroke-width="1"/>
+                  <text x="130" y="161" text-anchor="middle" font-family="Arial" font-size="7" font-weight="900" fill="#ff5252" letter-spacing="0.5">CHƯA ĐỦ TRANG BỊ</text>
+                </g>
+                <g class="state-complete s6-float" style="transform-box:fill-box;transform-origin:center;">
+                  <circle class="s6-pulse-green" cx="130" cy="95" r="30" fill="none" stroke="#00e676" stroke-width="2.5" style="transform-box:fill-box;transform-origin:center;"/>
+                  <circle class="s6-rotate" cx="130" cy="95" r="42" fill="none" stroke="rgba(0,242,254,0.3)" stroke-width="1.5" stroke-dasharray="10 6" style="transform-box:fill-box;transform-origin:center;"/>
+                  <circle cx="130" cy="95" r="36" fill="#0e2316" stroke="#00c853" stroke-width="3.5" filter="url(#gc-s6)"/>
+                  <path class="s6-draw-check" d="M112,94 L124,106 L150,78" fill="none" stroke="#00e676" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M75,75 L77,79 L82,79 L78,82 L79,87 L75,84 L71,87 L72,82 L68,79 L73,79 Z" fill="#ffb300" class="s6-blink"/>
+                  <path d="M185,75 L187,79 L192,79 L188,82 L189,87 L185,84 L181,87 L182,82 L178,79 L183,79 Z" fill="#ffb300" class="s6-blink" style="animation-delay:0.5s"/>
+                  <rect x="30" y="146" width="200" height="24" rx="4" fill="rgba(0,230,118,0.12)" stroke="#00c853" stroke-width="1.5" filter="url(#gc-s6)"/>
+                  <text x="130" y="161" text-anchor="middle" font-family="Arial" font-size="7" font-weight="900" fill="#69f0ae" letter-spacing="1">SẴN SÀNG TÁC NGHIỆP</text>
+                </g>
+                <circle class="s6-blink" cx="14" cy="14" r="5" fill="#ff1744" filter="url(#gc-s6)"/>
+                <text x="23" y="18" font-family="Arial" font-size="8" font-weight="900" fill="#ff1744">REC</text>
+                <rect x="5" y="168" width="135" height="22" rx="2" fill="rgba(0,0,0,0.75)"/>
+                <rect x="5" y="168" width="42" height="22" rx="2" fill="#b71c1c"/>
+                <text x="26" y="183" text-anchor="middle" font-family="Arial" font-size="6.5" font-weight="900" fill="white">TÁC NGHIỆP</text>
+                <text x="94" y="177" font-family="Arial" font-size="5.5" font-weight="700" fill="#00f2fe">Phóng viên Nova News</text>
+                <text x="94" y="185" font-family="Arial" font-size="5" fill="rgba(255,255,255,0.6)">Trang bị đồ dùng tác nghiệp</text>
+                <rect x="0" y="200" width="260" height="20" fill="#b71c1c" opacity="0.92"/>
+                <clipPath id="tc-s6"><rect x="0" y="200" width="260" height="20"/></clipPath>
+                <g clip-path="url(#tc-s6)">
+                  <text class="s6-tick" x="0" y="214" font-family="Arial" font-size="7" font-weight="700" fill="white">🎙️ NHẬN NHIỆM VỤ TÒA SOẠN  •  Trang bị Micro, Máy quay, Thẻ và Sổ tác nghiệp  •  🎙️ NHẬN NHIỆM VỤ  •</text>
+                </g>
+              </svg>
+              <div class="graphic-caption">Bảng xác nhận trang thiết bị</div>
+            </div>
           </div>
         </section>
 

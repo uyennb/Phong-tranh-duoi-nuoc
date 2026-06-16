@@ -176,7 +176,9 @@ function updateSlideView() {
 // Hook to execute actions on slide entry
 function onSlideEnter(slideId) {
   // Reset and redraw any interactive assets based on active slide
-  if (slideId === 'analysis-workspace-slide') {
+  if (slideId === 'reporter-mission-slide') {
+    checkGearCompletion();
+  } else if (slideId === 'analysis-workspace-slide') {
     initMatchingGame('matching-danger-consequence');
   } else if (slideId === 'solution-prevention-slide') {
     initMatchingGame('matching-danger-prevention');
@@ -299,14 +301,17 @@ function initGearCollection() {
 function checkGearCompletion() {
   const allCollected = Object.values(state.collectedGear).every(v => v === true);
   const statusMsg = document.getElementById('gear-status-msg');
+  const graphic = document.getElementById('gear-completion-graphic');
   if (allCollected) {
     playSound('success');
     statusMsg.innerHTML = '✓ Đã nhận đủ trang bị! Bạn đã sẵn sàng tác nghiệp. Nhấn nút <strong>"Tiếp tục"</strong> ở thanh dưới.';
     statusMsg.style.color = 'var(--color-success)';
+    if (graphic) graphic.classList.add('complete');
   } else {
     const left = Object.values(state.collectedGear).filter(v => !v).length;
     statusMsg.innerHTML = `Hãy thu thập nốt <strong>${left}</strong> vật dụng còn lại trên bàn.`;
     statusMsg.style.color = 'var(--color-gold)';
+    if (graphic) graphic.classList.remove('complete');
   }
 }
 
