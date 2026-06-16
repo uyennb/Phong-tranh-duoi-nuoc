@@ -777,12 +777,76 @@
                 <p style="margin-top: 20px;">Hãy bước vào hồ sơ nhân chứng thực tế để tìm câu trả lời.</p>
               </div>
             </div>
-            <div class="slide-graphic">
-              <!-- Magnifying glass looking at paper -->
-              <svg viewBox="0 0 100 100" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
-                <path d="M35 15 H75 V85 H25 V25 Z" fill="none" stroke="var(--color-cyan)" stroke-width="4"/>
-                <circle cx="35" cy="35" r="15" fill="none" stroke="var(--color-gold)" stroke-width="5"/>
-                <line x1="45" x1="45" y1="45" x2="65" y2="65" stroke="var(--color-gold)" stroke-width="6" stroke-linecap="round"/>
+            <div class="slide-graphic" style="background:#040d1c; padding:0; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="gc-s7" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <radialGradient id="bg-s7" cx="50%" cy="50%" r="60%"><stop offset="0%" style="stop-color:#0a1a35"/><stop offset="100%" style="stop-color:#020810"/></radialGradient>
+                  <style>
+                    .s7-blink{animation:s7bk 1s ease-in-out infinite}@keyframes s7bk{0%,100%{opacity:1}50%{opacity:.1}}
+                    .s7-float{animation:s7fl 3s ease-in-out infinite}@keyframes s7fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+                    .s7-spin{animation:s7sp 8s linear infinite}@keyframes s7sp{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+                    .s7-pulse{animation:s7pu 2s ease-out infinite}@keyframes s7pu{0%{r:8;opacity:.8}100%{r:22;opacity:0}}
+                    .s7-tick{animation:s7tk 10s linear infinite}@keyframes s7tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+                    .s7-flash{animation:s7da 2s ease infinite}@keyframes s7da{0%,100%{opacity:.3}50%{opacity:1}}
+                  </style>
+                </defs>
+                <rect width="260" height="220" fill="url(#bg-s7)"/>
+                <!-- Desk surface -->
+                <rect x="20" y="140" width="220" height="55" rx="4" fill="#0e2040"/>
+                <rect x="20" y="140" width="220" height="6" rx="2" fill="#1a3a6e"/>
+                <!-- Big investigation document -->
+                <g class="s7-float">
+                  <rect x="60" y="30" width="140" height="110" rx="6" fill="#fffde7" stroke="#ffb300" stroke-width="2"/>
+                  <!-- Red TOP SECRET header -->
+                  <rect x="60" y="30" width="140" height="18" rx="6" fill="#b71c1c"/>
+                  <text x="130" y="43" text-anchor="middle" font-family="Arial Black" font-size="7" font-weight="900" fill="white" letter-spacing="2">KẾ HOẠCH LẤY TIN</text>
+                  <!-- Document lines -->
+                  <line x1="72" y1="58" x2="188" y2="58" stroke="#ccc" stroke-width="1"/>
+                  <line x1="72" y1="66" x2="188" y2="66" stroke="#ccc" stroke-width="1"/>
+                  <line x1="72" y1="74" x2="188" y2="74" stroke="#ccc" stroke-width="1"/>
+                  <line x1="72" y1="82" x2="188" y2="82" stroke="#ccc" stroke-width="1"/>
+                  <line x1="72" y1="90" x2="160" y2="90" stroke="#ccc" stroke-width="1"/>
+                  <!-- Written content lines -->
+                  <line class="s7-flash" x1="72" y1="58" x2="155" y2="58" stroke="#1a237e" stroke-width="2"/>
+                  <line class="s7-flash" x1="72" y1="66" x2="170" y2="66" stroke="#1a237e" stroke-width="2"/>
+                  <line x1="72" y1="74" x2="140" y2="74" stroke="#333" stroke-width="1.5"/>
+                  <line x1="72" y1="82" x2="160" y2="82" stroke="#ff1744" stroke-width="2"/>
+                  <!-- Stamp URGENT -->
+                  <rect x="140" y="92" width="50" height="28" rx="4" fill="none" stroke="#ff1744" stroke-width="2.5" transform="rotate(-8,165,106)"/>
+                  <text x="165" y="108" text-anchor="middle" font-family="Arial Black" font-size="8" font-weight="900" fill="#ff1744" transform="rotate(-8,165,106)">KHẨN CẤP</text>
+                  <!-- Checkboxes -->
+                  <rect x="72" y="100" width="8" height="8" rx="1" fill="none" stroke="#333" stroke-width="1"/>
+                  <path d="M73,104 L75,107 L80,101" stroke="#00a000" stroke-width="1.5" fill="none"/>
+                  <rect x="72" y="112" width="8" height="8" rx="1" fill="none" stroke="#333" stroke-width="1"/>
+                  <path d="M73,116 L75,119 L80,113" stroke="#00a000" stroke-width="1.5" fill="none"/>
+                  <text x="84" y="108" font-family="Arial" font-size="5" fill="#555">Xác định địa điểm sự cố</text>
+                  <text x="84" y="120" font-family="Arial" font-size="5" fill="#555">Liên hệ nhân chứng</text>
+                </g>
+                <!-- Magnifying glass -->
+                <g style="transform:translate(160px,50px)">
+                  <circle cx="20" cy="20" r="18" fill="none" stroke="#ffb300" stroke-width="4" filter="url(#gc-s7)"/>
+                  <circle cx="20" cy="20" r="10" fill="rgba(255,179,0,0.08)"/>
+                  <line x1="33" y1="33" x2="46" y2="46" stroke="#ffb300" stroke-width="5" stroke-linecap="round"/>
+                  <!-- Glow dot inside lens -->
+                  <circle class="s7-pulse" cx="20" cy="20" r="8" fill="none" stroke="rgba(255,179,0,0.4)" style="transform-box:fill-box;transform-origin:center;"/>
+                </g>
+                <!-- Pencil on desk -->
+                <g transform="translate(30,135) rotate(-30)">
+                  <rect x="0" y="0" width="6" height="40" rx="2" fill="#ffeb3b"/>
+                  <polygon points="0,40 6,40 3,50" fill="#f5deb3"/>
+                  <rect x="0" y="0" width="6" height="6" fill="#ff9800"/>
+                  <circle cx="3" cy="0" r="3" fill="#ccc"/>
+                </g>
+                <!-- REC badge -->
+                <circle class="s7-blink" cx="14" cy="14" r="5" fill="#ff1744" filter="url(#gc-s7)"/>
+                <text x="23" y="18" font-family="Arial" font-size="8" font-weight="900" fill="#ff1744">REC</text>
+                <!-- Ticker -->
+                <rect x="0" y="200" width="260" height="20" fill="#b71c1c" opacity="0.92"/>
+                <clipPath id="tc-s7"><rect x="0" y="200" width="260" height="20"/></clipPath>
+                <g clip-path="url(#tc-s7)">
+                  <text class="s7-tick" x="0" y="214" font-family="Arial" font-size="7" font-weight="700" fill="white">📋 KẾ HOẠCH LẤY TIN  •  Phóng viên chuẩn bị hồ sơ điều tra  •  Xác định các câu hỏi then chốt  •  📋 KẾ HOẠCH LẤY TIN  •  Phóng viên chuẩn bị hồ sơ điều tra  •</text>
+                </g>
               </svg>
               <div class="graphic-caption">Kế hoạch lấy tin của phóng viên</div>
             </div>
@@ -807,10 +871,90 @@
                 </ul>
               </div>
             </div>
-            <div class="slide-graphic">
-              <!-- Group icon -->
-              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
-                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+            <div class="slide-graphic" style="background:#040d1c; padding:0; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="gc-s8" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <radialGradient id="bg-s8" cx="50%" cy="40%" r="60%"><stop offset="0%" style="stop-color:#0a1a35"/><stop offset="100%" style="stop-color:#020810"/></radialGradient>
+                  <style>
+                    .s8-blink{animation:s8bk 1s ease-in-out infinite}@keyframes s8bk{0%,100%{opacity:1}50%{opacity:.1}}
+                    .s8-float{animation:s8fl 3.5s ease-in-out infinite}@keyframes s8fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+                    .s8-speak{animation:s8sp 1.2s ease-in-out infinite}@keyframes s8sp{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+                    .s8-tick{animation:s8tk 10s linear infinite}@keyframes s8tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+                    .s8-wave{animation:s8wv 2s ease-in-out infinite}@keyframes s8wv{0%,100%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(1.5)}}
+                  </style>
+                </defs>
+                <rect width="260" height="220" fill="url(#bg-s8)"/>
+                <!-- Background park/outdoor scene -->
+                <rect x="0" y="130" width="260" height="50" fill="#0a1e0a" opacity="0.6"/>
+                <ellipse cx="50" cy="130" rx="30" ry="12" fill="#0d280d" opacity="0.7"/>
+                <ellipse cx="210" cy="130" rx="25" ry="10" fill="#0d280d" opacity="0.7"/>
+                <!-- Bench -->
+                <rect x="90" y="140" width="80" height="5" rx="2" fill="#5d4037"/>
+                <rect x="95" y="145" width="5" height="12" rx="1" fill="#4e342e"/>
+                <rect x="162" y="145" width="5" height="12" rx="1" fill="#4e342e"/>
+                <!-- REPORTER (left) -->
+                <g class="s8-float" transform="translate(55,35)">
+                  <!-- Body -->
+                  <rect x="16" y="48" width="28" height="35" rx="4" fill="#1a237e"/>
+                  <rect x="20" y="50" width="12" height="8" rx="1" fill="#b71c1c"/>
+                  <text x="26" y="57" text-anchor="middle" font-family="Arial" font-size="3.5" font-weight="900" fill="white">PRESS</text>
+                  <!-- Head -->
+                  <circle cx="30" cy="30" r="14" fill="#f5c5a3"/>
+                  <ellipse cx="30" cy="20" rx="14" ry="7" fill="#3e2000"/>
+                  <circle cx="26" cy="30" r="2" fill="#333"/>
+                  <circle cx="34" cy="30" r="2" fill="#333"/>
+                  <path d="M26,36 Q30,39 34,36" fill="none" stroke="#c0775a" stroke-width="1.2"/>
+                  <!-- Arm with mic -->
+                  <path d="M44,58 Q56,52 54,65" stroke="#1a237e" stroke-width="8" fill="none" stroke-linecap="round"/>
+                  <!-- Mic -->
+                  <rect x="54" y="55" width="6" height="14" rx="3" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
+                  <rect x="52" y="52" width="10" height="5" rx="3" fill="#111"/>
+                  <rect x="52" y="62" width="10" height="4" rx="1" fill="#b71c1c"/>
+                  <text x="57" y="66" text-anchor="middle" font-family="Arial" font-size="2.5" fill="white">NN</text>
+                </g>
+                <!-- WITNESS (right, sitting on bench) -->
+                <g transform="translate(145,55)">
+                  <!-- Elderly person with hat -->
+                  <circle cx="30" cy="30" r="13" fill="#f0d0b0"/>
+                  <ellipse cx="30" cy="20" rx="16" ry="7" fill="#795548"/>
+                  <rect x="14" y="18" width="32" height="4" rx="0" fill="#5d4037"/>
+                  <circle cx="26" cy="30" r="2" fill="#555"/>
+                  <circle cx="34" cy="30" r="2" fill="#555"/>
+                  <path d="M26,36 Q30,40 34,36" fill="none" stroke="#a0785a" stroke-width="1.2"/>
+                  <!-- Body -->
+                  <rect x="18" y="43" width="24" height="30" rx="4" fill="#607d8b"/>
+                  <!-- Arm gesturing -->
+                  <path d="M18,55 Q5,50 8,62" stroke="#607d8b" stroke-width="7" fill="none" stroke-linecap="round"/>
+                </g>
+                <!-- Speech bubble from witness -->
+                <g class="s8-speak" transform="translate(150,20)" style="transform-box:fill-box;transform-origin:center;">
+                  <rect x="0" y="0" width="70" height="35" rx="8" fill="rgba(255,255,255,0.08)" stroke="#00f2fe" stroke-width="1.5"/>
+                  <polygon points="10,35 4,48 24,35" fill="rgba(255,255,255,0.08)" stroke="#00f2fe" stroke-width="1"/>
+                  <text x="35" y="12" text-anchor="middle" font-family="Arial" font-size="5" fill="rgba(0,242,254,0.7)">NHÂN CHỨNG</text>
+                  <text x="35" y="22" text-anchor="middle" font-family="Arial" font-size="6" fill="white">"Tôi thấy...</text>
+                  <text x="35" y="30" text-anchor="middle" font-family="Arial" font-size="6" fill="white">bạn ấy té xuống"</text>
+                </g>
+                <!-- Sound waves from mic -->
+                <g transform="translate(122,85)" filter="url(#gc-s8)">
+                  <ellipse class="s8-wave" cx="0" cy="0" rx="10" ry="7" fill="none" stroke="#00f2fe" stroke-width="2" style="transform-box:fill-box;transform-origin:center;"/>
+                  <ellipse class="s8-wave" cx="0" cy="0" rx="10" ry="7" fill="none" stroke="#00f2fe" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;animation-delay:.5s"/>
+                </g>
+                <!-- REC -->
+                <circle class="s8-blink" cx="14" cy="14" r="5" fill="#ff1744" filter="url(#gc-s8)"/>
+                <text x="23" y="18" font-family="Arial" font-size="8" font-weight="900" fill="#ff1744">REC</text>
+                <!-- Lower third -->
+                <rect x="5" y="168" width="130" height="22" rx="2" fill="rgba(0,0,0,.75)"/>
+                <rect x="5" y="168" width="42" height="22" rx="2" fill="#b71c1c"/>
+                <text x="26" y="183" text-anchor="middle" font-family="Arial" font-size="6.5" font-weight="900" fill="white">PHỎNG VẤN</text>
+                <text x="90" y="177" font-family="Arial" font-size="5.5" fill="#00f2fe">Nova News • Nhân chứng hiện trường</text>
+                <text x="90" y="185" font-family="Arial" font-size="5" fill="rgba(255,255,255,.6)">Thu thập tư liệu điều tra</text>
+                <!-- Ticker -->
+                <rect x="0" y="200" width="260" height="20" fill="#b71c1c" opacity=".92"/>
+                <clipPath id="tc-s8"><rect x="0" y="200" width="260" height="20"/></clipPath>
+                <g clip-path="url(#tc-s8)">
+                  <text class="s8-tick" x="0" y="214" font-family="Arial" font-size="7" font-weight="700" fill="white">🎙 GẶP GỠ NHÂN CHỨNG  •  Thu thập tư liệu điều tra tại hiện trường  •  Lắng nghe câu chuyện thực tế  •  🎙 GẶP GỠ NHÂN CHỨNG  •  Thu thập tư liệu điều tra  •</text>
+                </g>
               </svg>
               <div class="graphic-caption">Gặp gỡ nhân chứng để lấy tư liệu</div>
             </div>
@@ -901,10 +1045,67 @@
                 </ul>
               </div>
             </div>
-            <div class="slide-graphic">
-              <!-- Checklist icon -->
-              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-success)" style="margin: 30px auto;">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            <div class="slide-graphic" style="background:#040d1c; padding:0; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="gc-s11" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <radialGradient id="bg-s11" cx="50%" cy="50%" r="60%"><stop offset="0%" style="stop-color:#0a1f12"/><stop offset="100%" style="stop-color:#020810"/></radialGradient>
+                  <style>
+                    .s11-blink{animation:s11bk 1s ease-in-out infinite}@keyframes s11bk{0%,100%{opacity:1}50%{opacity:.1}}
+                    .s11-check{animation:s11ck 0.4s ease-out forwards}
+                    .s11-float{animation:s11fl 3s ease-in-out infinite}@keyframes s11fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+                    .s11-tick{animation:s11tk 10s linear infinite}@keyframes s11tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+                    .s11-shine{animation:s11sh 2s ease-in-out infinite}@keyframes s11sh{0%,100%{opacity:.4}50%{opacity:1}}
+                    .s11-enter{animation:s11en 1.5s ease-out infinite}@keyframes s11en{0%{stroke-dashoffset:30;opacity:0}80%{opacity:1}100%{stroke-dashoffset:0;opacity:1}}
+                  </style>
+                </defs>
+                <rect width="260" height="220" fill="url(#bg-s11)"/>
+                <!-- Main board -->
+                <g class="s11-float">
+                  <rect x="40" y="20" width="180" height="150" rx="8" fill="#0e1e0e" stroke="#00c853" stroke-width="2" filter="url(#gc-s11)"/>
+                  <rect x="40" y="20" width="180" height="22" rx="8" fill="#1b5e20"/>
+                  <text x="130" y="35" text-anchor="middle" font-family="Arial Black" font-size="8" font-weight="900" fill="#69f0ae" letter-spacing="1">TỔNG KẾT NGUY CƠ</text>
+                  <!-- Risk items -->
+                  <!-- Item 1 checked -->
+                  <rect x="54" y="52" width="12" height="12" rx="2" fill="#1b5e20" stroke="#00c853" stroke-width="1.5"/>
+                  <path class="s11-enter" d="M56,58 L59,62 L65,55" fill="none" stroke="#00e676" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="30" stroke-dashoffset="0"/>
+                  <text x="72" y="61" font-family="Arial" font-size="7" fill="#e0f2e9">Bơi một mình không có người lớn</text>
+                  <rect x="54" y="52" width="155" height="12" rx="2" fill="none"/>
+                  <!-- Item 2 checked -->
+                  <rect x="54" y="70" width="12" height="12" rx="2" fill="#1b5e20" stroke="#00c853" stroke-width="1.5"/>
+                  <path class="s11-enter" d="M56,76 L59,80 L65,73" fill="none" stroke="#00e676" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="30" stroke-dashoffset="0" style="animation-delay:.3s"/>
+                  <text x="72" y="79" font-family="Arial" font-size="7" fill="#e0f2e9">Vùng nước sâu không có phao</text>
+                  <!-- Item 3 checked -->
+                  <rect x="54" y="88" width="12" height="12" rx="2" fill="#1b5e20" stroke="#00c853" stroke-width="1.5"/>
+                  <path class="s11-enter" d="M56,94 L59,98 L65,91" fill="none" stroke="#00e676" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="30" stroke-dashoffset="0" style="animation-delay:.6s"/>
+                  <text x="72" y="97" font-family="Arial" font-size="7" fill="#e0f2e9">Dòng chảy xiết bất ngờ</text>
+                  <!-- Item 4 warning -->
+                  <rect x="54" y="106" width="12" height="12" rx="2" fill="#b71c00" stroke="#ff5252" stroke-width="1.5"/>
+                  <text x="60" y="115" text-anchor="middle" font-family="Arial Black" font-size="9" font-weight="900" fill="#ff5252">!</text>
+                  <text x="72" y="115" font-family="Arial" font-size="7" fill="#ffcdd2">Không biết kỹ năng sơ cứu</text>
+                  <!-- Item 5 warning -->
+                  <rect x="54" y="124" width="12" height="12" rx="2" fill="#b71c00" stroke="#ff5252" stroke-width="1.5"/>
+                  <text x="60" y="133" text-anchor="middle" font-family="Arial Black" font-size="9" font-weight="900" fill="#ff5252">!</text>
+                  <text x="72" y="133" font-family="Arial" font-size="7" fill="#ffcdd2">Mặc quần áo nặng khi xuống nước</text>
+                  <!-- Divider -->
+                  <line x1="54" y1="145" x2="206" y2="145" stroke="#00c853" stroke-width="1" opacity="0.5"/>
+                  <text x="130" y="158" text-anchor="middle" font-family="Arial" font-size="6" fill="rgba(0,200,83,0.7)">Phóng viên Nova News • Tổng hợp ban đầu</text>
+                </g>
+                <!-- Pen near board -->
+                <g transform="translate(210,155) rotate(30)">
+                  <rect x="0" y="0" width="5" height="35" rx="2" fill="#ffeb3b"/>
+                  <polygon points="0,35 5,35 2.5,44" fill="#f5deb3"/>
+                  <rect x="0" y="0" width="5" height="5" fill="#ff9800"/>
+                </g>
+                <!-- REC -->
+                <circle class="s11-blink" cx="14" cy="14" r="5" fill="#ff1744" filter="url(#gc-s11)"/>
+                <text x="23" y="18" font-family="Arial" font-size="8" font-weight="900" fill="#ff1744">REC</text>
+                <!-- Ticker -->
+                <rect x="0" y="200" width="260" height="20" fill="#1b5e20" opacity=".92"/>
+                <clipPath id="tc-s11"><rect x="0" y="200" width="260" height="20"/></clipPath>
+                <g clip-path="url(#tc-s11)">
+                  <text class="s11-tick" x="0" y="214" font-family="Arial" font-size="7" font-weight="700" fill="white">✅ TỔNG KẾT NGUY CƠ  •  5 yếu tố nguy hiểm đã được xác định  •  Phóng viên hoàn tất giai đoạn khảo sát  •  ✅ TỔNG KẾT NGUY CƠ  •  5 yếu tố đã xác định  •</text>
+                </g>
               </svg>
               <div class="graphic-caption">Bảng tổng kết nguy cơ ban đầu</div>
             </div>
@@ -924,9 +1125,67 @@
                 <p>Chúng ta sẽ tiến hành phân tích sự biến đổi của cơ thể nạn nhân trong từng trường hợp gặp nạn để tìm ra nguyên nhân gây tử vong.</p>
               </div>
             </div>
-            <div class="slide-graphic">
-              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"/>
+            <div class="slide-graphic" style="background:#040d1c; padding:0; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="gc-s12" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <radialGradient id="bg-s12" cx="50%" cy="50%" r="60%"><stop offset="0%" style="stop-color:#1a0a0a"/><stop offset="100%" style="stop-color:#020810"/></radialGradient>
+                  <style>
+                    .s12-blink{animation:s12bk 1s ease-in-out infinite}@keyframes s12bk{0%,100%{opacity:1}50%{opacity:.1}}
+                    .s12-float{animation:s12fl 3s ease-in-out infinite}@keyframes s12fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+                    .s12-tick{animation:s12tk 10s linear infinite}@keyframes s12tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+                    .s12-arrow{animation:s12ar 1.5s ease-in-out infinite}@keyframes s12ar{0%,100%{opacity:.4;transform:translateX(0)}50%{opacity:1;transform:translateX(4px)}}
+                    .s12-pulse{animation:s12pu 2s ease-out infinite}@keyframes s12pu{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(2)}}
+                    .s12-spin{animation:s12sp 6s linear infinite}@keyframes s12sp{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+                  </style>
+                </defs>
+                <rect width="260" height="220" fill="url(#bg-s12)"/>
+                <!-- Analysis whiteboard -->
+                <g class="s12-float">
+                  <rect x="30" y="15" width="200" height="155" rx="8" fill="#0a0e1e" stroke="#00f2fe" stroke-width="1.5"/>
+                  <rect x="30" y="15" width="200" height="20" rx="8" fill="#0d1a4a"/>
+                  <text x="130" y="29" text-anchor="middle" font-family="Arial Black" font-size="8" font-weight="900" fill="#00f2fe" letter-spacing="1">CƠ CHẾ NGUY HIỂM</text>
+                  <!-- Central danger node -->
+                  <circle cx="130" cy="100" r="22" fill="#b71c1c" opacity="0.15" stroke="#ff1744" stroke-width="2"/>
+                  <circle class="s12-pulse" cx="130" cy="100" r="22" fill="none" stroke="rgba(255,23,68,.4)" stroke-width="2" style="transform-box:fill-box;transform-origin:center;"/>
+                  <text x="130" y="97" text-anchor="middle" font-family="Arial Black" font-size="7" font-weight="900" fill="#ff1744">ĐUỐI</text>
+                  <text x="130" y="107" text-anchor="middle" font-family="Arial Black" font-size="7" font-weight="900" fill="#ff1744">NƯỚC</text>
+                  <!-- Connecting branches -->
+                  <line x1="108" y1="86" x2="75" y2="60" stroke="#ff5252" stroke-width="1.5" opacity=".7"/>
+                  <line x1="130" y1="78" x2="130" y2="50" stroke="#ff5252" stroke-width="1.5" opacity=".7"/>
+                  <line x1="152" y1="86" x2="185" y2="60" stroke="#ff5252" stroke-width="1.5" opacity=".7"/>
+                  <line x1="108" y1="114" x2="75" y2="140" stroke="#ff5252" stroke-width="1.5" opacity=".7"/>
+                  <line x1="152" y1="114" x2="185" y2="140" stroke="#ff5252" stroke-width="1.5" opacity=".7"/>
+                  <!-- Cause nodes -->
+                  <rect x="48" y="44" width="54" height="20" rx="4" fill="#1a1040" stroke="#7c4dff" stroke-width="1.5"/>
+                  <text x="75" y="58" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#ce93d8">Dòng nước xiết</text>
+                  <rect x="103" y="30" width="54" height="20" rx="4" fill="#1a1040" stroke="#7c4dff" stroke-width="1.5"/>
+                  <text x="130" y="44" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#ce93d8">Kiệt sức đột ngột</text>
+                  <rect x="158" y="44" width="54" height="20" rx="4" fill="#1a1040" stroke="#7c4dff" stroke-width="1.5"/>
+                  <text x="185" y="58" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#ce93d8">Chuột rút bắp chân</text>
+                  <rect x="48" y="130" width="54" height="20" rx="4" fill="#0a1a10" stroke="#00c853" stroke-width="1.5"/>
+                  <text x="75" y="144" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#69f0ae">Hoảng loạn tâm lý</text>
+                  <rect x="158" y="130" width="54" height="20" rx="4" fill="#0a1a10" stroke="#00c853" stroke-width="1.5"/>
+                  <text x="185" y="144" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#69f0ae">Vật cản dưới nước</text>
+                  <!-- Arrows on connectors -->
+                  <g class="s12-arrow" style="transform-box:fill-box;transform-origin:center;">
+                    <polygon points="108,86 105,90 111,90" fill="#ff5252"/>
+                  </g>
+                </g>
+                <!-- Magnifying glass overlay -->
+                <g transform="translate(190,130)">
+                  <circle cx="15" cy="15" r="13" fill="none" stroke="#ffb300" stroke-width="3" filter="url(#gc-s12)"/>
+                  <line x1="24" y1="24" x2="34" y2="34" stroke="#ffb300" stroke-width="4" stroke-linecap="round"/>
+                </g>
+                <!-- REC -->
+                <circle class="s12-blink" cx="14" cy="14" r="5" fill="#ff1744" filter="url(#gc-s12)"/>
+                <text x="23" y="18" font-family="Arial" font-size="8" font-weight="900" fill="#ff1744">REC</text>
+                <!-- Ticker -->
+                <rect x="0" y="200" width="260" height="20" fill="#b71c1c" opacity=".92"/>
+                <clipPath id="tc-s12"><rect x="0" y="200" width="260" height="20"/></clipPath>
+                <g clip-path="url(#tc-s12)">
+                  <text class="s12-tick" x="0" y="214" font-family="Arial" font-size="7" font-weight="700" fill="white">🔬 PHÂN TÍCH CƠ CHẾ  •  5 yếu tố dẫn đến đuối nước  •  Hiểu rõ nguyên nhân để phòng ngừa  •  🔬 PHÂN TÍCH CƠ CHẾ  •  5 yếu tố dẫn đến đuối nước  •</text>
+                </g>
               </svg>
               <div class="graphic-caption">Bảng phân tích cơ chế nguy hiểm</div>
             </div>
@@ -1046,12 +1305,72 @@
                 </ul>
               </div>
             </div>
-            <div class="slide-graphic">
-              <!-- Lifebuoy icon -->
-              <svg viewBox="0 0 100 100" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
-                <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-cyan)" stroke-width="8"/>
-                <circle cx="50" cy="50" r="20" fill="none" stroke="var(--color-cyan)" stroke-width="4"/>
-                <path d="M50,10 L50,30 M50,70 L50,90 M10,50 L30,50 M70,50 L90,50" stroke="var(--color-cyan)" stroke-width="8"/>
+            <div class="slide-graphic" style="background:#040d1c; padding:0; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="gc-s16" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <radialGradient id="bg-s16" cx="50%" cy="40%" r="70%"><stop offset="0%" style="stop-color:#0a1a35"/><stop offset="100%" style="stop-color:#020810"/></radialGradient>
+                  <linearGradient id="water-s16" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#0d3060"/><stop offset="100%" style="stop-color:#020f28"/></linearGradient>
+                  <style>
+                    .s16-blink{animation:s16bk 1s ease-in-out infinite}@keyframes s16bk{0%,100%{opacity:1}50%{opacity:.1}}
+                    .s16-spin{animation:s16sp 4s linear infinite}@keyframes s16sp{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+                    .s16-bob{animation:s16bo 2s ease-in-out infinite}@keyframes s16bo{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+                    .s16-wave{animation:s16wv 2.5s ease-in-out infinite}@keyframes s16wv{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+                    .s16-tick{animation:s16tk 10s linear infinite}@keyframes s16tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+                    .s16-pulse{animation:s16pu 2s ease-out infinite}@keyframes s16pu{0%{r:30;opacity:.7}100%{r:55;opacity:0}}
+                  </style>
+                </defs>
+                <rect width="260" height="220" fill="url(#bg-s16)"/>
+                <!-- Water -->
+                <rect x="0" y="120" width="260" height="80" fill="url(#water-s16)"/>
+                <path d="M0,120 Q32,112 65,120 Q97,128 130,120 Q162,112 195,120 Q227,128 260,120" fill="none" stroke="rgba(0,150,255,.3)" stroke-width="2"/>
+                <!-- Lifebuoy (big, animated) -->
+                <g class="s16-bob" style="transform-box:fill-box;transform-origin:center;">
+                  <g transform="translate(90,60)">
+                    <!-- Outer ring -->
+                    <circle cx="40" cy="40" r="38" fill="none" stroke="#ff3d00" stroke-width="10" filter="url(#gc-s16)"/>
+                    <!-- Inner hole -->
+                    <circle cx="40" cy="40" r="20" fill="rgba(0,30,60,0.8)"/>
+                    <!-- Quarter segments red/white -->
+                    <path d="M40,2 A38,38 0 0 1 78,40 L60,40 A20,20 0 0 0 40,20 Z" fill="#ff3d00"/>
+                    <path d="M78,40 A38,38 0 0 1 40,78 L40,60 A20,20 0 0 0 60,40 Z" fill="white" opacity=".85"/>
+                    <path d="M40,78 A38,38 0 0 1 2,40 L20,40 A20,20 0 0 0 40,60 Z" fill="#ff3d00"/>
+                    <path d="M2,40 A38,38 0 0 1 40,2 L40,20 A20,20 0 0 0 20,40 Z" fill="white" opacity=".85"/>
+                    <!-- Center icon - water drop -->
+                    <ellipse cx="40" cy="42" rx="8" ry="10" fill="rgba(0,242,254,0.3)" stroke="#00f2fe" stroke-width="1.5"/>
+                    <path d="M40,30 L40,36" stroke="#00f2fe" stroke-width="2" stroke-linecap="round"/>
+                    <!-- Rope lines -->
+                    <line x1="2" y1="40" x2="-15" y2="40" stroke="#ffb300" stroke-width="3" stroke-dasharray="3,2"/>
+                    <line x1="78" y1="40" x2="95" y2="40" stroke="#ffb300" stroke-width="3" stroke-dasharray="3,2"/>
+                  </g>
+                  <!-- Pulse ring -->
+                  <circle class="s16-pulse" cx="130" cy="100" r="30" fill="none" stroke="rgba(255,61,0,.3)" stroke-width="2" style="transform-box:fill-box;transform-origin:center;"/>
+                </g>
+                <!-- Hand throwing lifebuoy -->
+                <g transform="translate(10,75)">
+                  <path d="M0,30 Q15,20 25,35" stroke="#f5c5a3" stroke-width="8" fill="none" stroke-linecap="round"/>
+                  <circle cx="0" cy="30" r="6" fill="#f5c5a3"/>
+                  <!-- Sleeve -->
+                  <rect x="-8" y="28" width="16" height="12" rx="4" fill="#1a237e"/>
+                </g>
+                <!-- Label tags floating -->
+                <g transform="translate(5,20)">
+                  <rect x="0" y="0" width="70" height="18" rx="4" fill="rgba(0,0,0,.6)" stroke="#00f2fe" stroke-width="1"/>
+                  <text x="35" y="12" text-anchor="middle" font-family="Arial" font-size="6" fill="#00f2fe">🦺 Áo phao cứu sinh</text>
+                </g>
+                <g transform="translate(185,25)">
+                  <rect x="0" y="0" width="70" height="18" rx="4" fill="rgba(0,0,0,.6)" stroke="#ffb300" stroke-width="1"/>
+                  <text x="35" y="12" text-anchor="middle" font-family="Arial" font-size="6" fill="#ffb300">📡 Còi báo hiệu</text>
+                </g>
+                <!-- REC -->
+                <circle class="s16-blink" cx="14" cy="14" r="5" fill="#ff1744" filter="url(#gc-s16)"/>
+                <text x="23" y="18" font-family="Arial" font-size="8" font-weight="900" fill="#ff1744">REC</text>
+                <!-- Ticker -->
+                <rect x="0" y="200" width="260" height="20" fill="#b71c1c" opacity=".92"/>
+                <clipPath id="tc-s16"><rect x="0" y="200" width="260" height="20"/></clipPath>
+                <g clip-path="url(#tc-s16)">
+                  <text class="s16-tick" x="0" y="214" font-family="Arial" font-size="7" font-weight="700" fill="white">🦺 GIẢI PHÁP SINH TỒN  •  Phao cứu sinh • Còi báo hiệu • Kỹ năng thở  •  Nghiên cứu từ chuyên gia  •  🦺 GIẢI PHÁP SINH TỒN  •  Phao cứu sinh • Còi báo hiệu  •</text>
+                </g>
               </svg>
               <div class="graphic-caption">Nghiên cứu giải pháp sinh tồn</div>
             </div>
@@ -1186,10 +1505,63 @@
                 </ul>
               </div>
             </div>
-            <div class="slide-graphic">
-              <!-- Shield check icon -->
-              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-success)" style="margin: 30px auto;">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <div class="slide-graphic" style="background:#040d1c; padding:0; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="gc-s20" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <radialGradient id="bg-s20" cx="50%" cy="50%" r="60%"><stop offset="0%" style="stop-color:#0a1f12"/><stop offset="100%" style="stop-color:#020810"/></radialGradient>
+                  <style>
+                    .s20-blink{animation:s20bk 1s ease-in-out infinite}@keyframes s20bk{0%,100%{opacity:1}50%{opacity:.1}}
+                    .s20-float{animation:s20fl 3s ease-in-out infinite}@keyframes s20fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+                    .s20-ring{animation:s20rn 2s ease-out infinite}@keyframes s20rn{0%{r:40;opacity:.7}100%{r:72;opacity:0}}
+                    .s20-tick{animation:s20tk 10s linear infinite}@keyframes s20tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+                    .s20-shine{animation:s20sh 2.5s ease-in-out infinite}@keyframes s20sh{0%,100%{opacity:.6}50%{opacity:1;filter:drop-shadow(0 0 8px #00e676)}}
+                  </style>
+                </defs>
+                <rect width="260" height="220" fill="url(#bg-s20)"/>
+                <!-- Shield (large, center) -->
+                <g class="s20-float" style="transform-box:fill-box;transform-origin:center;">
+                  <!-- Glow ring -->
+                  <circle class="s20-ring" cx="130" cy="90" r="40" fill="none" stroke="rgba(0,200,83,.3)" stroke-width="2" style="transform-box:fill-box;transform-origin:center;"/>
+                  <!-- Shield body -->
+                  <path d="M130,18 L175,38 L175,88 Q175,130 130,152 Q85,130 85,88 L85,38 Z" fill="#0a2010" stroke="#00c853" stroke-width="3" filter="url(#gc-s20)"/>
+                  <!-- Shield inner gradient overlay -->
+                  <path d="M130,25 L168,43 L168,88 Q168,124 130,144 Q92,124 92,88 L92,43 Z" fill="rgba(0,200,83,0.08)"/>
+                  <!-- Big checkmark -->
+                  <path class="s20-shine" d="M108,88 L122,104 L155,70" fill="none" stroke="#00e676" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#gc-s20)"/>
+                  <!-- Stars on shield -->
+                  <text x="130" y="160" text-anchor="middle" font-family="Arial" font-size="12" fill="#69f0ae">★ ★ ★</text>
+                </g>
+                <!-- Science labels around shield -->
+                <g transform="translate(5,30)">
+                  <rect x="0" y="0" width="72" height="22" rx="4" fill="rgba(0,30,0,.8)" stroke="#00c853" stroke-width="1"/>
+                  <text x="36" y="10" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#69f0ae">🔬 Đã kiểm chứng KH</text>
+                  <text x="36" y="18" text-anchor="middle" font-family="Arial" font-size="5" fill="rgba(255,255,255,.6)">Chuyên gia xác nhận</text>
+                </g>
+                <g transform="translate(183,30)">
+                  <rect x="0" y="0" width="72" height="22" rx="4" fill="rgba(0,30,0,.8)" stroke="#00c853" stroke-width="1"/>
+                  <text x="36" y="10" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#69f0ae">✅ 5/5 giải pháp đạt</text>
+                  <text x="36" y="18" text-anchor="middle" font-family="Arial" font-size="5" fill="rgba(255,255,255,.6)">Độ tin cậy 100%</text>
+                </g>
+                <g transform="translate(5,155)">
+                  <rect x="0" y="0" width="72" height="22" rx="4" fill="rgba(0,30,0,.8)" stroke="#ffb300" stroke-width="1"/>
+                  <text x="36" y="10" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#ffb300">🏆 Phê duyệt bởi</text>
+                  <text x="36" y="18" text-anchor="middle" font-family="Arial" font-size="5" fill="rgba(255,255,255,.6)">Nova News Agency</text>
+                </g>
+                <g transform="translate(183,155)">
+                  <rect x="0" y="0" width="72" height="22" rx="4" fill="rgba(0,30,0,.8)" stroke="#ffb300" stroke-width="1"/>
+                  <text x="36" y="10" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#ffb300">📊 Độ chính xác</text>
+                  <text x="36" y="18" text-anchor="middle" font-family="Arial" font-size="5" fill="#69f0ae">Rất cao ★★★★★</text>
+                </g>
+                <!-- REC -->
+                <circle class="s20-blink" cx="14" cy="14" r="5" fill="#ff1744" filter="url(#gc-s20)"/>
+                <text x="23" y="18" font-family="Arial" font-size="8" font-weight="900" fill="#ff1744">REC</text>
+                <!-- Ticker -->
+                <rect x="0" y="200" width="260" height="20" fill="#1b5e20" opacity=".92"/>
+                <clipPath id="tc-s20"><rect x="0" y="200" width="260" height="20"/></clipPath>
+                <g clip-path="url(#tc-s20)">
+                  <text class="s20-tick" x="0" y="214" font-family="Arial" font-size="7" font-weight="700" fill="white">🛡️ KIỂM CHỨNG KHOA HỌC  •  5/5 giải pháp đã được xác nhận  •  Chuyên gia phê duyệt  •  🛡️ KIỂM CHỨNG KHOA HỌC  •  Độ tin cậy 100%  •</text>
+                </g>
               </svg>
               <div class="graphic-caption">Bảng kiểm chứng khoa học an toàn</div>
             </div>
@@ -1326,10 +1698,79 @@
                 <p style="margin-top: 15px;">Hãy chia sẻ cuốn sổ tay này với bạn bè và người thân của bạn.</p>
               </div>
             </div>
-            <div class="slide-graphic">
-              <!-- Share icon -->
-              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
-                <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+            <div class="slide-graphic" style="background:#040d1c; padding:0; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="gc-s24" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <radialGradient id="bg-s24" cx="50%" cy="50%" r="60%"><stop offset="0%" style="stop-color:#0a1a35"/><stop offset="100%" style="stop-color:#020810"/></radialGradient>
+                  <style>
+                    .s24-blink{animation:s24bk 1s ease-in-out infinite}@keyframes s24bk{0%,100%{opacity:1}50%{opacity:.1}}
+                    .s24-tick{animation:s24tk 10s linear infinite}@keyframes s24tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+                    .s24-spread{animation:s24sp 2s ease-out infinite}@keyframes s24sp{0%{r:8;opacity:.8}100%{r:30;opacity:0}}
+                    .s24-float{animation:s24fl 3s ease-in-out infinite}@keyframes s24fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+                    .s24-beam{animation:s24bm 1.5s ease-in-out infinite}@keyframes s24bm{0%,100%{opacity:.3;stroke-width:1}50%{opacity:.9;stroke-width:2}}
+                  </style>
+                </defs>
+                <rect width="260" height="220" fill="url(#bg-s24)"/>
+                <!-- Central school building -->
+                <g transform="translate(90,70)">
+                  <rect x="0" y="30" width="80" height="60" rx="2" fill="#0d2040" stroke="#1a3a6e" stroke-width="1.5"/>
+                  <polygon points="-8,30 40,-5 88,30" fill="#0a1828" stroke="#1a3a6e" stroke-width="1.5"/>
+                  <!-- School flag -->
+                  <line x1="40" y1="-5" x2="40" y2="-25" stroke="#888" stroke-width="1.5"/>
+                  <rect x="40" y="-25" width="18" height="10" rx="1" fill="#b71c1c"/>
+                  <!-- Windows -->
+                  <rect x="10" y="40" width="15" height="15" rx="1" fill="#00f2fe" opacity=".3"/>
+                  <rect x="33" y="40" width="15" height="15" rx="1" fill="#00f2fe" opacity=".3"/>
+                  <rect x="56" y="40" width="15" height="15" rx="1" fill="#00f2fe" opacity=".3"/>
+                  <!-- Door -->
+                  <rect x="30" y="65" width="20" height="25" rx="2" fill="#0a1428"/>
+                  <circle cx="48" cy="78" r="2" fill="#ffb300"/>
+                  <!-- Text label -->
+                  <text x="40" y="102" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#00f2fe">TRƯỜNG HỌC</text>
+                </g>
+                <!-- Signal spreading nodes -->
+                <g class="s24-float">
+                  <!-- Center broadcast point -->
+                  <circle cx="130" cy="100" r="8" fill="#00f2fe" opacity=".2" filter="url(#gc-s24)"/>
+                  <circle class="s24-spread" cx="130" cy="100" r="8" fill="none" stroke="#00f2fe" stroke-width="2" style="transform-box:fill-box;transform-origin:center;"/>
+                  <circle class="s24-spread" cx="130" cy="100" r="8" fill="none" stroke="#00f2fe" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;animation-delay:.7s"/>
+                  <circle class="s24-spread" cx="130" cy="100" r="8" fill="none" stroke="#00f2fe" stroke-width="1" style="transform-box:fill-box;transform-origin:center;animation-delay:1.4s"/>
+                </g>
+                <!-- Receiver circles with people -->
+                <g transform="translate(20,40)">
+                  <circle cx="20" cy="20" r="16" fill="#0a1428" stroke="#00f2fe" stroke-width="1.5"/>
+                  <circle cx="20" cy="14" r="5" fill="#f5c5a3"/>
+                  <ellipse cx="20" cy="26" rx="7" ry="5" fill="#1a237e"/>
+                  <line class="s24-beam" x1="36" y1="20" x2="88" y2="92" stroke="#00f2fe" stroke-width="1.5" stroke-dasharray="4,3"/>
+                </g>
+                <g transform="translate(205,40)">
+                  <circle cx="20" cy="20" r="16" fill="#0a1428" stroke="#ffb300" stroke-width="1.5"/>
+                  <circle cx="20" cy="14" r="5" fill="#f5c5a3"/>
+                  <ellipse cx="20" cy="26" rx="7" ry="5" fill="#b71c1c"/>
+                  <line class="s24-beam" x1="4" y1="20" x2="-75" y2="92" stroke="#ffb300" stroke-width="1.5" stroke-dasharray="4,3"/>
+                </g>
+                <g transform="translate(20,145)">
+                  <circle cx="20" cy="20" r="16" fill="#0a1428" stroke="#69f0ae" stroke-width="1.5"/>
+                  <circle cx="20" cy="14" r="5" fill="#f5c5a3"/>
+                  <ellipse cx="20" cy="26" rx="7" ry="5" fill="#1b5e20"/>
+                  <line class="s24-beam" x1="36" y1="10" x2="88" y2="-38" stroke="#69f0ae" stroke-width="1.5" stroke-dasharray="4,3"/>
+                </g>
+                <g transform="translate(205,145)">
+                  <circle cx="20" cy="20" r="16" fill="#0a1428" stroke="#ffb300" stroke-width="1.5"/>
+                  <circle cx="20" cy="14" r="5" fill="#f5c5a3"/>
+                  <ellipse cx="20" cy="26" rx="7" ry="5" fill="#e65100"/>
+                  <line class="s24-beam" x1="4" y1="10" x2="-75" y2="-38" stroke="#ffb300" stroke-width="1.5" stroke-dasharray="4,3"/>
+                </g>
+                <!-- REC -->
+                <circle class="s24-blink" cx="14" cy="14" r="5" fill="#ff1744" filter="url(#gc-s24)"/>
+                <text x="23" y="18" font-family="Arial" font-size="8" font-weight="900" fill="#ff1744">REC</text>
+                <!-- Ticker -->
+                <rect x="0" y="200" width="260" height="20" fill="#b71c1c" opacity=".92"/>
+                <clipPath id="tc-s24"><rect x="0" y="200" width="260" height="20"/></clipPath>
+                <g clip-path="url(#tc-s24)">
+                  <text class="s24-tick" x="0" y="214" font-family="Arial" font-size="7" font-weight="700" fill="white">📢 LAN TỎA THÔNG ĐIỆP  •  An toàn cho mọi học sinh  •  Chia sẻ kiến thức bảo vệ bản thân  •  📢 LAN TỎA THÔNG ĐIỆP  •  An toàn cho mọi học sinh  •</text>
+                </g>
               </svg>
               <div class="graphic-caption">Lan tỏa thông điệp an toàn trường học</div>
             </div>
@@ -1362,10 +1803,79 @@
                 </div>
               </div>
             </div>
-            <div class="slide-graphic">
-              <!-- Quill/pen icon -->
-              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
-                <path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/>
+            <div class="slide-graphic" style="background:#040d1c; padding:0; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="gc-s25" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <radialGradient id="bg-s25" cx="50%" cy="50%" r="60%"><stop offset="0%" style="stop-color:#0a1020"/><stop offset="100%" style="stop-color:#020810"/></radialGradient>
+                  <style>
+                    .s25-blink{animation:s25bk 1s ease-in-out infinite}@keyframes s25bk{0%,100%{opacity:1}50%{opacity:.1}}
+                    .s25-write{animation:s25wr 3s ease-in-out infinite}@keyframes s25wr{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+                    .s25-float{animation:s25fl 3s ease-in-out infinite}@keyframes s25fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+                    .s25-tick{animation:s25tk 10s linear infinite}@keyframes s25tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+                    .s25-glow{animation:s25gl 2s ease-in-out infinite}@keyframes s25gl{0%,100%{opacity:.5}50%{opacity:1}}
+                    .s25-cursor{animation:s25cu 1s step-end infinite}@keyframes s25cu{0%,100%{opacity:1}50%{opacity:0}}
+                  </style>
+                </defs>
+                <rect width="260" height="220" fill="url(#bg-s25)"/>
+                <!-- Open journal/diary -->
+                <g class="s25-float">
+                  <!-- Journal body -->
+                  <rect x="30" y="20" width="200" height="155" rx="5" fill="#fffde7" stroke="#ffb300" stroke-width="2"/>
+                  <!-- Spine -->
+                  <rect x="118" y="20" width="24" height="155" fill="#ffe082"/>
+                  <line x1="130" y1="20" x2="130" y2="175" stroke="#ffb300" stroke-width="1" stroke-dasharray="4,3"/>
+                  <!-- Header LEFT page -->
+                  <rect x="30" y="20" width="88" height="20" rx="5" fill="#1a237e"/>
+                  <text x="74" y="34" text-anchor="middle" font-family="Arial Black" font-size="6.5" fill="white">NHẬT KÝ PHẢN TƯ</text>
+                  <!-- Lines LEFT page -->
+                  <line x1="40" y1="52" x2="112" y2="52" stroke="#ccc" stroke-width="1"/>
+                  <line x1="40" y1="62" x2="112" y2="62" stroke="#ccc" stroke-width="1"/>
+                  <line x1="40" y1="72" x2="112" y2="72" stroke="#ccc" stroke-width="1"/>
+                  <line x1="40" y1="82" x2="112" y2="82" stroke="#ccc" stroke-width="1"/>
+                  <line x1="40" y1="92" x2="112" y2="92" stroke="#ccc" stroke-width="1"/>
+                  <line x1="40" y1="102" x2="112" y2="102" stroke="#ccc" stroke-width="1"/>
+                  <!-- Written text LEFT -->
+                  <text x="40" y="60" font-family="Arial" font-size="5.5" fill="#333">Hôm nay tôi học được...</text>
+                  <text x="40" y="70" font-family="Arial" font-size="5.5" fill="#333">Điều quan trọng nhất là</text>
+                  <text x="40" y="80" font-family="Arial" font-size="5.5" fill="#1a237e">không hoảng loạn khi...</text>
+                  <text x="40" y="90" font-family="Arial" font-size="5.5" fill="#333">gặp nguy hiểm dưới nước</text>
+                  <text x="40" y="108" font-family="Arial" font-size="5" fill="#888">— Phóng viên Nova News</text>
+                  <!-- Emoji sticker -->
+                  <text x="95" y="148" font-family="Arial" font-size="22" fill="#333">💡</text>
+                  <!-- Header RIGHT page -->
+                  <rect x="142" y="20" width="88" height="20" rx="5" fill="#b71c1c"/>
+                  <text x="186" y="34" text-anchor="middle" font-family="Arial Black" font-size="6.5" fill="white">CẢM XÚC HÔM NAY</text>
+                  <!-- Emotion icons RIGHT page -->
+                  <text x="150" y="65" font-family="Arial" font-size="20">😮</text>
+                  <text x="186" y="62" font-family="Arial" font-size="6" fill="#555">Ngạc nhiên</text>
+                  <text x="186" y="70" font-family="Arial" font-size="5.5" fill="#888">Không ngờ có nhiều</text>
+                  <text x="186" y="77" font-family="Arial" font-size="5.5" fill="#888">nguy hiểm như vậy</text>
+                  <text x="150" y="105" font-family="Arial" font-size="20">💪</text>
+                  <text x="186" y="102" font-family="Arial" font-size="6" fill="#555">Tự tin hơn</text>
+                  <text x="186" y="110" font-family="Arial" font-size="5.5" fill="#888">Đã biết cách xử lý</text>
+                  <text x="150" y="145" font-family="Arial" font-size="20">❤️</text>
+                  <text x="186" y="142" font-family="Arial" font-size="6" fill="#555">Trân trọng</text>
+                  <text x="186" y="150" font-family="Arial" font-size="5.5" fill="#888">Sẽ chia sẻ với bạn bè</text>
+                </g>
+                <!-- Pen writing (animated) -->
+                <g class="s25-write" style="transform-box:fill-box;transform-origin:112px 95px;">
+                  <line x1="108" y1="90" x2="125" y2="70" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+                  <polygon points="108,90 105,95 112,93" fill="#333"/>
+                  <rect x="118" y="65" width="5" height="22" rx="2" fill="#1a237e"/>
+                  <circle cx="120" cy="63" r="3" fill="#ffb300"/>
+                </g>
+                <!-- Cursor blinking at writing point -->
+                <rect class="s25-cursor" x="108" y="93" width="2" height="8" fill="#1a237e"/>
+                <!-- REC -->
+                <circle class="s25-blink" cx="14" cy="14" r="5" fill="#ff1744" filter="url(#gc-s25)"/>
+                <text x="23" y="18" font-family="Arial" font-size="8" font-weight="900" fill="#ff1744">REC</text>
+                <!-- Ticker -->
+                <rect x="0" y="200" width="260" height="20" fill="#b71c1c" opacity=".92"/>
+                <clipPath id="tc-s25"><rect x="0" y="200" width="260" height="20"/></clipPath>
+                <g clip-path="url(#tc-s25)">
+                  <text class="s25-tick" x="0" y="214" font-family="Arial" font-size="7" font-weight="700" fill="white">📔 NHẬT KÝ PHẢN TƯ  •  Ghi lại cảm xúc và bài học hôm nay  •  Phóng viên Nova News hoàn tất nhiệm vụ  •  📔 NHẬT KÝ PHẢN TƯ  •  Ghi lại cảm xúc  •</text>
+                </g>
               </svg>
               <div class="graphic-caption">Bảng nhật ký phản tư phóng viên</div>
             </div>
@@ -1391,10 +1901,86 @@
                 <p>Nếu là phóng viên kênh tin tức lớn, bạn muốn gửi lời cảnh báo đặc biệt nào nhất đến với các bậc phụ huynh học sinh hiện nay? Vì sao?</p>
               </div>
             </div>
-            <div class="slide-graphic">
-              <!-- Megaphone icon -->
-              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
-                <path d="M12 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h3l5 4V4l-5 4zm6 1a5 5 0 0 1 0 6M20 6a8 8 0 0 1 0 12"/>
+            <div class="slide-graphic" style="background:#040d1c; padding:0; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="gc-s26" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <filter id="gr-s26" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <radialGradient id="bg-s26" cx="50%" cy="50%" r="60%"><stop offset="0%" style="stop-color:#0a1a35"/><stop offset="100%" style="stop-color:#020810"/></radialGradient>
+                  <style>
+                    .s26-blink{animation:s26bk 1s ease-in-out infinite}@keyframes s26bk{0%,100%{opacity:1}50%{opacity:.1}}
+                    .s26-tick{animation:s26tk 10s linear infinite}@keyframes s26tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+                    .s26-ring1{animation:s26r1 2s ease-out infinite}@keyframes s26r1{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(2)}}
+                    .s26-ring2{animation:s26r1 2s ease-out .5s infinite}
+                    .s26-ring3{animation:s26r1 2s ease-out 1s infinite}
+                    .s26-float{animation:s26fl 3s ease-in-out infinite}@keyframes s26fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+                    .s26-eq1{animation:s26eq 0.4s ease-in-out infinite alternate}@keyframes s26eq{0%{height:6px}100%{height:25px}}
+                    .s26-eq2{animation:s26eq 0.6s ease-in-out .1s infinite alternate}
+                    .s26-eq3{animation:s26eq 0.5s ease-in-out .2s infinite alternate}
+                    .s26-eq4{animation:s26eq 0.7s ease-in-out .3s infinite alternate}
+                    .s26-eq5{animation:s26eq 0.45s ease-in-out .15s infinite alternate}
+                  </style>
+                </defs>
+                <rect width="260" height="220" fill="url(#bg-s26)"/>
+                <!-- Broadcast tower -->
+                <g class="s26-float">
+                  <line x1="130" y1="30" x2="130" y2="130" stroke="#555" stroke-width="3"/>
+                  <line x1="110" y1="60" x2="150" y2="60" stroke="#555" stroke-width="2"/>
+                  <line x1="115" y1="80" x2="145" y2="80" stroke="#555" stroke-width="2"/>
+                  <line x1="118" y1="100" x2="142" y2="100" stroke="#555" stroke-width="2"/>
+                  <!-- Cross bars -->
+                  <line x1="110" y1="60" x2="130" y2="30" stroke="#555" stroke-width="1.5"/>
+                  <line x1="150" y1="60" x2="130" y2="30" stroke="#555" stroke-width="1.5"/>
+                  <!-- Signal emitter at top -->
+                  <circle cx="130" cy="30" r="6" fill="#ff1744" filter="url(#gr-s26)"/>
+                  <circle class="s26-ring1" cx="130" cy="30" r="6" fill="none" stroke="#ff5252" stroke-width="2" style="transform-box:fill-box;transform-origin:center;"/>
+                  <circle class="s26-ring2" cx="130" cy="30" r="6" fill="none" stroke="#ff5252" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;"/>
+                  <circle class="s26-ring3" cx="130" cy="30" r="6" fill="none" stroke="#ff5252" stroke-width="1" style="transform-box:fill-box;transform-origin:center;"/>
+                  <!-- Tower base -->
+                  <polygon points="100,130 160,130 150,155 110,155" fill="#1a2a3a" stroke="#2a3a5a" stroke-width="1"/>
+                  <!-- Ground struts -->
+                  <line x1="100" y1="130" x2="70" y2="170" stroke="#444" stroke-width="2"/>
+                  <line x1="160" y1="130" x2="190" y2="170" stroke="#444" stroke-width="2"/>
+                  <line x1="110" y1="155" x2="100" y2="175" stroke="#444" stroke-width="2"/>
+                  <line x1="150" y1="155" x2="160" y2="175" stroke="#444" stroke-width="2"/>
+                </g>
+                <!-- Signal arcs LEFT -->
+                <path d="M108,30 Q80,55 108,80" fill="none" stroke="#00f2fe" stroke-width="2" opacity=".6" filter="url(#gc-s26)"/>
+                <path d="M95,22 Q55,55 95,88" fill="none" stroke="#00f2fe" stroke-width="1.5" opacity=".4" filter="url(#gc-s26)"/>
+                <path d="M80,15 Q28,55 80,95" fill="none" stroke="#00f2fe" stroke-width="1" opacity=".25" filter="url(#gc-s26)"/>
+                <!-- Signal arcs RIGHT -->
+                <path d="M152,30 Q180,55 152,80" fill="none" stroke="#00f2fe" stroke-width="2" opacity=".6" filter="url(#gc-s26)"/>
+                <path d="M165,22 Q205,55 165,88" fill="none" stroke="#00f2fe" stroke-width="1.5" opacity=".4" filter="url(#gc-s26)"/>
+                <path d="M180,15 Q232,55 180,95" fill="none" stroke="#00f2fe" stroke-width="1" opacity=".25" filter="url(#gc-s26)"/>
+                <!-- Audio equalizer bars -->
+                <g transform="translate(35,140)">
+                  <rect x="0" y="0" width="8" height="6" rx="2" fill="#00f2fe" class="s26-eq1" style="transform-box:fill-box;transform-origin:bottom;"/>
+                  <rect x="12" y="0" width="8" height="6" rx="2" fill="#00f2fe" class="s26-eq2" style="transform-box:fill-box;transform-origin:bottom;"/>
+                  <rect x="24" y="0" width="8" height="6" rx="2" fill="#00f2fe" class="s26-eq3" style="transform-box:fill-box;transform-origin:bottom;"/>
+                  <rect x="36" y="0" width="8" height="6" rx="2" fill="#00f2fe" class="s26-eq4" style="transform-box:fill-box;transform-origin:bottom;"/>
+                  <rect x="48" y="0" width="8" height="6" rx="2" fill="#00f2fe" class="s26-eq5" style="transform-box:fill-box;transform-origin:bottom;"/>
+                  <text x="28" y="38" text-anchor="middle" font-family="Arial" font-size="5.5" fill="rgba(0,242,254,.6)">AUDIO</text>
+                </g>
+                <g transform="translate(175,140)">
+                  <rect x="0" y="0" width="8" height="6" rx="2" fill="#ffb300" class="s26-eq3" style="transform-box:fill-box;transform-origin:bottom;"/>
+                  <rect x="12" y="0" width="8" height="6" rx="2" fill="#ffb300" class="s26-eq1" style="transform-box:fill-box;transform-origin:bottom;"/>
+                  <rect x="24" y="0" width="8" height="6" rx="2" fill="#ffb300" class="s26-eq4" style="transform-box:fill-box;transform-origin:bottom;"/>
+                  <rect x="36" y="0" width="8" height="6" rx="2" fill="#ffb300" class="s26-eq2" style="transform-box:fill-box;transform-origin:bottom;"/>
+                  <rect x="48" y="0" width="8" height="6" rx="2" fill="#ffb300" class="s26-eq5" style="transform-box:fill-box;transform-origin:bottom;"/>
+                  <text x="28" y="38" text-anchor="middle" font-family="Arial" font-size="5.5" fill="rgba(255,179,0,.6)">SIGNAL</text>
+                </g>
+                <!-- NOVA NEWS badge -->
+                <rect x="90" y="165" width="80" height="22" rx="4" fill="#b71c1c" filter="url(#gr-s26)"/>
+                <text x="130" y="180" text-anchor="middle" font-family="Arial Black" font-size="8" font-weight="900" fill="white" letter-spacing="1">NOVA NEWS</text>
+                <!-- REC -->
+                <circle class="s26-blink" cx="14" cy="14" r="5" fill="#ff1744" filter="url(#gr-s26)"/>
+                <text x="23" y="18" font-family="Arial" font-size="8" font-weight="900" fill="#ff1744">REC</text>
+                <!-- Ticker -->
+                <rect x="0" y="200" width="260" height="20" fill="#b71c1c" opacity=".92"/>
+                <clipPath id="tc-s26"><rect x="0" y="200" width="260" height="20"/></clipPath>
+                <g clip-path="url(#tc-s26)">
+                  <text class="s26-tick" x="0" y="214" font-family="Arial" font-size="7" font-weight="700" fill="white">📡 PHÁT THANH NOVA NEWS  •  Chuyên luận an toàn đang phát sóng  •  Tiếp cận hàng triệu khán giả  •  📡 PHÁT THANH NOVA NEWS  •  Chuyên luận an toàn  •</text>
+                </g>
               </svg>
               <div class="graphic-caption">Phát thanh chuyên luận Nova News</div>
             </div>
@@ -1458,12 +2044,65 @@
                 </div>
               </div>
             </div>
-            <div class="slide-graphic">
-              <!-- Running character or badge visual -->
-              <svg viewBox="0 0 100 100" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
-                <polygon points="50,15 17,39 29,78 71,78 83,39" fill="none" stroke="var(--color-gold)" stroke-width="4"/>
-                <circle cx="50" cy="48" r="18" fill="none" stroke="var(--color-cyan)" stroke-width="3"/>
-                <path d="M45,48 L48,51 L55,44" fill="none" stroke="var(--color-success)" stroke-width="3" stroke-linecap="round"/>
+            <div class="slide-graphic" style="background:#040d1c; padding:0; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="gc-s28" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <filter id="gr-s28" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <radialGradient id="bg-s28" cx="50%" cy="50%" r="60%"><stop offset="0%" style="stop-color:#0a1a35"/><stop offset="100%" style="stop-color:#020810"/></radialGradient>
+                  <style>
+                    .s28-blink{animation:s28bk 1s ease-in-out infinite}@keyframes s28bk{0%,100%{opacity:1}50%{opacity:.1}}
+                    .s28-tick{animation:s28tk 10s linear infinite}@keyframes s28tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+                    .s28-float{animation:s28fl 3s ease-in-out infinite}@keyframes s28fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+                    .s28-star{animation:s28st 1.5s ease-in-out infinite}@keyframes s28st{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.2);opacity:1}}
+                    .s28-run{animation:s28rn 0.5s ease-in-out infinite alternate}@keyframes s28rn{0%{transform:translateX(0)}100%{transform:translateX(3px)}}
+                    .s28-confetti{animation:s28cf 3s ease-in-out infinite}@keyframes s28cf{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(20deg)}}
+                  </style>
+                </defs>
+                <rect width="260" height="220" fill="url(#bg-s28)"/>
+                <!-- Stars burst in background -->
+                <text class="s28-star" x="20" y="40" font-family="Arial" font-size="16" style="transform-box:fill-box;transform-origin:center;">⭐</text>
+                <text class="s28-star" x="220" y="35" font-family="Arial" font-size="12" style="transform-box:fill-box;transform-origin:center;animation-delay:.5s">✨</text>
+                <text class="s28-star" x="30" y="160" font-family="Arial" font-size="14" style="transform-box:fill-box;transform-origin:center;animation-delay:1s">🌟</text>
+                <text class="s28-star" x="225" y="155" font-family="Arial" font-size="10" style="transform-box:fill-box;transform-origin:center;animation-delay:.3s">⭐</text>
+                <!-- Big achievement badge -->
+                <g class="s28-float" style="transform-box:fill-box;transform-origin:center;">
+                  <!-- Pentagon shield -->
+                  <polygon points="130,10 185,40 185,100 130,130 75,100 75,40" fill="#0a1428" stroke="#ffb300" stroke-width="3" filter="url(#gc-s28)"/>
+                  <polygon points="130,18 177,45 177,98 130,122 83,98 83,45" fill="rgba(255,179,0,0.06)"/>
+                  <!-- Inner circle -->
+                  <circle cx="130" cy="72" r="35" fill="#0d1e38" stroke="#00f2fe" stroke-width="2"/>
+                  <!-- Running figure -->
+                  <g class="s28-run" style="transform-box:fill-box;transform-origin:center;">
+                    <!-- Body -->
+                    <circle cx="130" cy="56" r="8" fill="#f5c5a3"/>
+                    <rect x="124" y="64" width="12" height="14" rx="3" fill="#1a237e"/>
+                    <!-- Legs running -->
+                    <line x1="130" y1="78" x2="122" y2="92" stroke="#0d1a3a" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="130" y1="78" x2="138" y2="88" stroke="#0d1a3a" stroke-width="4" stroke-linecap="round"/>
+                    <!-- Arms -->
+                    <line x1="124" y1="68" x2="114" y2="76" stroke="#1a237e" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="136" y1="68" x2="146" y2="62" stroke="#1a237e" stroke-width="4" stroke-linecap="round"/>
+                  </g>
+                  <!-- Checkmark at top of shield -->
+                  <path d="M115,34 L122,42 L148,22" fill="none" stroke="#00e676" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#gc-s28)"/>
+                </g>
+                <!-- Text labels -->
+                <text x="130" y="148" text-anchor="middle" font-family="Arial Black" font-size="9" font-weight="900" fill="#ffb300" filter="url(#gc-s28)">HÀNH ĐỘNG!</text>
+                <!-- Confetti particles -->
+                <text class="s28-confetti" x="55" y="55" font-family="Arial" font-size="10" style="transform-box:fill-box;transform-origin:center;">🎉</text>
+                <text class="s28-confetti" x="185" y="60" font-family="Arial" font-size="10" style="transform-box:fill-box;transform-origin:center;animation-delay:1s">🎊</text>
+                <text class="s28-confetti" x="45" y="100" font-family="Arial" font-size="8" style="transform-box:fill-box;transform-origin:center;animation-delay:.5s">🎈</text>
+                <text class="s28-confetti" x="200" y="105" font-family="Arial" font-size="8" style="transform-box:fill-box;transform-origin:center;animation-delay:1.5s">🎈</text>
+                <!-- REC -->
+                <circle class="s28-blink" cx="14" cy="14" r="5" fill="#ff1744" filter="url(#gr-s28)"/>
+                <text x="23" y="18" font-family="Arial" font-size="8" font-weight="900" fill="#ff1744">REC</text>
+                <!-- Ticker -->
+                <rect x="0" y="200" width="260" height="20" fill="#b71c1c" opacity=".92"/>
+                <clipPath id="tc-s28"><rect x="0" y="200" width="260" height="20"/></clipPath>
+                <g clip-path="url(#tc-s28)">
+                  <text class="s28-tick" x="0" y="214" font-family="Arial" font-size="7" font-weight="700" fill="white">🏆 HÀNH ĐỘNG VÌ AN TOÀN  •  Cam kết bảo vệ bản thân và bạn bè  •  Học đường an toàn là ưu tiên số 1  •  🏆 HÀNH ĐỘNG VÌ AN TOÀN  •  Cam kết bảo vệ  •</text>
+                </g>
               </svg>
               <div class="graphic-caption">Hành động vì an toàn học đường</div>
             </div>
@@ -1492,10 +2131,97 @@
                 </ul>
               </div>
             </div>
-            <div class="slide-graphic">
-              <!-- Brain/knowledge icon -->
-              <svg viewBox="0 0 24 24" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
-                <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.07 19.58 10.48 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/>
+            <div class="slide-graphic" style="background:#040d1c; padding:0; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="gc-s29" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <filter id="gr-s29" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                  <radialGradient id="bg-s29" cx="50%" cy="50%" r="60%"><stop offset="0%" style="stop-color:#0a1a35"/><stop offset="100%" style="stop-color:#020810"/></radialGradient>
+                  <style>
+                    .s29-blink{animation:s29bk 1s ease-in-out infinite}@keyframes s29bk{0%,100%{opacity:1}50%{opacity:.1}}
+                    .s29-tick{animation:s29tk 10s linear infinite}@keyframes s29tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+                    .s29-float{animation:s29fl 3s ease-in-out infinite}@keyframes s29fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+                    .s29-orbit{animation:s29or 6s linear infinite}@keyframes s29or{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+                    .s29-pulse{animation:s29pu 2s ease-out infinite}@keyframes s29pu{0%{r:30;opacity:.7}100%{r:60;opacity:0}}
+                    .s29-coin{animation:s29co 2s ease-in-out infinite}@keyframes s29co{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+                    .s29-glow{animation:s29gl 2s ease-in-out infinite}@keyframes s29gl{0%,100%{opacity:.5}50%{opacity:1}}
+                  </style>
+                </defs>
+                <rect width="260" height="220" fill="url(#bg-s29)"/>
+                <!-- Central brain / knowledge hub -->
+                <g class="s29-float" style="transform-box:fill-box;transform-origin:center;">
+                  <!-- Outer glow -->
+                  <circle class="s29-pulse" cx="130" cy="90" r="30" fill="none" stroke="rgba(0,242,254,.3)" stroke-width="2" style="transform-box:fill-box;transform-origin:center;"/>
+                  <!-- Brain shape (simplified) -->
+                  <ellipse cx="130" cy="90" rx="38" ry="32" fill="#0a1428" stroke="#00f2fe" stroke-width="2" filter="url(#gc-s29)"/>
+                  <!-- Brain folds -->
+                  <path d="M100,85 Q110,70 120,80 Q130,70 140,80 Q150,70 160,85" fill="none" stroke="#00f2fe" stroke-width="1.5" opacity=".6"/>
+                  <path d="M100,95 Q115,108 130,98 Q145,108 160,95" fill="none" stroke="#00f2fe" stroke-width="1.5" opacity=".6"/>
+                  <path d="M108,78 Q108,110 118,108" fill="none" stroke="rgba(0,242,254,.4)" stroke-width="1"/>
+                  <path d="M152,78 Q152,110 142,108" fill="none" stroke="rgba(0,242,254,.4)" stroke-width="1"/>
+                  <!-- Center glow dot -->
+                  <circle cx="130" cy="90" r="8" fill="rgba(0,242,254,0.2)" filter="url(#gc-s29)"/>
+                  <text x="130" y="94" text-anchor="middle" font-family="Arial" font-size="10">💡</text>
+                </g>
+                <!-- Orbiting knowledge coins -->
+                <g class="s29-orbit" style="transform-box:fill-box;transform-origin:130px 90px;">
+                  <g transform="translate(130,90)">
+                    <g transform="translate(0,-55)">
+                      <circle cx="0" cy="0" r="14" fill="#1a237e" stroke="#00f2fe" stroke-width="1.5"/>
+                      <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="10">🌊</text>
+                    </g>
+                  </g>
+                </g>
+                <g style="animation:s29or 6s linear 1.5s infinite;transform-box:fill-box;transform-origin:130px 90px;">
+                  <g transform="translate(130,90)">
+                    <g transform="translate(0,-55)">
+                      <circle cx="0" cy="0" r="14" fill="#1a237e" stroke="#ffb300" stroke-width="1.5"/>
+                      <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="10">🦺</text>
+                    </g>
+                  </g>
+                </g>
+                <g style="animation:s29or 6s linear 3s infinite;transform-box:fill-box;transform-origin:130px 90px;">
+                  <g transform="translate(130,90)">
+                    <g transform="translate(0,-55)">
+                      <circle cx="0" cy="0" r="14" fill="#1a237e" stroke="#69f0ae" stroke-width="1.5"/>
+                      <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="10">📋</text>
+                    </g>
+                  </g>
+                </g>
+                <!-- Knowledge bar at bottom -->
+                <g transform="translate(30,152)">
+                  <rect x="0" y="0" width="200" height="22" rx="5" fill="#0a1428" stroke="#1a3a6e" stroke-width="1"/>
+                  <rect x="0" y="0" width="200" height="22" rx="5" fill="none" stroke="rgba(0,242,254,.2)" stroke-width="1"/>
+                  <!-- Progress bar -->
+                  <rect x="4" y="4" width="192" height="14" rx="4" fill="#0d1e38"/>
+                  <rect x="4" y="4" width="168" height="14" rx="4" fill="#1a237e"/>
+                  <rect x="4" y="4" width="168" height="14" rx="4" fill="none" stroke="#00f2fe" stroke-width="1" opacity=".5"/>
+                  <text x="90" y="14" text-anchor="middle" font-family="Arial" font-size="6" font-weight="700" fill="white">KIẾN THỨC TÍCH LŨY: 84%</text>
+                  <!-- Milestone dots -->
+                  <circle cx="52" cy="11" r="3" fill="#69f0ae"/>
+                  <circle cx="100" cy="11" r="3" fill="#69f0ae"/>
+                  <circle cx="148" cy="11" r="3" fill="#69f0ae"/>
+                  <circle cx="172" cy="11" r="3" fill="#ffb300"/>
+                </g>
+                <!-- Subject tags -->
+                <rect x="10" y="155" width="0" height="0"/>
+                <g transform="translate(5,18)">
+                  <rect x="0" y="0" width="65" height="16" rx="4" fill="rgba(0,0,0,.5)" stroke="#00f2fe" stroke-width="1"/>
+                  <text x="32" y="11" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#00f2fe">Nhận biết nguy cơ</text>
+                </g>
+                <g transform="translate(190,18)">
+                  <rect x="0" y="0" width="65" height="16" rx="4" fill="rgba(0,0,0,.5)" stroke="#ffb300" stroke-width="1"/>
+                  <text x="32" y="11" text-anchor="middle" font-family="Arial" font-size="5.5" fill="#ffb300">Kỹ năng sinh tồn</text>
+                </g>
+                <!-- REC -->
+                <circle class="s29-blink" cx="14" cy="14" r="5" fill="#ff1744" filter="url(#gr-s29)"/>
+                <text x="23" y="18" font-family="Arial" font-size="8" font-weight="900" fill="#ff1744">REC</text>
+                <!-- Ticker -->
+                <rect x="0" y="200" width="260" height="20" fill="#b71c1c" opacity=".92"/>
+                <clipPath id="tc-s29"><rect x="0" y="200" width="260" height="20"/></clipPath>
+                <g clip-path="url(#tc-s29)">
+                  <text class="s29-tick" x="0" y="214" font-family="Arial" font-size="7" font-weight="700" fill="white">🧠 KIẾN THỨC TÍCH LŨY  •  Nhận biết nguy cơ • Kỹ năng sinh tồn • Cam kết an toàn  •  Nova News chuyên mục giáo dục  •  🧠 KIẾN THỨC TÍCH LŨY  •</text>
+                </g>
               </svg>
               <div class="graphic-caption">Kiến thức tích lũy chuyên mục an toàn</div>
             </div>
