@@ -79,23 +79,30 @@
         </div>
       </article>
 
-      <!-- Lesson 2 (Locked) -->
-      <article class="lesson-card locked">
-        <span class="lesson-badge">Tiết 2 • Kỹ năng</span>
-        <h3 class="lesson-title">Biện pháp phòng ngừa</h3>
-        <p class="lesson-desc">
-          Thu thập và huấn luyện kỹ năng phòng vệ chủ động, kỹ thuật khởi động đúng cách, quy tắc bơi an toàn và cách sử dụng áo phao tiêu chuẩn.
-        </p>
-        <div class="locked-overlay">
-          <div class="lock-icon">🔒</div>
-          <div class="lock-badge">Sắp ra mắt</div>
+      <!-- Lesson 2 (Active) -->
+      <article class="lesson-card active" id="lesson-card-2" style="background:linear-gradient(135deg,rgba(12,25,50,0.85) 0%,rgba(6,13,29,0.95) 100%);">
+        <!-- Animated top border -->
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--color-cyan),#00e5ff,var(--color-cyan));background-size:200%;animation:bgShift 3s linear infinite;"></div>
+        <div>
+          <span class="lesson-badge">Tiết 2 • Biên tập viên tổng hợp</span>
+          <h3 class="lesson-title">Biên tập bản tin 1 phút</h3>
+          <p class="lesson-desc">
+            Vào vai biên tập viên tổng hợp của tòa soạn <strong style="color:var(--color-cyan);">Nova News</strong>, chọn lọc dữ kiện và biên soạn bản tin cảnh báo đuối nước trong 1 phút.
+          </p>
         </div>
-        <div class="lesson-footer">
-          <div class="lesson-meta">
-            <span>⏱ 45 Phút</span>
-            <span>• Khóa</span>
+        <div>
+          <div style="display:flex;gap:8px;margin-bottom:15px;flex-wrap:wrap;">
+            <span style="background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);color:var(--color-cyan);padding:3px 10px;border-radius:10px;font-size:0.75rem;font-weight:600;">⚡ Tin nhanh 60s</span>
+            <span style="background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);color:var(--color-cyan);padding:3px 10px;border-radius:10px;font-size:0.75rem;font-weight:600;">📊 Phân loại dữ kiện</span>
+            <span style="background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.2);color:var(--color-cyan);padding:3px 10px;border-radius:10px;font-size:0.75rem;font-weight:600;">📺 Bản tin phát sóng</span>
           </div>
-          <button class="btn-start" disabled style="opacity: 0.3;">KHÓA</button>
+          <div class="lesson-footer">
+            <div class="lesson-meta">
+              <span>⏱ 45 Phút</span>
+              <span>• ✦ Tương tác cao</span>
+            </div>
+            <button class="btn-start">BẮT ĐẦU BIÊN TẬP ➔</button>
+          </div>
         </div>
       </article>
 
@@ -150,7 +157,7 @@
       <div class="slides-wrapper">
         
         <!-- P0-01 Welcome / Cover -->
-        <section class="slide" id="cover-slide">
+        <section class="slide" data-lesson="1" id="cover-slide">
           <div class="slide-cover">
             <span class="news-badge">PHÓNG SỰ ĐẶC BIỆT</span>
             <h3>Phòng tránh đuối nước</h3>
@@ -174,7 +181,7 @@
         </section>
 
         <!-- P0-02 Big Question & Role Mission -->
-        <section class="slide" id="mission-slide">
+        <section class="slide" data-lesson="1" id="mission-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -398,7 +405,7 @@
         </section>
 
         <!-- S1-01 Tin nóng -->
-        <section class="slide" id="hotnews-slide">
+        <section class="slide" data-lesson="1" id="hotnews-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -421,7 +428,7 @@
         </section>
 
         <!-- S1-02 Câu hỏi nhanh (Interactive discussion) -->
-        <section class="slide" id="quicktalk-slide">
+        <section class="slide" data-lesson="1" id="quicktalk-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -677,7 +684,7 @@
         </section>
 
         <!-- S1-03 Chốt vấn đề cần điều tra -->
-        <section class="slide" id="investigation-goal-slide">
+        <section class="slide" data-lesson="1" id="investigation-goal-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
               <div class="slide-header">
@@ -698,7 +705,7 @@
         </section>
 
         <!-- S2-01 Nhiệm vụ từ tòa soạn (Interactive items collection) -->
-        <section class="slide" id="reporter-mission-slide">
+        <section class="slide" data-lesson="1" id="reporter-mission-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -824,7 +831,7 @@
         </section>
 
         <!-- S2-02 Câu hỏi điều tra -->
-        <section class="slide" id="reporter-questions-slide">
+        <section class="slide" data-lesson="1" id="reporter-questions-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -929,7 +936,7 @@
         </section>
 
         <!-- S3-01 Nhiệm vụ thu thập dữ kiện -->
-        <section class="slide" id="investigation-intro-slide">
+        <section class="slide" data-lesson="1" id="investigation-intro-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -1037,7 +1044,7 @@
         </section>
 
         <!-- S3-02 HOW TO: Cách thu thập dữ kiện -->
-        <section class="slide" id="investigation-how-slide">
+        <section class="slide" data-lesson="1" id="investigation-how-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
               <div class="slide-header">
@@ -1057,7 +1064,7 @@
         </section>
 
         <!-- S3-03 to S3-05 Witness Corkboard (Combined slide) -->
-        <section class="slide" id="witnesses-corkboard-slide">
+        <section class="slide" data-lesson="1" id="witnesses-corkboard-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
               <div class="slide-header">
@@ -1095,7 +1102,7 @@
         </section>
 
         <!-- S3-06 Tổng hợp dữ kiện ban đầu -->
-        <section class="slide" id="witness-summary-slide">
+        <section class="slide" data-lesson="1" id="witness-summary-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -1188,7 +1195,7 @@
         </section>
 
         <!-- S4-01 Nhiệm vụ phân tích góc nhìn -->
-        <section class="slide" id="analysis-intro-slide">
+        <section class="slide" data-lesson="1" id="analysis-intro-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -1268,7 +1275,7 @@
         </section>
 
         <!-- S4-02 HOW TO: Cách phân tích góc nhìn -->
-        <section class="slide" id="analysis-how-slide">
+        <section class="slide" data-lesson="1" id="analysis-how-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
               <div class="slide-header">
@@ -1288,7 +1295,7 @@
         </section>
 
         <!-- S4-03 Workspace phân tích (Interactive match danger consequence) -->
-        <section class="slide" id="analysis-workspace-slide">
+        <section class="slide" data-lesson="1" id="analysis-workspace-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
               <div class="slide-header">
@@ -1343,7 +1350,7 @@
         </section>
 
         <!-- S4-04 Chốt góc nhìn nhân chứng -->
-        <section class="slide" id="analysis-summary-slide">
+        <section class="slide" data-lesson="1" id="analysis-summary-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
               <div class="slide-header">
@@ -1364,7 +1371,7 @@
         </section>
 
         <!-- S5-01 Nhiệm vụ chọn điều quan trọng -->
-        <section class="slide" id="solution-intro-slide">
+        <section class="slide" data-lesson="1" id="solution-intro-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -1453,7 +1460,7 @@
         </section>
 
         <!-- S5-02 HOW TO: Cách tìm giải pháp và phân loại vật hỗ trợ -->
-        <section class="slide" id="solution-how-slide">
+        <section class="slide" data-lesson="1" id="solution-how-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
               <div class="slide-header">
@@ -1471,7 +1478,7 @@
         </section>
 
         <!-- S5-03 Workspace: Tìm giải pháp (Interactive danger prevention match) -->
-        <section class="slide" id="solution-prevention-slide">
+        <section class="slide" data-lesson="1" id="solution-prevention-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
               <div class="slide-header">
@@ -1523,7 +1530,7 @@
         </section>
 
         <!-- S5-04 Workspace: Vật nào giúp mình nổi? (Interactive tank buoyancy experiment) -->
-        <section class="slide" id="solution-float-slide">
+        <section class="slide" data-lesson="1" id="solution-float-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
               <div class="slide-header">
@@ -1628,7 +1635,7 @@
         </section>
 
         <!-- S5-05 Chốt điều quan trọng -->
-        <section class="slide" id="solution-summary-slide">
+        <section class="slide" data-lesson="1" id="solution-summary-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -1707,7 +1714,7 @@
         </section>
 
         <!-- S6-01 Nhiệm vụ sản phẩm -->
-        <section class="slide" id="notebook-intro-slide">
+        <section class="slide" data-lesson="1" id="notebook-intro-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -1848,7 +1855,7 @@
         </section>
 
         <!-- S6-02 HOW TO: Cách hoàn thiện sổ tay -->
-        <section class="slide" id="notebook-how-slide">
+        <section class="slide" data-lesson="1" id="notebook-how-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
               <div class="slide-header">
@@ -1868,7 +1875,7 @@
         </section>
 
         <!-- S6-03 Workspace hoàn thiện sổ tay (Interactive notebook builder) -->
-        <section class="slide" id="notebook-compiler-slide">
+        <section class="slide" data-lesson="1" id="notebook-compiler-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
               <div class="slide-header">
@@ -1937,7 +1944,7 @@
         </section>
 
         <!-- S6-04 Chia sẻ và chốt giá trị sản phẩm -->
-        <section class="slide" id="notebook-summary-slide">
+        <section class="slide" data-lesson="1" id="notebook-summary-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -2034,7 +2041,7 @@
         </section>
 
         <!-- S7-01 Nhật ký phóng viên (Interactive Reflection) -->
-        <section class="slide" id="reflection-slide">
+        <section class="slide" data-lesson="1" id="reflection-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -2139,7 +2146,7 @@
         </section>
 
         <!-- S7-02 Điều phóng viên rút ra -->
-        <section class="slide" id="reflection-summary-slide">
+        <section class="slide" data-lesson="1" id="reflection-summary-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -2244,7 +2251,7 @@
         </section>
 
         <!-- S8-01 Cam kết an toàn (Interactive Signature Pad Canvas) -->
-        <section class="slide" id="pledge-slide">
+        <section class="slide" data-lesson="1" id="pledge-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
               <div class="slide-header">
@@ -2282,7 +2289,7 @@
         </section>
 
         <!-- S8-02 Thông điệp hành động -->
-        <section class="slide" id="pledge-summary-slide">
+        <section class="slide" data-lesson="1" id="pledge-summary-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -2366,7 +2373,7 @@
         </section>
 
         <!-- END-01 Nội dung cốt lõi -->
-        <section class="slide" id="final-cores-slide">
+        <section class="slide" data-lesson="1" id="final-cores-slide">
           <div class="slide-grid">
             <div class="slide-info">
               <div class="slide-header">
@@ -2485,7 +2492,7 @@
         </section>
 
         <!-- END-02 Sản phẩm cuối & Big Question Revisit (Confetti animation overlay) -->
-        <section class="slide" id="final-products-slide">
+        <section class="slide" data-lesson="1" id="final-products-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
               <div class="slide-header">
@@ -2508,6 +2515,1436 @@
             </div>
           </div>
         </section>
+        <!-- ========================================= -->
+        <!-- TIẾT 2 - BIÊN TẬP VIÊN TỔNG HỢP SLIDES -->
+        <!-- ========================================= -->
+
+        <!-- P0-01 Welcome Screen -->
+        <section class="slide" data-lesson="2" id="l2-cover-slide">
+          <div class="slide-cover">
+            <span class="news-badge" style="background: var(--color-cyan); color: #040914;">TÁC NGHIỆP TÒA SOẠN</span>
+            <h3>Phòng tránh đuối nước</h3>
+            <div class="sub-title" style="color: var(--color-gold);">Tiết 2 – Biên tập viên tổng hợp</div>
+            
+            <div class="cover-meta-grid">
+              <div class="cover-meta-item">
+                <span class="label">Vai trò nhiệm vụ</span>
+                <span class="val">Biên tập viên Nova News</span>
+              </div>
+              <div class="cover-meta-item">
+                <span class="label">Sản phẩm đầu ra</span>
+                <span class="val">Bản thảo bản tin 1 phút</span>
+              </div>
+            </div>
+            
+            <button class="btn-action" style="background: linear-gradient(90deg, var(--color-cyan) 0%, #0097a7 100%); color: #040914; box-shadow: var(--shadow-glow);" onclick="playSound('click'); state.currentSlide++; updateSlideView();">
+              BẮT ĐẦU BIÊN TẬP ➔
+            </button>
+          </div>
+        </section>
+
+        <!-- P0-02 Big Question & Role Mission -->
+        <section class="slide" data-lesson="2" id="l2-mission-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">CÂU HỎI LỚN & VAI TRÒ</div>
+                <h3>Câu hỏi Lớn & Sứ mệnh</h3>
+              </div>
+              <div class="slide-content">
+                <p><strong>Big Question:</strong> Nếu chỉ có 1 phút để cảnh báo cộng đồng về đuối nước, chúng ta nên nói điều gì?</p>
+                <p><strong>Nhiệm vụ của bạn (Biên tập viên):</strong></p>
+                <ul>
+                  <li>Nhận diện nguy cơ quá tải thông tin đối với người xem.</li>
+                  <li>Lọc thông tin đúng, loại bỏ thông tin gây nhiễu, tin đồn sai sự thật.</li>
+                  <li>Sắp xếp dữ kiện theo mạch logic dễ hiểu, dễ nhớ.</li>
+                  <li>Viết kịch bản và xuất bản bản thảo bản tin 1 phút.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background grid -->
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <path d="M 0,40 L 260,40 M 0,80 L 260,80 M 0,120 L 260,120 M 0,160 L 260,160" stroke="rgba(0, 242, 254, 0.05)" stroke-width="1"/>
+                <path d="M 50,0 L 50,220 M 100,0 L 100,220 M 150,0 L 150,220 M 200,0 L 200,220" stroke="rgba(0, 242, 254, 0.05)" stroke-width="1"/>
+                
+                <!-- Countdown clock style -->
+                <circle cx="130" cy="100" r="50" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="8"/>
+                <circle cx="130" cy="100" r="50" fill="none" stroke="var(--color-cyan)" stroke-width="6" stroke-dasharray="314" stroke-dashoffset="60" filter="drop-shadow(0 0 5px rgba(0, 242, 254, 0.5))"/>
+                <text x="130" y="108" font-family="monospace" font-size="24" font-weight="900" fill="#fff" text-anchor="middle">60s</text>
+                
+                <!-- Clipboard editor badge -->
+                <g transform="translate(30, 150)">
+                  <rect width="60" height="45" rx="4" fill="rgba(12, 25, 50, 0.85)" stroke="var(--color-gold)" stroke-width="1"/>
+                  <line x1="10" y1="12" x2="50" y2="12" stroke="#fff" stroke-width="2"/>
+                  <line x1="10" y1="22" x2="40" y2="22" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+                  <line x1="10" y1="32" x2="45" y2="32" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+                  <circle cx="50" cy="27" r="4" fill="var(--color-cyan)"/>
+                </g>
+                
+                <!-- Information pieces waiting to be sorted -->
+                <g transform="translate(170, 40)">
+                  <rect width="50" height="25" rx="3" fill="#1a305a" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                  <text x="25" y="15" font-family="sans-serif" font-size="7" fill="#fff" text-anchor="middle">DỮ KIỆN A</text>
+                </g>
+                <g transform="translate(180, 75)">
+                  <rect width="50" height="25" rx="3" fill="#c62828" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                  <text x="25" y="15" font-family="sans-serif" font-size="7" fill="#fff" text-anchor="middle">TIN ĐỒN B</text>
+                </g>
+                <g transform="translate(165, 115)">
+                  <rect width="55" height="25" rx="3" fill="#2e7d32" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                  <text x="27" y="15" font-family="sans-serif" font-size="7" fill="#fff" text-anchor="middle">GIẢI PHÁP C</text>
+                </g>
+                
+                <text x="130" y="200" font-family="sans-serif" font-size="8" fill="rgba(0, 242, 254, 0.6)" text-anchor="middle" letter-spacing="1">NOVA NEWSROOM MISSION</text>
+              </svg>
+              <div class="graphic-caption">Nhiệm vụ tác nghiệp ban biên tập Nova News</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R1-01 Tin nhanh 60 giây -->
+        <section class="slide" data-lesson="2" id="l2-flash-images-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 1 • TIN NÓNG KHẨN</div>
+                <h3>Bản Tin Nhanh 15 Giây</h3>
+              </div>
+              <div class="slide-content">
+                <p>Một lượng lớn thẻ hình ảnh dữ liệu vừa được gửi về phòng biên tập của Nova News. Các hình ảnh sẽ chạy rất nhanh liên tục.</p>
+                <p>Nhiệm vụ của bạn là hãy quan sát thật kỹ và ghi nhớ nhiều hình ảnh nhất có thể.</p>
+                
+                <div style="margin: 20px 0;">
+                  <button id="l2-btn-start-flash" class="btn-action" style="padding: 10px 24px; font-size: 0.95rem; background: var(--color-cyan); color: #040914; box-shadow: var(--shadow-glow);">
+                    BẮT ĐẦU BẢN TIN (15 GIÂY)
+                  </button>
+                </div>
+                <div id="l2-flash-status" class="gear-status-msg" style="display: none; color: var(--color-success);">
+                  ✓ Bản tin kết thúc! Nhấn "Tiếp theo" để kiểm tra trí nhớ của bạn.
+                </div>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#020712; padding:0; min-height:280px; display:flex; flex-direction:column; justify-content:center;">
+              <!-- Flashing Screen Mockup -->
+              <div id="l2-flash-screen" class="flash-screen-box">
+                <div class="flash-screen-inner">
+                  <div class="flash-screen-idle-text">CHỜ PHÁT BẢN TIN...</div>
+                </div>
+              </div>
+              
+              <!-- Countdown bar -->
+              <div class="flash-progress-bar-container">
+                <div id="l2-flash-progress" class="flash-progress-bar"></div>
+              </div>
+              <div class="graphic-caption" id="l2-flash-caption">Bảng tin nhanh hiện trường Nova News</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R1-02 Câu hỏi nhanh sau bản tin -->
+        <section class="slide" data-lesson="2" id="l2-flash-qa-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 1 • KIỂM TRA TRÍ NHỚ</div>
+                <h3>Bạn nhớ được gì?</h3>
+              </div>
+              <div class="slide-content">
+                <p>Nhấp chọn tất cả những hình ảnh/thông điệp xuất hiện trong bản tin nhanh bạn vừa quan sát:</p>
+                <div class="flash-selection-grid" id="l2-flash-selection-grid">
+                  <!-- JS will populate cards or we declare them static for easy styling -->
+                  <div class="flash-select-card" data-item="chuot-rut">⚡ Chuột rút khi bơi</div>
+                  <div class="flash-select-card" data-item="ao-phao">🦺 Áo phao cứu sinh</div>
+                  <div class="flash-select-card" data-item="nuoc-xoay">🌀 Dòng nước xoáy</div>
+                  <div class="flash-select-card" data-item="canh-cay">🌿 Cành cây hỗ trợ</div>
+                  <div class="flash-select-card" data-item="cuc-da">🪨 Cục đá cứu hộ</div>
+                  <div class="flash-select-card" data-item="phao-cuu-sinh">⭕ Phao cứu sinh</div>
+                  <div class="flash-select-card" data-item="lat-thuyen">⛵ Lật thuyền cứu hộ</div>
+                  <div class="flash-select-card" data-item="can-nhua">🏺 Can nhựa rỗng</div>
+                  <div class="flash-select-card" data-item="song-sau">🌊 Dòng sông sâu</div>
+                  <div class="flash-select-card" data-item="bien-sau">🐳 Biển rộng lớn</div>
+                  <div class="flash-select-card" data-item="nguoi-cuu-ho">🧑‍🚒 Người cứu hộ</div>
+                  <div class="flash-select-card" data-item="co-canh-bao">🚩 Cờ cảnh báo màu đỏ</div>
+                </div>
+                
+                <div style="margin: 20px 0 10px;">
+                  <button id="l2-btn-submit-flash-qa" class="btn-submit-qa" style="padding: 10px 20px;">
+                    GỬI BÁO CÁO TRÍ NHỚ
+                  </button>
+                </div>
+                <div id="l2-flash-qa-result" class="feedback-success"></div>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Brain with glowing signals -->
+                <path d="M130,50 C110,50 100,65 100,80 C100,95 110,105 120,110 C110,115 105,125 110,135 C115,145 125,145 130,145 C135,145 145,145 150,135 C155,125 150,115 140,110 C150,105 160,95 160,80 C160,65 150,50 130,50 Z" fill="none" stroke="var(--color-cyan)" stroke-width="2" filter="drop-shadow(0 0 4px rgba(0, 242, 254, 0.4))"/>
+                <path d="M130,50 C125,70 125,90 120,110 M130,50 C135,70 135,90 140,110" fill="none" stroke="var(--color-cyan)" stroke-width="1"/>
+                <circle cx="100" cy="80" r="3" fill="var(--color-cyan)"/>
+                <circle cx="160" cy="80" r="3" fill="var(--color-cyan)"/>
+                <circle cx="110" cy="135" r="3" fill="var(--color-cyan)"/>
+                <circle cx="150" cy="135" r="3" fill="var(--color-cyan)"/>
+                <!-- Signal lines shooting out -->
+                <line x1="90" y1="70" x2="70" y2="60" stroke="var(--color-cyan)" stroke-width="1.5" stroke-dasharray="4,2"/>
+                <line x1="170" y1="70" x2="190" y2="60" stroke="var(--color-cyan)" stroke-width="1.5" stroke-dasharray="4,2"/>
+                <line x1="90" y1="90" x2="70" y2="100" stroke="var(--color-cyan)" stroke-width="1.5" stroke-dasharray="4,2"/>
+                <line x1="170" y1="90" x2="190" y2="100" stroke="var(--color-cyan)" stroke-width="1.5" stroke-dasharray="4,2"/>
+                
+                <text x="130" y="180" font-family="sans-serif" font-size="9" font-weight="bold" fill="#fff" text-anchor="middle">Khả năng ghi nhớ thông tin</text>
+                <text x="130" y="195" font-family="sans-serif" font-size="7.5" fill="var(--color-text-muted)" text-anchor="middle">Não bộ dễ quá tải khi thông tin quá nhiều</text>
+              </svg>
+              <div class="graphic-caption">Sơ đồ kiểm tra xử lý thông tin của não bộ</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R1-03 Chốt vấn đề cần biên tập -->
+        <section class="slide" data-lesson="2" id="l2-editorial-goal-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 1 • CHỐT VẤN ĐỀ</div>
+                <h3>Giải Pháp: Vai Trò Biên Tập Viên</h3>
+              </div>
+              <div class="slide-content" style="max-width: 700px; margin: 0 auto;">
+                <p style="font-size: 1.25rem; color: #fff;">
+                  “Nhiều thông tin không có nghĩa là truyền thông hiệu quả. Để người xem dễ nhớ và hành động đúng lúc khẩn cấp, chúng ta bắt buộc phải chọn lọc và sắp xếp dữ kiện.”
+                </p>
+                <div class="success-banner" style="background: rgba(0, 242, 254, 0.08); border-color: var(--color-cyan); justify-content: center; margin: 30px 0;">
+                  <span>🔍 BIÊN TẬP VIÊN NOVA NEWS CẦN TIẾN HÀNH CHỌN LỌC DỮ KIỆN NGAY!</span>
+                </div>
+                <p>Chúng ta sẽ nhận nhiệm vụ cụ thể từ tổng biên tập để biên tập một bản tin 1 phút.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R2-01 Nhiệm vụ từ tòa soạn -->
+        <section class="slide" data-lesson="2" id="l2-editor-mission-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 2 • NHIỆM VỤ TÒA SOẠN</div>
+                <h3>Nhận nhiệm vụ Biên tập</h3>
+              </div>
+              <div class="slide-content">
+                <p>Tổng biên tập tòa soạn <strong>Nova News</strong> vừa ký giao nhiệm vụ:</p>
+                <blockquote style="border-left: 4px solid var(--color-cyan); padding-left: 15px; margin: 15px 0; font-style: italic; color: #fff;">
+                  “Hiện nay có rất nhiều nguồn tin tức hỗn loạn về đuối nước học đường. Hãy sản xuất một bản tin phát sóng 1 phút (tối đa 150 - 200 từ) giúp trẻ em dễ hiểu, biết cách nhận diện nguy cơ và hành động tự bảo vệ bản thân.”
+                </blockquote>
+                <p>Bản tin cuối bài phải được trình bày rõ ràng, sinh động và ít chi tiết gây rối mắt.</p>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Envelope with mission paper -->
+                <path d="M40,50 L220,50 L220,170 L40,170 Z" fill="#142240" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+                <path d="M40,50 L130,110 L220,50" fill="none" stroke="var(--color-cyan)" stroke-width="2"/>
+                <!-- Stamp -->
+                <circle cx="180" cy="130" r="22" fill="none" stroke="var(--color-red-bright)" stroke-width="2" stroke-dasharray="4,2"/>
+                <circle cx="180" cy="130" r="18" fill="none" stroke="var(--color-red-bright)" stroke-width="1"/>
+                <text x="180" y="133" font-family="sans-serif" font-size="6" font-weight="900" fill="var(--color-red-bright)" text-anchor="middle" letter-spacing="0.5">APPROVED</text>
+                
+                <text x="80" y="90" font-family="sans-serif" font-size="8" font-weight="bold" fill="#fff">ĐỀ ÁN BẢN TIN 1 PHÚT</text>
+                <line x1="80" y1="102" x2="150" y2="102" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                <line x1="80" y1="112" x2="140" y2="112" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                <line x1="80" y1="122" x2="135" y2="122" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+                
+                <text x="130" y="200" font-family="sans-serif" font-size="7.5" fill="var(--color-text-muted)" text-anchor="middle">Thư nhiệm vụ chính thức "Editorial Mission"</text>
+              </svg>
+              <div class="graphic-caption">Phong thư giao việc của ban Tổng biên tập</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R2-02 Checklist bản tin tốt -->
+        <section class="slide" data-lesson="2" id="l2-checklist-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 2 • TIÊU CHÍ BẢN TIN</div>
+                <h3>Checklist Bản Tin Chất Lượng</h3>
+              </div>
+              <div class="slide-content">
+                <p>Một biên tập viên giỏi luôn kiểm duyệt kịch bản theo các tiêu chí khắt khe:</p>
+                <div style="display:flex; flex-direction:column; gap:12px; margin-top:15px;">
+                  <div class="qa-card" style="padding:10px 15px; display:flex; align-items:center; gap:15px;">
+                    <div style="color:var(--color-cyan); font-size:1.5rem; font-weight:bold;">1</div>
+                    <div><strong>Dễ hiểu:</strong> Sử dụng từ ngữ ngắn gọn, không thuật ngữ quá phức tạp.</div>
+                  </div>
+                  <div class="qa-card" style="padding:10px 15px; display:flex; align-items:center; gap:15px;">
+                    <div style="color:var(--color-cyan); font-size:1.5rem; font-weight:bold;">2</div>
+                    <div><strong>Dễ nhớ:</strong> Nhắc đi nhắc lại thông điệp an toàn then chốt (Headline).</div>
+                  </div>
+                  <div class="qa-card" style="padding:10px 15px; display:flex; align-items:center; gap:15px;">
+                    <div style="color:var(--color-cyan); font-size:1.5rem; font-weight:bold;">3</div>
+                    <div><strong>Hữu ích:</strong> Cung cấp biện pháp thoát hiểm và phòng vệ thực tế.</div>
+                  </div>
+                  <div class="qa-card" style="padding:10px 15px; display:flex; align-items:center; gap:15px;">
+                    <div style="color:var(--color-cyan); font-size:1.5rem; font-weight:bold;">4</div>
+                    <div><strong>Ngắn gọn:</strong> Lược bỏ các chi tiết thừa để tiết kiệm thời gian phát sóng 1 phút.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Clipboard check list -->
+                <rect x="50" y="30" width="160" height="150" rx="6" fill="#142240" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                <!-- Clipboard clip -->
+                <rect x="110" y="20" width="40" height="20" rx="3" fill="#37474f"/>
+                <circle cx="130" cy="28" r="3" fill="#fff"/>
+                
+                <!-- Check boxes with check marks -->
+                <g transform="translate(70, 60)">
+                  <rect width="12" height="12" rx="2" fill="none" stroke="var(--color-success)" stroke-width="2"/>
+                  <path d="M3,6 L5,8 L9,3" fill="none" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round"/>
+                  <text x="25" y="10" font-family="sans-serif" font-size="9" fill="#fff">Dễ hiểu</text>
+                </g>
+                <g transform="translate(70, 90)">
+                  <rect width="12" height="12" rx="2" fill="none" stroke="var(--color-success)" stroke-width="2"/>
+                  <path d="M3,6 L5,8 L9,3" fill="none" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round"/>
+                  <text x="25" y="10" font-family="sans-serif" font-size="9" fill="#fff">Dễ nhớ</text>
+                </g>
+                <g transform="translate(70, 120)">
+                  <rect width="12" height="12" rx="2" fill="none" stroke="var(--color-success)" stroke-width="2"/>
+                  <path d="M3,6 L5,8 L9,3" fill="none" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round"/>
+                  <text x="25" y="10" font-family="sans-serif" font-size="9" fill="#fff">Hữu ích</text>
+                </g>
+                <g transform="translate(70, 150)">
+                  <rect width="12" height="12" rx="2" fill="none" stroke="var(--color-success)" stroke-width="2"/>
+                  <path d="M3,6 L5,8 L9,3" fill="none" stroke="var(--color-success)" stroke-width="2" stroke-linecap="round"/>
+                  <text x="25" y="10" font-family="sans-serif" font-size="9" fill="#fff">Ngắn gọn</text>
+                </g>
+              </svg>
+              <div class="graphic-caption">Bảng đánh giá các tiêu chí bản tin an toàn</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R3-01 Nhiệm vụ chọn lọc dữ kiện -->
+        <section class="slide" data-lesson="2" id="l2-keep-or-toss-intro-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 3 • CHỌN LỌC DỮ KIỆN</div>
+                <h3>Hoạt động: Giữ hay Loại?</h3>
+              </div>
+              <div class="slide-content">
+                <p>Tòa soạn đã thu thập được bộ 18 thẻ thông tin đa dạng về đuối nước từ các báo cáo khoa học, mạng xã hội và lời đồn dân gian.</p>
+                <p>Nhiệm vụ của nhóm biên tập viên là phải đọc kỹ từng thẻ, thảo luận và đưa ra quyết định: Giữ lại đưa vào bản tin, lưu trữ làm thông tin nền, hay loại bỏ thẳng tay vì sai lệch.</p>
+                <ul>
+                  <li><strong>Học liệu:</strong> Bộ 18 thẻ thông tin.</li>
+                  <li><strong>Hình thức:</strong> Nhóm 4 học sinh.</li>
+                  <li><strong>Thời gian:</strong> 8 phút.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Stack of cards graphic -->
+                <g transform="translate(100, 70) rotate(-10)" style="transform-origin: center;">
+                  <rect width="70" height="90" rx="6" fill="#fff" stroke="#ccc" stroke-width="1.5"/>
+                  <rect width="70" height="20" fill="var(--color-cyan)" rx="3"/>
+                  <line x1="10" y1="35" x2="60" y2="35" stroke="#eee" stroke-width="2"/>
+                  <line x1="10" y1="45" x2="50" y2="45" stroke="#eee" stroke-width="2"/>
+                </g>
+                <g transform="translate(110, 70) rotate(5)" style="transform-origin: center;">
+                  <rect width="70" height="90" rx="6" fill="#fff" stroke="#ccc" stroke-width="1.5" filter="drop-shadow(2px 2px 5px rgba(0,0,0,0.3))"/>
+                  <rect width="70" height="20" fill="var(--color-red)" rx="3"/>
+                  <!-- Question icon on card -->
+                  <circle cx="35" cy="55" r="10" fill="none" stroke="rgba(255, 23, 68, 0.2)" stroke-width="2"/>
+                  <text x="35" y="60" font-family="sans-serif" font-size="14" font-weight="bold" fill="var(--color-red)" text-anchor="middle">?</text>
+                </g>
+              </svg>
+              <div class="graphic-caption">Bộ thẻ thông tin chờ xử lý của tòa soạn</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R3-02 HOW TO – Cách chọn lọc dữ kiện -->
+        <section class="slide" data-lesson="2" id="l2-keep-or-toss-how-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 3 • HƯỚNG DẪN THỰC HIỆN</div>
+                <h3>Cách thức chọn lọc dữ kiện</h3>
+              </div>
+              <div class="slide-content">
+                <p>Hãy làm việc theo quy trình 4 bước biên tập sau đây:</p>
+                <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px;">
+                  <p><strong>Bước 1:</strong> Đọc kỹ từng thẻ thông tin trong bộ thẻ.</p>
+                  <p><strong>Bước 2:</strong> Thảo luận xem thông tin này có ảnh hưởng trực tiếp đến tính mạng của học sinh khi ở dưới nước hay không.</p>
+                  <p><strong>Bước 3:</strong> Phân loại thẻ vào 1 trong 3 nhóm: Breaking News, Background Info, hoặc Fake/Misleading.</p>
+                  <p><strong>Bước 4:</strong> Kiểm tra chéo toàn bộ các thẻ đã phân loại trước khi nhấn báo cáo kết quả lên tòa soạn.</p>
+                </div>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Infographic steps -->
+                <g transform="translate(20, 30)">
+                  <circle cx="20" cy="20" r="15" fill="var(--color-cyan)" opacity="0.2"/>
+                  <text x="20" y="24" font-family="sans-serif" font-size="12" font-weight="bold" fill="var(--color-cyan)" text-anchor="middle">1</text>
+                  <text x="45" y="23" font-family="sans-serif" font-size="9" font-weight="bold" fill="#fff">Đọc kỹ thẻ</text>
+                </g>
+                <g transform="translate(140, 30)">
+                  <circle cx="20" cy="20" r="15" fill="var(--color-cyan)" opacity="0.2"/>
+                  <text x="20" y="24" font-family="sans-serif" font-size="12" font-weight="bold" fill="var(--color-cyan)" text-anchor="middle">2</text>
+                  <text x="45" y="23" font-family="sans-serif" font-size="9" font-weight="bold" fill="#fff">Thảo luận</text>
+                </g>
+                <g transform="translate(20, 110)">
+                  <circle cx="20" cy="20" r="15" fill="var(--color-cyan)" opacity="0.2"/>
+                  <text x="20" y="24" font-family="sans-serif" font-size="12" font-weight="bold" fill="var(--color-cyan)" text-anchor="middle">3</text>
+                  <text x="45" y="23" font-family="sans-serif" font-size="9" font-weight="bold" fill="#fff">Phân loại</text>
+                </g>
+                <g transform="translate(140, 110)">
+                  <circle cx="20" cy="20" r="15" fill="var(--color-cyan)" opacity="0.2"/>
+                  <text x="20" y="24" font-family="sans-serif" font-size="12" font-weight="bold" fill="var(--color-cyan)" text-anchor="middle">4</text>
+                  <text x="45" y="23" font-family="sans-serif" font-size="9" font-weight="bold" fill="#fff">Kiểm tra lại</text>
+                </g>
+                <!-- Arrow indicators -->
+                <path d="M 100,50 L 130,50" stroke="var(--color-cyan)" stroke-width="2" marker-end="url(#arrow)"/>
+                <path d="M 220,70 L 220,110" stroke="var(--color-cyan)" stroke-width="2"/>
+                <path d="M 130,130 L 100,130" stroke="var(--color-cyan)" stroke-width="2"/>
+                
+                <text x="130" y="195" font-family="sans-serif" font-size="8.5" fill="var(--color-text-muted)" text-anchor="middle">Quy trình xử lý thông tin chuẩn báo chí</text>
+              </svg>
+              <div class="graphic-caption">Sơ đồ quy trình biên tập 4 bước</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R3-03 Ba cột phân loại thông tin -->
+        <section class="slide" data-lesson="2" id="l2-columns-intro-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 3 • BA CỘT LỚN</div>
+                <h3>Giải thích Khung Phân Loại</h3>
+              </div>
+              <div class="slide-content">
+                <p>Chúng ta sẽ chia bàn làm việc của mình thành 3 khu vực phân loại:</p>
+                <ul>
+                  <li><strong style="color: var(--color-cyan);">BREAKING NEWS:</strong> Những tin cảnh báo đuối nước nguy cấp liên quan trực tiếp đến sinh mạng học sinh, cần người xem nhớ để hành động phòng ngừa ngay.</li>
+                  <li><strong style="color: var(--color-gold);">BACKGROUND INFO:</strong> Những thông tin khoa học hoặc xã hội đúng sự thật nhưng mang tính bổ trợ, không mang tính khẩn cấp để đưa vào bản tin 1 phút.</li>
+                  <li><strong style="color: var(--color-red-bright);">FAKE / MISLEADING:</strong> Những thông tin sai lệch cực kỳ nguy hại cần phải loại bỏ ngay để tránh gây hiểu lầm chết người.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- 3 Columns box -->
+                <rect x="15" y="40" width="70" height="120" rx="4" fill="none" stroke="var(--color-cyan)" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <text x="50" y="32" font-family="sans-serif" font-size="7.5" font-weight="bold" fill="var(--color-cyan)" text-anchor="middle">BREAKING</text>
+                
+                <rect x="95" y="40" width="70" height="120" rx="4" fill="none" stroke="var(--color-gold)" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <text x="130" y="32" font-family="sans-serif" font-size="7.5" font-weight="bold" fill="var(--color-gold)" text-anchor="middle">BACKGROUND</text>
+                
+                <rect x="175" y="40" width="70" height="120" rx="4" fill="none" stroke="var(--color-red-bright)" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <text x="210" y="32" font-family="sans-serif" font-size="7.5" font-weight="bold" fill="var(--color-red-bright)" text-anchor="middle">FAKE / MIS</text>
+                
+                <text x="130" y="195" font-family="sans-serif" font-size="8.5" fill="var(--color-text-muted)" text-anchor="middle">Giao diện Workspace ba cột lọc tin</text>
+              </svg>
+              <div class="graphic-caption">Kiến trúc 3 cột lọc tin chính của biên tập viên</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R3-04 Mẫu thẻ thông tin cần xử lý -->
+        <section class="slide" data-lesson="2" id="l2-cards-sample-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 3 • BỘ THẺ TIN TỨC</div>
+                <h3>Các thẻ tin tức cần xử lý</h3>
+              </div>
+              <div class="slide-content">
+                <p>Một số thẻ dữ kiện mẫu bạn sẽ gặp trên bàn làm việc:</p>
+                <div style="display:flex; gap:10px; margin-top:10px;">
+                  <div class="qa-card" style="flex:1; padding:15px; font-size:0.9rem;">
+                    <div style="color:var(--color-cyan); font-weight:bold; margin-bottom:5px;">Ví dụ A</div>
+                    “Mặc áo phao khi tham gia giao thông đường thủy giúp giảm 90% nguy cơ tử vong do đuối nước.”
+                    <div style="margin-top:10px; color:var(--color-success); font-size:0.75rem;">➔ Phân loại: BREAKING</div>
+                  </div>
+                  <div class="qa-card" style="flex:1; padding:15px; font-size:0.9rem;">
+                    <div style="color:var(--color-gold); font-weight:bold; margin-bottom:5px;">Ví dụ B</div>
+                    “Uống một ngụm nước biển/nước muối giúp ngăn ngừa chuột rút khi đang bơi lội.”
+                    <div style="margin-top:10px; color:var(--color-red-bright); font-size:0.75rem;">➔ Phân loại: FAKE (Phản khoa học)</div>
+                  </div>
+                </div>
+                <p style="margin-top:15px;">Hãy chuẩn bị phân loại toàn bộ 18 thẻ trên bàn làm việc của nhóm.</p>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Correct check badge -->
+                <circle cx="90" cy="100" r="30" fill="none" stroke="var(--color-success)" stroke-width="2.5"/>
+                <path d="M78,100 L86,108 L104,90" fill="none" stroke="var(--color-success)" stroke-width="3" stroke-linecap="round"/>
+                
+                <!-- Incorrect cross badge -->
+                <circle cx="170" cy="100" r="30" fill="none" stroke="var(--color-red-bright)" stroke-width="2.5"/>
+                <path d="M158,88 L182,112 M182,88 L158,112" fill="none" stroke="var(--color-red-bright)" stroke-width="3" stroke-linecap="round"/>
+                
+                <text x="90" y="150" font-family="sans-serif" font-size="8.5" fill="#fff" text-anchor="middle">Kiểm chứng Đúng</text>
+                <text x="170" y="150" font-family="sans-serif" font-size="8.5" fill="#fff" text-anchor="middle">Phát hiện Sai</text>
+              </svg>
+              <div class="graphic-caption">Biểu tượng kiểm duyệt sự thật tin tức</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R3-05 Workspace phân loại nhóm -->
+        <section class="slide" data-lesson="2" id="l2-classification-workspace-slide">
+          <div class="slide-grid" style="grid-template-columns: 1fr;">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 3 • WORKSPACE THẢO LUẬN</div>
+                <h3>Bàn Biên Tập: Phân loại 18 thẻ thông tin</h3>
+              </div>
+              <div class="slide-content">
+                <p>Nhấp chọn thẻ dữ kiện bên trái rồi nhấp chọn 1 trong 3 nhóm thích hợp bên phải để phân loại thẻ:</p>
+                
+                <!-- Sorting Game Workspace Container -->
+                <div class="editor-workspace-container">
+                  <!-- Left: Card Pile/Scroll List -->
+                  <div class="cards-pile-wrapper">
+                    <h4>🗂️ Bộ thẻ dữ kiện</h4>
+                    <div id="l2-cards-pile" class="cards-pile-list">
+                      <!-- Cards will be populated here by JS -->
+                    </div>
+                  </div>
+                  
+                  <!-- Right: 3 Column Slots -->
+                  <div class="columns-grid-wrapper">
+                    <!-- Column 1: Breaking -->
+                    <div class="classification-col" data-col="breaking">
+                      <div class="col-header col-breaking">🔴 BREAKING NEWS</div>
+                      <div class="col-items" id="l2-col-breaking">
+                        <!-- Items dropped here -->
+                      </div>
+                    </div>
+                    
+                    <!-- Column 2: Background -->
+                    <div class="classification-col" data-col="background">
+                      <div class="col-header col-background">🟡 BACKGROUND INFO</div>
+                      <div class="col-items" id="l2-col-background">
+                        <!-- Items dropped here -->
+                      </div>
+                    </div>
+                    
+                    <!-- Column 3: Fake/Misleading -->
+                    <div class="classification-col" data-col="fake">
+                      <div class="col-header col-fake">❌ FAKE / MISLEADING</div>
+                      <div class="col-items" id="l2-col-fake">
+                        <!-- Items dropped here -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Bottom controls -->
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                  <span id="l2-classification-status" class="gear-status-msg" style="margin-top:0;">Phân loại cả 18 thẻ để hoàn thành bài phân tích sạch.</span>
+                  <button id="l2-btn-reset-classification" class="btn-submit-qa" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.3); color:#fff; margin-top:0;">
+                    Reset bàn làm việc
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R3-06 Tổng hợp dữ kiện đã chọn lọc -->
+        <section class="slide" data-lesson="2" id="l2-classification-summary-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 3 • TỔNG HỢP KẾT QUẢ</div>
+                <h3>Sàng lọc Dữ kiện Tác nghiệp</h3>
+              </div>
+              <div class="slide-content">
+                <p>Tuyệt vời! Bạn đã hoàn thành phân loại bộ dữ kiện với kết quả chính xác:</p>
+                <ul>
+                  <li><strong style="color:var(--color-cyan);">8 thẻ Tin nóng đã giữ:</strong> Lật thuyền, Biển cảnh báo, Chuột rút khi bơi, Dòng chảy xa bờ, Áo phao, Kỹ năng tự nổi, Gọi người lớn cứu trợ, Kêu cứu khi gặp nạn.</li>
+                  <li><strong>5 thẻ Thông tin nền đã lưu trữ:</strong> Việt Nam có nhiều sông, bơi tốt cho sức khỏe, thích đi bơi mùa hè, lịch sử môn bơi, các kiểu bơi phổ biến.</li>
+                  <li><strong style="color:var(--color-red-bright);">5 thẻ Tin giả đã loại bỏ:</strong> Cục đá giúp nổi, biết bơi thì không đuối nước, tự nhảy xuống cứu ngay, uống nước muối chống chuột rút, nín thở càng lâu càng tốt.</li>
+                </ul>
+                <p><strong>Tiếp theo:</strong> Chúng ta cần sắp xếp 8 thẻ tin nóng đã giữ vào một cấu trúc logic.</p>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Flow chart from data to framework -->
+                <rect x="20" y="80" width="60" height="40" rx="4" fill="#142240" stroke="var(--color-cyan)" stroke-width="1.5"/>
+                <text x="50" y="105" font-family="sans-serif" font-size="8" fill="#fff" text-anchor="middle">LỌC TIN</text>
+                
+                <path d="M 90,100 L 125,100" stroke="var(--color-cyan)" stroke-width="2" marker-end="url(#arrow)"/>
+                
+                <rect x="140" y="80" width="100" height="60" rx="4" fill="#142240" stroke="var(--color-gold)" stroke-width="1.5"/>
+                <text x="190" y="102" font-family="sans-serif" font-size="8" fill="#fff" text-anchor="middle">XÂY KHUNG</text>
+                <text x="190" y="115" font-family="sans-serif" font-size="7" fill="rgba(255,255,255,0.6)" text-anchor="middle">Logic 4 phần</text>
+                
+                <text x="130" y="195" font-family="sans-serif" font-size="8.5" fill="var(--color-text-muted)" text-anchor="middle">Mũi tên chuyển giao sang giai đoạn lập dàn ý</text>
+              </svg>
+              <div class="graphic-caption">Sơ đồ chuyển giao từ chọn dữ kiện sang xây khung</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R4-01 Nhiệm vụ xây khung bản tin -->
+        <section class="slide" data-lesson="2" id="l2-logic-intro-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 4 • XÂY DỰNG KHUNG</div>
+                <h3>Hoạt động: Xây khung bản tin</h3>
+              </div>
+              <div class="slide-content">
+                <p>Một bản tin chất lượng không chỉ cần thông tin chính xác, mà các thông tin cần được sắp xếp theo một trật tự logic để người nghe tiếp nhận và hiểu ngay lập tức.</p>
+                <p>Chúng ta sẽ lấy 8 dữ kiện "Tin nóng" vừa lọc ở giai đoạn trước và kéo thả/click để sắp xếp chúng vào cấu trúc logic 4 phần chính của một bản tin Nova News đạt chuẩn.</p>
+                <ul>
+                  <li><strong>Hình thức:</strong> Nhóm biên tập 4 học sinh.</li>
+                  <li><strong>Thời gian:</strong> 6 phút.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Structure diagram blocks -->
+                <rect x="25" y="45" width="90" height="45" rx="3" fill="#0d1b3e" stroke="var(--color-cyan)" stroke-width="1"/>
+                <text x="70" y="72" font-family="sans-serif" font-size="9" font-weight="bold" fill="#fff" text-anchor="middle">Mở đầu (Hook)</text>
+                
+                <rect x="145" y="45" width="90" height="45" rx="3" fill="#0d1b3e" stroke="var(--color-cyan)" stroke-width="1"/>
+                <text x="190" y="72" font-family="sans-serif" font-size="9" font-weight="bold" fill="#fff" text-anchor="middle">Nguyên nhân</text>
+                
+                <rect x="25" y="115" width="90" height="45" rx="3" fill="#0d1b3e" stroke="var(--color-cyan)" stroke-width="1"/>
+                <text x="70" y="142" font-family="sans-serif" font-size="9" font-weight="bold" fill="#fff" text-anchor="middle">Giải pháp</text>
+                
+                <rect x="145" y="115" width="90" height="45" rx="3" fill="#0d1b3e" stroke="var(--color-cyan)" stroke-width="1"/>
+                <text x="190" y="142" font-family="sans-serif" font-size="9" font-weight="bold" fill="#fff" text-anchor="middle">Cảnh báo</text>
+                
+                <text x="130" y="195" font-family="sans-serif" font-size="8.5" fill="var(--color-text-muted)" text-anchor="middle">Khung xương logic 4 phần của bản tin</text>
+              </svg>
+              <div class="graphic-caption">Bản đồ cấu trúc kịch bản bản tin</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R4-02 HOW TO – Cách tổ chức thông tin -->
+        <section class="slide" data-lesson="2" id="l2-logic-how-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 4 • HƯỚNG DẪN XÂY DỰNG</div>
+                <h3>Quy trình sắp xếp kịch bản</h3>
+              </div>
+              <div class="slide-content">
+                <p>Hãy thảo luận và đặt các thẻ dữ kiện dựa trên nguyên tắc:</p>
+                <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px;">
+                  <p><strong>1. Mở đầu (Hook):</strong> Chọn thẻ nêu ra sự kiện thời sự nổi bật hoặc biển cảnh báo nguy hiểm để thu hút sự chú ý ngay.</p>
+                  <p><strong>2. Nguyên nhân (Risks):</strong> Chọn các thẻ nêu rõ tại sao việc đi bơi hoặc gần nước lại ẩn chứa hiểm họa (chuột rút, dòng chảy xa bờ).</p>
+                  <p><strong>3. Giải pháp (Prevention):</strong> Chọn các thẻ hướng dẫn kỹ năng phòng tránh thực tế (mặc áo phao, kỹ năng tự nổi cứu mạng).</p>
+                  <p><strong>4. Cảnh báo (Call to Action):</strong> Chọn thẻ kêu gọi hành động hỗ trợ khẩn cấp (kêu cứu khi gặp nạn, gọi người lớn hỗ trợ).</p>
+                </div>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Flow chart arrows -->
+                <rect x="100" y="20" width="60" height="25" rx="3" fill="#1b2a4a"/>
+                <text x="130" y="35" font-family="sans-serif" font-size="8" fill="#fff" text-anchor="middle">Mở đầu</text>
+                
+                <path d="M 130,45 L 130,65" stroke="var(--color-cyan)" stroke-width="1.5"/>
+                
+                <rect x="100" y="65" width="60" height="25" rx="3" fill="#1b2a4a"/>
+                <text x="130" y="80" font-family="sans-serif" font-size="8" fill="#fff" text-anchor="middle">Nguyên nhân</text>
+                
+                <path d="M 130,90 L 130,110" stroke="var(--color-cyan)" stroke-width="1.5"/>
+                
+                <rect x="100" y="110" width="60" height="25" rx="3" fill="#1b2a4a"/>
+                <text x="130" y="125" font-family="sans-serif" font-size="8" fill="#fff" text-anchor="middle">Giải pháp</text>
+                
+                <path d="M 130,135 L 130,155" stroke="var(--color-cyan)" stroke-width="1.5"/>
+                
+                <rect x="100" y="155" width="60" height="25" rx="3" fill="#1b2a4a"/>
+                <text x="130" y="170" font-family="sans-serif" font-size="8" fill="#fff" text-anchor="middle">Cảnh báo</text>
+              </svg>
+              <div class="graphic-caption">Chuỗi liên kết kịch bản từ trên xuống</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R4-03 Workspace khung bản tin -->
+        <section class="slide" data-lesson="2" id="l2-logic-workspace-slide">
+          <div class="slide-grid" style="grid-template-columns: 1fr;">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 4 • WORKSPACE XÂY KHUNG</div>
+                <h3>Workspace: Xây dựng khung logic kịch bản</h3>
+              </div>
+              <div class="slide-content">
+                <p>Nhấp chọn thẻ dữ kiện Breaking News bên dưới, sau đó nhấp vào ô tương ứng trong khung bản tin để đặt vị trí:</p>
+                
+                <!-- Logic Framework Workspace -->
+                <div class="framework-workspace-container">
+                  <!-- Left: 4 slots -->
+                  <div class="framework-slots-grid">
+                    <div class="framework-slot" data-slot="intro">
+                      <div class="slot-title">1. MỞ ĐẦU (Hook)</div>
+                      <div class="slot-items-container" id="l2-slot-intro">
+                        <!-- Dropped here -->
+                      </div>
+                    </div>
+                    <div class="framework-slot" data-slot="cause">
+                      <div class="slot-title">2. NGUYÊN NHÂN (Risks)</div>
+                      <div class="slot-items-container" id="l2-slot-cause">
+                        <!-- Dropped here -->
+                      </div>
+                    </div>
+                    <div class="framework-slot" data-slot="solution">
+                      <div class="slot-title">3. GIẢI PHÁP (Prevention)</div>
+                      <div class="slot-items-container" id="l2-slot-solution">
+                        <!-- Dropped here -->
+                      </div>
+                    </div>
+                    <div class="framework-slot" data-slot="warning">
+                      <div class="slot-title">4. CẢNH BÁO (Call to Action)</div>
+                      <div class="slot-items-container" id="l2-slot-warning">
+                        <!-- Dropped here -->
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Right: Cards pile -->
+                  <div class="framework-cards-pile">
+                    <h4>🎙️ Các dữ kiện khẩn cấp cần đưa vào</h4>
+                    <div class="framework-cards-list" id="l2-framework-cards-pile">
+                      <!-- Cards go here -->
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Bottom status -->
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                  <span id="l2-logic-status" class="gear-status-msg" style="margin-top:0;">Hãy đặt toàn bộ 8 thẻ vào 4 ô logic trên.</span>
+                  <button id="l2-btn-reset-logic" class="btn-submit-qa" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.3); color:#fff; margin-top:0;">
+                    Reset kịch bản
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R4-04 Chốt cấu trúc logic -->
+        <section class="slide" data-lesson="2" id="l2-logic-summary-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 4 • CHỐT LOGIC</div>
+                <h3>Bản phác thảo khung hoàn chỉnh</h3>
+              </div>
+              <div class="slide-content">
+                <p>Khung xương logic cho kịch bản bản tin của ban biên tập đã hoàn tất kiểm duyệt:</p>
+                <ul>
+                  <li><strong>Mở đầu:</strong> Nêu rõ sự kiện lật thuyền nguy hiểm và tầm quan trọng của biển cảnh báo.</li>
+                  <li><strong>Nguyên nhân:</strong> Nhấn mạnh hai nguy cơ hàng đầu là bị chuột rút khi bơi và rơi vào dòng chảy xa bờ chảy xiết.</li>
+                  <li><strong>Giải pháp:</strong> Hướng dẫn mặc áo phao cứu sinh chuẩn và luyện tập kỹ năng tự nổi ngửa đầu cứu mạng.</li>
+                  <li><strong>Cảnh báo hành động:</strong> Kêu cứu thật lớn khi gặp nguy hiểm và gọi người lớn trợ giúp cứu hộ gián tiếp.</li>
+                </ul>
+                <p><strong>Tiếp theo:</strong> Để bản tin thu hút người xem ngay từ những giây đầu, tiêu đề (Headline) của bản tin sẽ là gì?</p>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Headline edit visual -->
+                <rect x="30" y="70" width="200" height="60" rx="4" fill="#0c1932" stroke="var(--color-cyan)" stroke-width="1.5" filter="drop-shadow(0 0 5px rgba(0,242,254,0.3))"/>
+                <text x="130" y="90" font-family="sans-serif" font-size="8" fill="var(--color-gold)" text-anchor="middle" font-weight="bold" letter-spacing="1">CHỌN TIÊU ĐỀ BẢN TIN</text>
+                <!-- Simulated typing cursor -->
+                <text x="130" y="112" font-family="sans-serif" font-size="10.5" font-weight="bold" fill="#fff" text-anchor="middle">PHÒNG TRÁNH HƠN CỨU HỘ|</text>
+                
+                <text x="130" y="195" font-family="sans-serif" font-size="8.5" fill="var(--color-text-muted)" text-anchor="middle">Bảng biên soạn Headline bản tin</text>
+              </svg>
+              <div class="graphic-caption">Bảng phác thảo tiêu đề bản tin an toàn nước</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R5-01 Nhiệm vụ chọn headline -->
+        <section class="slide" data-lesson="2" id="l2-headline-intro-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 5 • CHỌN TIÊU ĐỀ</div>
+                <h3>Sức mạnh của một Headline tốt</h3>
+              </div>
+              <div class="slide-content">
+                <p>Headline (Tiêu đề) chính là "mồi câu" để giữ chân khán giả nghe tiếp bản tin. Đối với một bản tin an toàn 1 phút dành cho trẻ em, một tiêu đề tốt cần:</p>
+                <ul>
+                  <li>Ngắn gọn, gói gọn dưới 10 từ.</li>
+                  <li>Mang tính kêu gọi hành động hoặc cảnh báo ấn tượng.</li>
+                  <li>Dễ thuộc, dễ nhớ để trẻ em dễ dàng rỉ tai nhau.</li>
+                </ul>
+                <p>Hãy thảo luận và quyết định xem câu nói nào sẽ đại diện cho tinh thần bản tin của nhóm.</p>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Newspaper mockup with big headline -->
+                <rect x="40" y="30" width="180" height="150" fill="#fcfaf0" stroke="#b0bec5" stroke-width="2"/>
+                <rect x="50" y="40" width="160" height="15" fill="#37474f"/>
+                <text x="130" y="51" font-family="sans-serif" font-size="9" font-weight="950" fill="#fff" text-anchor="middle" letter-spacing="2">NOVA DAILY</text>
+                
+                <!-- Headline text placeholder -->
+                <rect x="50" y="65" width="160" height="25" fill="#e0e0e0"/>
+                <text x="130" y="80" font-family="sans-serif" font-size="11" font-weight="900" fill="#212121" text-anchor="middle">TIN NÓNG HỌC ĐƯỜNG</text>
+                
+                <!-- Columns of text simulated -->
+                <line x1="50" y1="105" x2="125" y2="105" stroke="#90a4ae" stroke-width="1.5"/>
+                <line x1="50" y1="115" x2="120" y2="115" stroke="#90a4ae" stroke-width="1.5"/>
+                <line x1="50" y1="125" x2="125" y2="125" stroke="#90a4ae" stroke-width="1.5"/>
+                <line x1="50" y1="135" x2="110" y2="135" stroke="#90a4ae" stroke-width="1.5"/>
+                
+                <rect x="135" y="105" width="75" height="50" fill="rgba(0,242,254,0.1)" stroke="var(--color-cyan)" stroke-width="1"/>
+                <text x="172.5" y="133" font-family="sans-serif" font-size="7" fill="var(--color-cyan)" text-anchor="middle">AN TOÀN NƯỚC</text>
+              </svg>
+              <div class="graphic-caption">Trang báo học đường in tin tức an toàn</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R5-02 HOW TO – Cách chốt headline -->
+        <section class="slide" data-lesson="2" id="l2-headline-how-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 5 • HƯỚNG DẪN BIÊN TẬP</div>
+                <h3>Mẹo tạo Headline hiệu quả</h3>
+              </div>
+              <div class="slide-content">
+                <p>Quy trình đề xuất cho nhóm biên tập viên:</p>
+                <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px;">
+                  <p><strong>Bước 1:</strong> Đọc lại kịch bản logic đã xây ở slide trước.</p>
+                  <p><strong>Bước 2:</strong> Rút ra một thông điệp cốt lõi cực ngắn (ví dụ: bơi tốt vẫn nguy hiểm, đề phòng là số 1).</p>
+                  <p><strong>Bước 3:</strong> Lựa chọn 1 tiêu đề trong danh mục mẫu hoặc tự biên soạn một câu tiêu đề riêng, thể hiện phong cách tác nghiệp độc đáo của nhóm.</p>
+                  <p><strong>Bước 4:</strong> Bình chọn để gửi ý kiến lên hệ thống tin tức tòa soạn.</p>
+                </div>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Target icon with arrows -->
+                <circle cx="130" cy="100" r="40" fill="none" stroke="var(--color-cyan)" stroke-width="2"/>
+                <circle cx="130" cy="100" r="25" fill="none" stroke="var(--color-cyan)" stroke-width="1.5" stroke-dasharray="4,2"/>
+                <circle cx="130" cy="100" r="8" fill="var(--color-red)"/>
+                
+                <line x1="60" y1="100" x2="90" y2="100" stroke="var(--color-cyan)" stroke-width="2" marker-end="url(#arrow)"/>
+                <line x1="200" y1="100" x2="170" y2="100" stroke="var(--color-cyan)" stroke-width="2"/>
+                <line x1="130" y1="30" x2="130" y2="60" stroke="var(--color-cyan)" stroke-width="2"/>
+                <line x1="130" y1="170" x2="130" y2="140" stroke="var(--color-cyan)" stroke-width="2"/>
+                
+                <text x="130" y="195" font-family="sans-serif" font-size="8.5" fill="var(--color-text-muted)" text-anchor="middle">Mục tiêu: Đánh trúng trọng tâm thông điệp</text>
+              </svg>
+              <div class="graphic-caption">Sơ đồ nhắm mục tiêu thông điệp cốt lõi</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R5-03 Gợi ý headline -->
+        <section class="slide" data-lesson="2" id="l2-headline-suggestions-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 5 • LỰA CHỌN HEADLINE</div>
+                <h3>Lựa chọn Headline cho bản tin của bạn</h3>
+              </div>
+              <div class="slide-content">
+                <p>Chọn 1 tiêu đề mẫu thích hợp hoặc tự viết tiêu đề mới:</p>
+                
+                <div class="headline-poll-container" style="display:flex; flex-direction:column; gap:12px; margin:15px 0;">
+                  <div class="headline-option-card" data-headline="h1">
+                    <span class="option-marker">A</span>
+                    <strong>“Phòng tránh luôn tốt hơn cứu hộ”</strong>
+                  </div>
+                  <div class="headline-option-card" data-headline="h2">
+                    <span class="option-marker">B</span>
+                    <strong>“Đừng chủ quan với nước”</strong>
+                  </div>
+                  <div class="headline-option-card" data-headline="h3">
+                    <span class="option-marker">C</span>
+                    <strong>“Biết bơi không có nghĩa là luôn an toàn”</strong>
+                  </div>
+                  <div class="headline-option-card" data-headline="custom">
+                    <span class="option-marker">D</span>
+                    <div style="flex:1;">
+                      <strong style="display:block; margin-bottom:5px;">Tự viết Headline của nhóm:</strong>
+                      <input type="text" id="l2-custom-headline-input" class="input-field" placeholder="Nhập tiêu đề tự chế tại đây..." style="padding:6px 12px; font-size:0.9rem;">
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <button id="l2-btn-submit-headline" class="btn-submit-qa" style="padding: 10px 24px;">
+                    BẦU CHỌN & GỬI LÊN TÒA SOẠN
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Megaphone announcing headline -->
+                <path d="M50,110 L90,110 L120,80 L140,80 L140,140 L120,140 L90,110 Z" fill="#142240" stroke="var(--color-cyan)" stroke-width="2"/>
+                <path d="M140,100 Q160,80 180,100 Q200,80 220,100" fill="none" stroke="var(--color-cyan)" stroke-width="2"/>
+                <path d="M140,110 Q165,95 190,110" fill="none" stroke="var(--color-cyan)" stroke-width="1.5"/>
+                <!-- Megaphone handle -->
+                <rect x="85" y="110" width="10" height="25" rx="2" fill="#37474f" transform="rotate(20 85 110)"/>
+                
+                <text x="130" y="195" font-family="sans-serif" font-size="8.5" fill="var(--color-text-muted)" text-anchor="middle">Biểu tượng truyền thanh đại chúng</text>
+              </svg>
+              <div class="graphic-caption">Minh họa loa phóng thanh bản tin khẩn</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R5-04 Bỏ phiếu headline mạnh nhất -->
+        <section class="slide" data-lesson="2" id="l2-headline-vote-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 5 • KẾT QUẢ TRƯNG CẦU</div>
+                <h3>Bảng thống kê phiếu bầu Headline</h3>
+              </div>
+              <div class="slide-content">
+                <p>Hệ thống Nova News vừa ghi nhận phiếu bầu của nhóm bạn. Dưới đây là thống kê biểu quyết từ các chi nhánh ban biên tập học đường khác:</p>
+                
+                <!-- Live voting bars -->
+                <div class="vote-chart-container" style="display:flex; flex-direction:column; gap:15px; margin:20px 0;">
+                  <div class="vote-bar-row">
+                    <div class="vote-bar-label">Phòng tránh tốt hơn cứu hộ:</div>
+                    <div class="vote-bar-track">
+                      <div class="vote-bar-fill" id="l2-vote-fill-h1" style="width: 0%;"></div>
+                    </div>
+                    <div class="vote-bar-percentage" id="l2-vote-val-h1">0%</div>
+                  </div>
+                  <div class="vote-bar-row">
+                    <div class="vote-bar-label">Đừng chủ quan với nước:</div>
+                    <div class="vote-bar-track">
+                      <div class="vote-bar-fill" id="l2-vote-fill-h2" style="width: 0%;"></div>
+                    </div>
+                    <div class="vote-bar-percentage" id="l2-vote-val-h2">0%</div>
+                  </div>
+                  <div class="vote-bar-row">
+                    <div class="vote-bar-label">Biết bơi chưa chắc đã an toàn:</div>
+                    <div class="vote-bar-track">
+                      <div class="vote-bar-fill" id="l2-vote-fill-h3" style="width: 0%;"></div>
+                    </div>
+                    <div class="vote-bar-percentage" id="l2-vote-val-h3">0%</div>
+                  </div>
+                  <div class="vote-bar-row" id="l2-custom-vote-row" style="display:none;">
+                    <div class="vote-bar-label" id="l2-custom-vote-label">Headline tự chế:</div>
+                    <div class="vote-bar-track">
+                      <div class="vote-bar-fill" id="l2-vote-fill-custom" style="width: 0%;"></div>
+                    </div>
+                    <div class="vote-bar-percentage" id="l2-vote-val-custom">0%</div>
+                  </div>
+                </div>
+                
+                <p style="font-size:0.9rem; color:var(--color-success);">✓ Tiêu đề đã được chốt và ghim vào kịch bản bản thảo của bạn!</p>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Statistics bar chart graphic -->
+                <line x1="40" y1="160" x2="220" y2="160" stroke="#fff" stroke-width="2"/>
+                <line x1="40" y1="40" x2="40" y2="160" stroke="#fff" stroke-width="2"/>
+                
+                <!-- 3 Bar graphics -->
+                <rect x="65" y="80" width="25" height="80" fill="var(--color-cyan)" rx="2" style="animation: growBar 1.5s ease;"/>
+                <rect x="115" y="50" width="25" height="110" fill="var(--color-gold)" rx="2" style="animation: growBar 2s ease;"/>
+                <rect x="165" y="70" width="25" height="90" fill="rgba(0, 242, 254, 0.4)" rx="2" style="animation: growBar 1.8s ease;"/>
+                
+                <text x="77" y="175" font-family="sans-serif" font-size="8" fill="#fff" text-anchor="middle">H1</text>
+                <text x="127" y="175" font-family="sans-serif" font-size="8" fill="#fff" text-anchor="middle">H2</text>
+                <text x="177" y="175" font-family="sans-serif" font-size="8" fill="#fff" text-anchor="middle">H3</text>
+              </svg>
+              <div class="graphic-caption">Biểu đồ bầu chọn của ban biên tập học đường</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R5-05 Chốt thông điệp chính -->
+        <section class="slide" data-lesson="2" id="l2-headline-summary-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 5 • KẾT LUẬN TIÊU ĐỀ</div>
+                <h3>Tiêu đề Bản tin Chính Thức</h3>
+              </div>
+              <div class="slide-content" style="max-width: 750px; margin:0 auto;">
+                <p>Ban biên tập quyết định ghim Headline chính thức sau đây lên đầu bản thảo bản tin:</p>
+                <div class="success-banner" style="background:rgba(255,143,0,0.08); border-color:var(--color-gold); padding:25px; margin:25px 0;">
+                  <span id="l2-final-headline-display" style="font-size:1.8rem; font-weight:900; color:var(--color-gold); text-align:center; display:block; letter-spacing:0.05em;">
+                    “BIẾT BƠI CHƯA CHẮC ĐÃ AN TOÀN”
+                  </span>
+                </div>
+                <p>Một tiêu đề tốt sẽ giúp tập trung sự chú ý tối đa của người nghe. Tiếp theo, hãy biên soạn bản thảo nội dung chi tiết bản tin!</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R6-01 Nhiệm vụ viết bản thảo bản tin -->
+        <section class="slide" data-lesson="2" id="l2-draft-intro-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 6 • VIẾT BẢN THẢO</div>
+                <h3>Kịch bản Bản Tin 1 Phút</h3>
+              </div>
+              <div class="slide-content">
+                <p>Đã đến lúc lắp ghép tất cả các thành phần chúng ta đã chuẩn bị thành một kịch bản bản tin phát sóng 1 phút hoàn chỉnh.</p>
+                <p>Kịch bản bản thảo của bạn cần đáp ứng cấu trúc:</p>
+                <ul>
+                  <li><strong>Opening:</strong> Lời dẫn mở đầu (Hook) gây chú ý khẩn cấp.</li>
+                  <li><strong>Main News:</strong> Các thông tin nguy hiểm (chuột rút, dòng chảy) và cách xử lý (áo phao, tự nổi).</li>
+                  <li><strong>Closing:</strong> Câu chốt ấn tượng (chính là Headline đã được chọn) kèm lời kêu gọi hành động cụ thể.</li>
+                  <li><strong>Icon minh họa:</strong> Chỉ dẫn hình ảnh hỗ trợ để phát sóng.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Script paper with sections -->
+                <rect x="50" y="30" width="160" height="160" rx="4" fill="#fff" stroke="#90a4ae" stroke-width="2"/>
+                <rect x="50" y="30" width="160" height="25" fill="var(--color-cyan)" rx="2"/>
+                <text x="130" y="46" font-family="sans-serif" font-size="8" font-weight="bold" fill="#040914" text-anchor="middle">BẢN THẢO PHÁT SÓNG</text>
+                
+                <text x="60" y="75" font-family="sans-serif" font-size="7" font-weight="bold" fill="var(--color-red-bright)">[OPENING]</text>
+                <line x1="60" y1="85" x2="200" y2="85" stroke="#ccc" stroke-width="1.5"/>
+                
+                <text x="60" y="105" font-family="sans-serif" font-size="7" font-weight="bold" fill="var(--color-cyan)">[MAIN NEWS]</text>
+                <line x1="60" y1="115" x2="200" y2="115" stroke="#ccc" stroke-width="1.5"/>
+                <line x1="60" y1="125" x2="190" y2="125" stroke="#ccc" stroke-width="1.5"/>
+                
+                <text x="60" y="145" font-family="sans-serif" font-size="7" font-weight="bold" fill="var(--color-gold)">[CLOSING]</text>
+                <line x1="60" y1="155" x2="200" y2="155" stroke="#ccc" stroke-width="1.5"/>
+              </svg>
+              <div class="graphic-caption">Cấu trúc 3 phần của bản thảo bản tin an toàn nước</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R6-02 HOW TO – Cách viết bản thảo bản tin -->
+        <section class="slide" data-lesson="2" id="l2-draft-how-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 6 • HƯỚNG DẪN BIÊN SOẠN</div>
+                <h3>Quy trình biên soạn bản thảo</h3>
+              </div>
+              <div class="slide-content">
+                <p>Hãy tuân thủ quy trình 4 bước để hoàn tất bản thảo:</p>
+                <div style="display:flex; flex-direction:column; gap:10px; margin-top:10px;">
+                  <p><strong>Bước 1:</strong> Dùng khung logic của giai đoạn 4 để tổ chức thông tin.</p>
+                  <p><strong>Bước 2:</strong> Chọn câu dẫn Opening thu hút, thể hiện mức độ nguy hiểm hoặc thời sự.</p>
+                  <p><strong>Bước 3:</strong> Tích chọn các dữ kiện an toàn nước cốt lõi cần phải đọc lên trong bản tin.</p>
+                  <p><strong>Bước 4:</strong> Lựa chọn các biểu tượng hình ảnh an toàn phù hợp để gắn lên góc bản tin trên tivi.</p>
+                </div>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Pencil writing on paper -->
+                <rect x="50" y="40" width="130" height="140" rx="3" fill="#fff" stroke="#ccc" stroke-width="1.5"/>
+                <line x1="65" y1="65" x2="165" y2="65" stroke="#777" stroke-width="1.5"/>
+                <line x1="65" y1="80" x2="155" y2="80" stroke="#777" stroke-width="1.5"/>
+                <line x1="65" y1="95" x2="165" y2="95" stroke="#777" stroke-width="1.5"/>
+                
+                <g transform="translate(140, 70) rotate(-35)">
+                  <!-- Pencil -->
+                  <rect x="0" y="0" width="10" height="80" fill="var(--color-gold)" rx="2"/>
+                  <polygon points="0,0 5,-15 10,0" fill="#f5c5a3"/>
+                  <polygon points="3,-9 5,-15 7,-9" fill="#000"/>
+                  <rect x="0" y="70" width="10" height="10" fill="#e91e63" rx="1"/> <!-- eraser -->
+                </g>
+              </svg>
+              <div class="graphic-caption">Biểu tượng biên soạn kịch bản phát sóng</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R6-03 Workspace hoàn thiện bản thảo -->
+        <section class="slide" data-lesson="2" id="l2-draft-workspace-slide">
+          <div class="slide-grid" style="grid-template-columns: 1fr;">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 6 • WORKSPACE BẢN THẢO</div>
+                <h3>Bàn Biên Tập: Thiết kế kịch bản phát sóng 60 giây</h3>
+              </div>
+              <div class="slide-content">
+                <p>Hãy hoàn thiện kịch bản nói bằng cách điền thông tin và lựa chọn các thành phần dưới đây:</p>
+                
+                <!-- Script Designer Form -->
+                <div class="script-designer-container">
+                  <div class="designer-form-column">
+                    <!-- Headline display (read-only) -->
+                    <div class="form-group">
+                      <label>Headline (Tiêu đề đã chọn):</label>
+                      <div class="input-display" id="l2-draft-headline-display">...</div>
+                    </div>
+                    
+                    <!-- Opening Hook Selector -->
+                    <div class="form-group">
+                      <label for="l2-draft-opening">1. Chọn Lời dẫn mở đầu (Opening Hook):</label>
+                      <select id="l2-draft-opening" class="input-field" style="background:#0c1932; border-color:rgba(0,242,254,0.3);">
+                        <option value="">-- Chọn câu mở đầu gây chú ý --</option>
+                        <option value="hook1">🚨 Cảnh báo khẩn cấp từ hiện trường: Số vụ đuối nước học đường đang gia tăng ở mức nguy hiểm!</option>
+                        <option value="hook2">🌊 Bạn có biết, những dòng sông tĩnh lặng lại ẩn chứa hiểm họa vô cùng đáng sợ đối với học sinh?</option>
+                        <option value="hook3">🎙️ Bản tin Nova News hôm nay xin gửi tới các bạn cảnh báo đặc biệt về an toàn dưới nước!</option>
+                      </select>
+                    </div>
+                    
+                    <!-- Main News Selection -->
+                    <div class="form-group">
+                      <label>2. Tích chọn 3 dữ kiện quan trọng đưa vào tin chính (Main News):</label>
+                      <div class="checkboxes-list-wrapper">
+                        <label class="checkbox-container-custom">
+                          <input type="checkbox" name="main_news_fact" value="fact1">
+                          <span>🦺 Mặc áo phao chuẩn giúp bảo vệ cơ thể và giảm 90% nguy cơ đuối nước.</span>
+                        </label>
+                        <label class="checkbox-container-custom">
+                          <input type="checkbox" name="main_news_fact" value="fact2">
+                          <span>🏊 Kỹ năng tự nổi cứu mạng giúp cơ thể nổi ngửa, tiết kiệm sức khi chờ cứu nạn.</span>
+                        </label>
+                        <label class="checkbox-container-custom">
+                          <input type="checkbox" name="main_news_fact" value="fact3">
+                          <span>🌀 Chuột rút đột ngột và dòng chảy xa bờ chảy xiết là 2 tác nhân gây đuối nước chính.</span>
+                        </label>
+                        <label class="checkbox-container-custom">
+                          <input type="checkbox" name="main_news_fact" value="fact4">
+                          <span>🚩 Luôn quan sát biển cảnh báo và tuyệt đối không chơi ở vùng nước sâu trơn trượt.</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="designer-visuals-column">
+                    <!-- Icon selection -->
+                    <div class="form-group">
+                      <label>3. Chọn các icon cảnh báo hiển thị trên góc màn hình tivi:</label>
+                      <div class="icons-select-grid">
+                        <div class="icon-select-card" data-icon="warning">⚠️ Cảnh báo</div>
+                        <div class="icon-select-card" data-icon="vest">🦺 Áo phao</div>
+                        <div class="icon-select-card" data-icon="swimmer">🏊 Tự nổi</div>
+                        <div class="icon-select-card" data-icon="phone">📞 Gọi cứu hộ</div>
+                      </div>
+                    </div>
+                    
+                    <!-- Simulated action -->
+                    <div style="margin-top: 30px; text-align: center;">
+                      <button id="l2-btn-compile-draft" class="btn-action" style="background: linear-gradient(90deg, var(--color-success) 0%, #00c853 100%); color:#040914; box-shadow: 0 0 15px rgba(0, 230, 118, 0.4); font-size:1.1rem; width:100%;">
+                        XUẤT KỊCH BẢN PHÁT SÓNG ⚙️
+                      </button>
+                    </div>
+                    
+                    <div id="l2-compile-success" class="gear-status-msg" style="display:none; color:var(--color-success); text-align:center;">
+                      ✓ Kịch bản bản tin đã được tổng hợp thành công! Nhấn "Tiếp theo" để phát sóng.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R6-04 Chia sẻ bản thảo -->
+        <section class="slide" data-lesson="2" id="l2-draft-broadcast-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 6 • PHÒNG PHÁT SÓNG</div>
+                <h3>Bản tin 1 Phút của bạn đang phát sóng</h3>
+              </div>
+              <div class="slide-content">
+                <p>Kịch bản bản thảo của nhóm bạn đang được phát trực tiếp trên kênh truyền hình học đường <strong>Nova News</strong>:</p>
+                
+                <!-- Teleprompter Screen Mockup -->
+                <div class="teleprompter-screen" id="l2-teleprompter-box">
+                  <!-- Generated script will go here -->
+                </div>
+                
+                <p style="margin-top:15px; font-size:0.9rem;">Bản tin đã được tuyên truyền thành công đến toàn trường học!</p>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#020712; padding:0; min-height:280px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+              <!-- Simulated TV player frame -->
+              <div class="tv-player-frame">
+                <!-- Anchor MC avatar -->
+                <div class="tv-anchor-box">
+                  <div class="tv-anchor-silhouette">🎙️</div>
+                  <div class="tv-anchor-name-tag">MC NOVA NEWS</div>
+                </div>
+                <!-- Selected floating icons overlay -->
+                <div class="tv-floating-icons" id="l2-tv-overlay-icons">
+                  <!-- icons populated by JS -->
+                </div>
+                <!-- Banner ticker -->
+                <div class="tv-lower-third">
+                  <div class="tv-news-title" id="l2-tv-headline">BẢN TIN AN TOÀN NƯỚC</div>
+                </div>
+              </div>
+              <div class="graphic-caption">Màn hình phát sóng tivi trực tuyến Nova News</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R7-01 1 phút nhìn lại -->
+        <section class="slide" data-lesson="2" id="l2-reflection-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 7 • PHẢN TƯ CÁ NHÂN</div>
+                <h3>Nhật ký Biên Tập Viên</h3>
+              </div>
+              <div class="slide-content">
+                <p>Trước khi kết thúc ca làm việc tại tòa soạn, hãy ghi chép nhanh bài học kinh nghiệm của bạn hôm nay:</p>
+                <div class="discussion-container" style="margin-top:15px;">
+                  <div class="qa-card" style="padding:15px;">
+                    <label for="l2-input-reflect1">1. Bài học quan trọng nhất em rút ra về việc chọn lọc thông tin cứu nạn là:</label>
+                    <textarea id="l2-input-reflect1" class="input-field" rows="2" placeholder="Ghi chú lại suy nghĩ của bạn..."></textarea>
+                  </div>
+                  <div class="qa-card" style="padding:15px;">
+                    <label for="l2-input-reflect2">2. Một thói quen sai lầm trước đây em đã biết và sẽ sửa đổi là:</label>
+                    <textarea id="l2-input-reflect2" class="input-field" rows="2" placeholder="Ghi chú lại suy nghĩ của bạn..."></textarea>
+                  </div>
+                  <button id="l2-btn-submit-reflect" class="btn-submit-qa">LƯU NHẬT KÝ PHẢN TƯ</button>
+                  <div id="l2-reflect-success-msg" class="feedback-success">
+                    <span>✓ Nhật ký biên tập viên đã lưu trữ thành công! Bấm nút "Tiếp theo" ở dưới để chốt cảnh báo hành động.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Diary book overlay -->
+                <path d="M50,40 L210,40 L210,180 L50,180 Z" fill="#fff" stroke="var(--color-cyan)" stroke-width="2"/>
+                <rect x="50" y="40" width="15" height="140" fill="var(--color-cyan)"/>
+                <!-- Ring bounds of diary binder -->
+                <ellipse cx="50" cy="60" rx="6" ry="3" fill="none" stroke="#666" stroke-width="1.5"/>
+                <ellipse cx="50" cy="90" rx="6" ry="3" fill="none" stroke="#666" stroke-width="1.5"/>
+                <ellipse cx="50" cy="120" rx="6" ry="3" fill="none" stroke="#666" stroke-width="1.5"/>
+                <ellipse cx="50" cy="150" rx="6" ry="3" fill="none" stroke="#666" stroke-width="1.5"/>
+                
+                <line x1="80" y1="70" x2="180" y2="70" stroke="#777" stroke-width="1.5"/>
+                <line x1="80" y1="90" x2="170" y2="90" stroke="#777" stroke-width="1.5"/>
+                <line x1="80" y1="110" x2="180" y2="110" stroke="#777" stroke-width="1.5"/>
+                <line x1="80" y1="130" x2="160" y2="130" stroke="#777" stroke-width="1.5"/>
+                
+                <text x="130" y="195" font-family="sans-serif" font-size="8.5" fill="var(--color-text-muted)" text-anchor="middle">Sổ nhật ký suy ngẫm học tập</text>
+              </svg>
+              <div class="graphic-caption">Trang nhật ký phản tư của học sinh</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R7-02 Điều biên tập viên rút ra -->
+        <section class="slide" data-lesson="2" id="l2-reflection-summary-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 7 • KẾT LUẬN PHẢN TƯ</div>
+                <h3>Bài Học Lớn Nhất</h3>
+              </div>
+              <div class="slide-content" style="max-width:700px; margin:0 auto;">
+                <p style="font-size: 1.35rem; color: #fff; line-height: 1.6;">
+                  “Nói nhiều không bằng nói đúng. Để giúp người khác bảo vệ mạng sống trong gang tấc dưới nước, thông điệp cần cực kỳ ngắn gọn, sắc bén và đi thẳng vào hành động thực tế.”
+                </p>
+                <div class="success-banner" style="background:rgba(0, 230, 118, 0.08); border-color:var(--color-success); justify-content:center; margin:30px 0;">
+                  <span>✓ CHÚNG TA ĐÃ THẤU HIỂU NGUYÊN TẮC TRUYỀN THÔNG CỨU NGƯỜI!</span>
+                </div>
+                <p>Bây giờ, hãy tự cô đọng kiến thức thành một câu khuyên cảnh báo cá nhân của bạn.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R8-01 1 câu cảnh báo -->
+        <section class="slide" data-lesson="2" id="l2-adaptation-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 8 • CẢNH BÁO CÁ NHÂN</div>
+                <h3>Một Câu Cảnh Báo Cứu Mạng</h3>
+              </div>
+              <div class="slide-content">
+                <p>Nếu gặp một em nhỏ đang đi chơi gần bờ sông, bờ suối, bờ ao trơn trượt có nguy cơ cao xảy ra đuối nước, bạn chỉ được nói duy nhất 1 câu ngắn gọn để ngăn em nhỏ lại. Bạn sẽ khuyên điều gì?</p>
+                
+                <div class="discussion-container" style="margin-top:15px;">
+                  <div class="qa-card" style="padding:15px;">
+                    <label for="l2-input-warning">Lời khuyên khẩn cấp của em:</label>
+                    <input type="text" id="l2-input-warning" class="input-field" placeholder="Ví dụ: Em hãy mặc áo phao và tránh xa vùng nước sâu trơn trượt nhé!">
+                  </div>
+                  <div class="qa-card" style="padding:15px;">
+                    <label for="l2-input-warning-reason">Giải thích vì sao em chọn câu này:</label>
+                    <input type="text" id="l2-input-warning-reason" class="input-field" placeholder="Ví dụ: Vì câu này vừa có lời khuyên an toàn vừa nhắc nhở mặc áo phao ngay.">
+                  </div>
+                  
+                  <button id="l2-btn-submit-warning" class="btn-submit-qa">LƯU CÂU CẢNH BÁO CỨU MẠNG</button>
+                  
+                  <div id="l2-warning-success-msg" class="feedback-success">
+                    <span>✓ Lời cảnh báo của bạn đã được in và sẵn sàng lan tỏa! Nhấn "Tiếp theo" để tổng kết.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Bubble conversation warning -->
+                <path d="M30,50 L230,50 C240,50 240,60 240,65 L240,135 C240,140 230,150 220,150 L140,150 L110,175 L110,150 L30,150 C20,150 20,140 20,135 L20,65 C20,60 20,50 30,50 Z" fill="rgba(0, 242, 254, 0.08)" stroke="var(--color-cyan)" stroke-width="2"/>
+                <text x="130" y="85" font-family="sans-serif" font-size="10" font-weight="900" fill="var(--color-gold)" text-anchor="middle" letter-spacing="1">LỜI KHUYÊN KHẨN CẤP</text>
+                <!-- Simulated quote marks -->
+                <text x="130" y="115" font-family="sans-serif" font-size="12" font-style="italic" font-weight="bold" fill="#fff" text-anchor="middle">“Phòng tránh luôn tốt hơn cứu hộ!”</text>
+                
+                <text x="130" y="195" font-family="sans-serif" font-size="8.5" fill="var(--color-text-muted)" text-anchor="middle">Bong bóng thông điệp kêu gọi hành động</text>
+              </svg>
+              <div class="graphic-caption">Bảng ghi lời cảnh báo an toàn cá nhân</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- R8-02 Chia sẻ cảnh báo an toàn -->
+        <section class="slide" data-lesson="2" id="l2-adaptation-summary-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">GIAI ĐOẠN 8 • LAN TỎA THÔNG ĐIỆP</div>
+                <h3>Sức mạnh của Sự Lan Tỏa</h3>
+              </div>
+              <div class="slide-content">
+                <p>Một câu nói cảnh báo đúng thời điểm có giá trị bằng cả ngàn lời kêu cứu khi tai nạn đã xảy ra.</p>
+                <p>Hãy chia sẻ lời khuyên an toàn nước này với:</p>
+                <ul>
+                  <li>Các em nhỏ trong gia đình hoặc hàng xóm xung quanh.</li>
+                  <li>Bạn bè học sinh cùng lớp khi đi dã ngoại hay đi chơi mùa hè.</li>
+                  <li>Nhắc nhở bố mẹ chuẩn bị áo phao tiêu chuẩn mỗi khi đi bơi, đi thuyền du lịch.</li>
+                </ul>
+                <p>Hành động nhỏ của bạn chính là ngọn hải đăng bảo vệ cuộc sống của mọi người.</p>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Lighthouse scattering light rays -->
+                <path d="M115,160 L145,160 L135,70 L125,70 Z" fill="#37474f" stroke="#fff" stroke-width="1"/>
+                <rect x="123" y="60" width="14" height="10" fill="#cfd8dc" stroke="#fff" stroke-width="1"/>
+                <circle cx="130" cy="65" r="3" fill="var(--color-gold)" filter="drop-shadow(0 0 5px #fff)"/>
+                
+                <!-- Light rays -->
+                <polygon points="127,65 133,65 240,20 240,110" fill="var(--color-cyan)" opacity="0.15"/>
+                <polygon points="127,65 133,65 20,20 20,110" fill="var(--color-cyan)" opacity="0.15"/>
+                
+                <!-- Waves at bottom -->
+                <path d="M20,180 Q80,170 140,180 Q200,190 240,180" fill="none" stroke="var(--color-cyan)" stroke-width="1.5"/>
+                <path d="M20,190 Q80,185 140,190 Q200,195 240,190" fill="none" stroke="var(--color-cyan)" stroke-width="1" opacity="0.6"/>
+              </svg>
+              <div class="graphic-caption">Hải đăng lan tỏa ánh sáng an toàn</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- END-01 Nội dung cốt lõi -->
+        <section class="slide" data-lesson="2" id="l2-final-cores-slide">
+          <div class="slide-grid">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">KẾT BÀI • TRỌNG TÂM</div>
+                <h3>Tổng Kết Kiến Thức & Kỹ Năng</h3>
+              </div>
+              <div class="slide-content">
+                <p>Sau Tiết học 2, chúng ta đã tích lũy được bộ hành trang quan trọng:</p>
+                <div style="display:flex; gap:15px; margin-top:15px;">
+                  <div class="qa-card" style="flex:1; padding:15px;">
+                    <h4 style="color:var(--color-cyan); margin-bottom:8px; font-size:0.95rem;">💡 KIẾN THỨC CỐT LÕI</h4>
+                    <p style="font-size:0.85rem; line-height:1.5; color:var(--color-text-secondary);">
+                      Hiểu được nguy hại của quá tải thông tin; nắm vững cấu trúc logic bản tin; nhận diện tin đúng/sai khoa học cứu hộ.
+                    </p>
+                  </div>
+                  <div class="qa-card" style="flex:1; padding:15px;">
+                    <h4 style="color:var(--color-gold); margin-bottom:8px; font-size:0.95rem;">🛠️ KỸ NĂNG CỐT LÕI</h4>
+                    <p style="font-size:0.85rem; line-height:1.5; color:var(--color-text-secondary);">
+                      Chọn lọc thông tin cứu nạn; sắp xếp khung cấu trúc logic; viết headline ngắn gọn và hoàn thiện bản thảo kịch bản.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-graphic" style="background:#040d1c; padding:20px; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <rect width="260" height="220" fill="#040d1c" rx="8"/>
+                <!-- Folder compilation of documents -->
+                <path d="M40,50 L90,50 L105,65 L220,65 L220,170 L40,170 Z" fill="#0c1932" stroke="var(--color-cyan)" stroke-width="1.5" filter="drop-shadow(0 0 8px rgba(0,242,254,0.25))"/>
+                <!-- Documents inside folder -->
+                <rect x="60" y="80" width="120" height="70" rx="3" fill="#fff" opacity="0.8"/>
+                <rect x="70" y="90" width="120" height="70" rx="3" fill="#fff"/>
+                
+                <line x1="85" y1="105" x2="175" y2="105" stroke="#444" stroke-width="2"/>
+                <line x1="85" y1="115" x2="165" y2="115" stroke="#777" stroke-width="1.5"/>
+                <line x1="85" y1="127" x2="170" y2="127" stroke="#777" stroke-width="1.5"/>
+                
+                <text x="130" y="195" font-family="sans-serif" font-size="8.5" fill="var(--color-text-muted)" text-anchor="middle">Hồ sơ bản tin đã đóng gói thành công</text>
+              </svg>
+              <div class="graphic-caption">Bìa hồ sơ báo chí lưu trữ bản tin</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- END-02 Sản phẩm cuối & Big Question Revisit -->
+        <section class="slide" data-lesson="2" id="l2-final-products-slide">
+          <div class="slide-grid centered">
+            <div class="slide-info">
+              <div class="slide-header">
+                <div class="slide-phase">CHÚC MỪNG BIÊN TẬP VIÊN ĐÃ HOÀN THÀNH</div>
+                <h3>Kịch bản Phát sóng Đã Sẵn Sàng!</h3>
+              </div>
+              <div class="slide-content" style="max-width: 700px; margin: 0 auto;">
+                <div style="margin: 20px auto; width: 120px; height: 120px; background: radial-gradient(circle, var(--color-cyan) 0%, #0097a7 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 25px rgba(0,242,254,0.6); border: 4px solid #fff;">
+                  <span style="font-size: 3.5rem;">🎤</span>
+                </div>
+                <h4 style="color: var(--color-cyan); font-size: 1.5rem; margin-bottom: 15px;">HUY HIỆU BIÊN TẬP VIÊN TỔNG HỢP</h4>
+                <p style="font-size: 1.1rem; line-height: 1.6;">
+                  Em đã xuất sắc hoàn thành vai trò Biên tập viên tổng hợp của tòa soạn Nova News, hoàn thiện bản thảo kịch bản phát sóng 60 giây và lan tỏa lời khuyên cứu mạng!
+                </p>
+                <div class="success-banner" style="background: rgba(0, 230, 118, 0.08); border-color: var(--color-success); justify-content: center; margin: 25px 0;">
+                  <span style="font-weight: 700; color: #fff;">💡 TRẢ LỜI BIG QUESTION: Bản tin khẩn cấp 1 phút cần truyền tải thông tin đúng đắn, cấu trúc logic dễ thuộc, dễ nhớ để giúp trẻ em hành động an toàn.</span>
+                </div>
+                <button class="btn-action" style="background: linear-gradient(90deg, var(--color-cyan) 0%, #0097a7 100%); color:#040914; box-shadow:var(--shadow-glow);" onclick="playSound('click'); exitToDashboard();">TRỞ VỀ TRANG CHỦ NOVA NEWS</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
       </div>
 
@@ -2560,7 +3997,8 @@
         <button class="btn-close-sidebar" id="btn-close-sidebar" aria-label="Đóng danh mục">✕</button>
       </div>
       <div class="sidebar-content">
-        <!-- Chapter 1 -->
+        <div id="lesson-1-sidebar-chapters">
+<!-- Chapter 1 -->
         <div class="sidebar-chapter">
           <div class="chapter-title">Chương 1: Khởi động & Nhiệm vụ</div>
           <div class="chapter-items">
@@ -2632,9 +4070,92 @@
             <a href="#" class="sidebar-item" data-slide="29">Slide 30: Hoàn thành & Nhận cúp</a>
           </div>
         </div>
+        </div>
+
+        <div id="lesson-2-sidebar-chapters" style="display: none;">
+          <!-- Chapter 1 -->
+          <div class="sidebar-chapter">
+            <div class="chapter-title">Chương 1: Khởi động & Nhiệm vụ</div>
+            <div class="chapter-items">
+              <a href="#" class="sidebar-item active" data-slide="0">Slide 1: Trang bìa</a>
+              <a href="#" class="sidebar-item" data-slide="1">Slide 2: Nhiệm vụ học tập</a>
+            </div>
+          </div>
+          <!-- Chapter 2 -->
+          <div class="sidebar-chapter">
+            <div class="chapter-title">Chương 2: Nhận biết vấn đề</div>
+            <div class="chapter-items">
+              <a href="#" class="sidebar-item" data-slide="2">Slide 3: Tin nhanh 60 giây</a>
+              <a href="#" class="sidebar-item" data-slide="3">Slide 4: Câu hỏi thảo luận</a>
+              <a href="#" class="sidebar-item" data-slide="4">Slide 5: Chốt vấn đề biên tập</a>
+              <a href="#" class="sidebar-item" data-slide="5">Slide 6: Nhận nhiệm vụ tòa soạn</a>
+              <a href="#" class="sidebar-item" data-slide="6">Slide 7: Checklist bản tin tốt</a>
+            </div>
+          </div>
+          <!-- Chapter 3 -->
+          <div class="sidebar-chapter">
+            <div class="chapter-title">Chương 3: Chọn lọc dữ kiện</div>
+            <div class="chapter-items">
+              <a href="#" class="sidebar-item" data-slide="7">Slide 8: Giữ hay loại?</a>
+              <a href="#" class="sidebar-item" data-slide="8">Slide 9: Cách chọn lọc dữ kiện</a>
+              <a href="#" class="sidebar-item" data-slide="9">Slide 10: Ba cột phân loại</a>
+              <a href="#" class="sidebar-item" data-slide="10">Slide 11: Mẫu thẻ thông tin</a>
+              <a href="#" class="sidebar-item" data-slide="11">Slide 12: Phân loại dữ kiện (18 thẻ)</a>
+              <a href="#" class="sidebar-item" data-slide="12">Slide 13: Tổng hợp dữ kiện</a>
+            </div>
+          </div>
+          <!-- Chapter 4 -->
+          <div class="sidebar-chapter">
+            <div class="chapter-title">Chương 4: Tổ chức thông tin</div>
+            <div class="chapter-items">
+              <a href="#" class="sidebar-item" data-slide="13">Slide 14: Xây khung bản tin</a>
+              <a href="#" class="sidebar-item" data-slide="14">Slide 15: Cách tổ chức thông tin</a>
+              <a href="#" class="sidebar-item" data-slide="15">Slide 16: Khung logic bản tin</a>
+              <a href="#" class="sidebar-item" data-slide="16">Slide 17: Chốt cấu trúc logic</a>
+            </div>
+          </div>
+          <!-- Chapter 5 -->
+          <div class="sidebar-chapter">
+            <div class="chapter-title">Chương 5: Chốt thông điệp</div>
+            <div class="chapter-items">
+              <a href="#" class="sidebar-item" data-slide="17">Slide 18: Headline của ngày</a>
+              <a href="#" class="sidebar-item" data-slide="18">Slide 19: Cách chốt headline</a>
+              <a href="#" class="sidebar-item" data-slide="19">Slide 20: Gợi ý headline</a>
+              <a href="#" class="sidebar-item" data-slide="20">Slide 21: Bỏ phiếu bình chọn</a>
+              <a href="#" class="sidebar-item" data-slide="21">Slide 22: Thông điệp chính</a>
+            </div>
+          </div>
+          <!-- Chapter 6 -->
+          <div class="sidebar-chapter">
+            <div class="chapter-title">Chương 6: Tạo bản thảo</div>
+            <div class="chapter-items">
+              <a href="#" class="sidebar-item" data-slide="22">Slide 23: Viết bản thảo bản tin</a>
+              <a href="#" class="sidebar-item" data-slide="23">Slide 24: Cách viết bản thảo</a>
+              <a href="#" class="sidebar-item" data-slide="24">Slide 25: Hoàn thiện bản thảo</a>
+              <a href="#" class="sidebar-item" data-slide="25">Slide 26: Chia sẻ bản thảo</a>
+            </div>
+          </div>
+          <!-- Chapter 7 -->
+          <div class="sidebar-chapter">
+            <div class="chapter-title">Chương 7: Phản tư & Cam kết</div>
+            <div class="chapter-items">
+              <a href="#" class="sidebar-item" data-slide="26">Slide 27: 1 phút nhìn lại</a>
+              <a href="#" class="sidebar-item" data-slide="27">Slide 28: Điều rút ra</a>
+              <a href="#" class="sidebar-item" data-slide="28">Slide 29: 1 câu cảnh báo</a>
+              <a href="#" class="sidebar-item" data-slide="29">Slide 30: Chia sẻ cảnh báo</a>
+            </div>
+          </div>
+          <!-- Chapter 8 -->
+          <div class="sidebar-chapter">
+            <div class="chapter-title">Chương 8: Tổng kết</div>
+            <div class="chapter-items">
+              <a href="#" class="sidebar-item" data-slide="30">Slide 31: Nội dung cốt lõi</a>
+              <a href="#" class="sidebar-item" data-slide="31">Slide 32: Sản phẩm cuối</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
     <!-- Floating Toggle Button for Sidebar -->
     <button class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Mở danh mục">
       <span class="toggle-icon">☰</span>
