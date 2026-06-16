@@ -581,6 +581,14 @@ function initSortingGame() {
     'stone': '81%'
   };
 
+  const tiltAngles = {
+    'jacket': '-12deg',
+    'log': '8deg',
+    'can': '-5deg',
+    'branch': '15deg',
+    'stone': '-8deg'
+  };
+
   // Restore or set initial state for cards
   cards.forEach(card => {
     const itemId = card.dataset.item;
@@ -593,6 +601,9 @@ function initSortingGame() {
     card.onclick = null;
     card.ondragstart = null;
     card.ondragend = null;
+    
+    // Set custom property for dynamic rotation/tilt angle
+    card.style.setProperty('--tilt-angle', tiltAngles[itemId] || '0deg');
 
     if (itemState) {
       // If already dropped, place in the tank
@@ -703,6 +714,14 @@ function dropItemIntoTank(card, tank, leftPositions) {
   const itemId = card.dataset.item;
   const isFloat = (itemId === 'jacket' || itemId === 'can' || itemId === 'log' || itemId === 'branch');
   
+  const tiltAngles = {
+    'jacket': '-12deg',
+    'log': '8deg',
+    'can': '-5deg',
+    'branch': '15deg',
+    'stone': '-8deg'
+  };
+  
   // Update state immediately
   state.sortingItems[itemId] = isFloat ? 'float' : 'sink';
   
@@ -714,6 +733,7 @@ function dropItemIntoTank(card, tank, leftPositions) {
   tank.appendChild(card);
   card.style.position = 'absolute';
   card.style.left = leftPositions[itemId];
+  card.style.setProperty('--tilt-angle', tiltAngles[itemId] || '0deg');
   
   // Position above the water line for transition start
   card.style.top = '-50px';

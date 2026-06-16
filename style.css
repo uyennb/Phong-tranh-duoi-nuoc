@@ -1169,48 +1169,52 @@ header {
 .sortable-card .card-icon {
   width: 64px;
   height: 64px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1.5px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem; /* Large emoji */
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 3.5rem; /* Even larger emoji since there is no border */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.1);
 }
 
 .sortable-card .card-label {
   font-family: var(--font-header);
-  font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.85);
   text-align: center;
   font-weight: 600;
-  max-width: 100%;
-  white-space: normal;
+  padding: 4px 10px;
+  background: rgba(12, 25, 50, 0.85);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
   line-height: 1.2;
-  transition: color 0.3s;
+  white-space: nowrap;
 }
 
 /* Hover effects */
 .sortable-card:hover .card-icon {
-  background: rgba(0, 242, 254, 0.08);
-  border-color: var(--color-cyan);
-  box-shadow: 0 0 15px rgba(0, 242, 254, 0.35);
-  transform: translateY(-3px);
+  transform: translateY(-5px) scale(1.1);
 }
 
 .sortable-card:hover .card-label {
+  background: rgba(0, 242, 254, 0.1);
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
   color: var(--color-cyan);
 }
 
 .sortable-card.selected .card-icon {
-  background: rgba(0, 242, 254, 0.12);
-  border-color: var(--color-cyan);
-  box-shadow: 0 0 15px rgba(0, 242, 254, 0.45);
+  transform: scale(1.1);
 }
 
 .sortable-card.selected .card-label {
+  background: rgba(0, 242, 254, 0.15);
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
   color: var(--color-cyan);
 }
 
@@ -1248,43 +1252,36 @@ header {
   pointer-events: none;
 }
 
-/* Animated Waves */
+/* Animated Waves (Dual layer rolling waves) */
 .water-wave-overlay {
   position: absolute;
-  left: -20px;
-  right: -20px;
-  top: -10px;
-  height: 20px;
-  fill: rgba(0, 180, 255, 0.35);
-  animation: waveMotion 4s linear infinite alternate;
-}
-
-@keyframes waveMotion {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(15px); }
-}
-
-.water-line {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 130px;
-  height: 0;
-  border-top: 1.5px dashed rgba(0, 242, 254, 0.6);
-  z-index: 2;
+  left: -60px;
+  width: calc(100% + 120px);
+  top: -16px;
+  height: 26px;
+  z-index: 1;
   pointer-events: none;
 }
 
-.water-line-label {
-  position: absolute;
-  right: 15px;
-  top: -15px;
-  font-family: var(--font-header);
-  font-size: 0.55rem;
-  font-weight: 800;
-  color: rgba(0, 242, 254, 0.8);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.water-wave-overlay.wave-bg {
+  fill: rgba(0, 150, 255, 0.25);
+  animation: waveMotionBg 6s linear infinite alternate;
+}
+
+.water-wave-overlay.wave-fg {
+  fill: rgba(0, 180, 255, 0.45);
+  animation: waveMotionFg 4s linear infinite alternate;
+  z-index: 2;
+}
+
+@keyframes waveMotionBg {
+  0% { transform: translateX(0) scaleY(1); }
+  100% { transform: translateX(40px) scaleY(1.3); }
+}
+
+@keyframes waveMotionFg {
+  0% { transform: translateX(0) scaleY(1.3); }
+  100% { transform: translateX(-40px) scaleY(0.8); }
 }
 
 .tank-floor {
@@ -1327,33 +1324,47 @@ header {
   border: none !important;
   background: transparent !important;
   z-index: 4;
+  transform: rotate(var(--tilt-angle, 0deg));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
 .water-tank .sortable-card .card-icon {
   width: 54px;
   height: 54px;
-  font-size: 2.5rem; /* Slightly smaller to fit tank perfectly */
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-size: 2.8rem; /* Slightly larger as it is frame-less */
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 .water-tank .sortable-card .card-label {
-  font-size: 0.62rem;
-  color: rgba(255, 255, 255, 0.85);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  font-family: var(--font-header);
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  font-weight: 700;
+  padding: 3px 8px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
 }
 
-/* Buoyancy Tank validation glows on card-icon */
-.water-tank .sortable-card.floated .card-icon {
+/* Buoyancy Tank validation glows on card-label */
+.water-tank .sortable-card.floated .card-label {
   border-color: var(--color-success);
-  background: rgba(12, 45, 25, 0.85);
-  box-shadow: 0 0 15px rgba(0, 230, 118, 0.5);
+  background: rgba(12, 45, 25, 0.9);
+  box-shadow: 0 0 12px rgba(0, 230, 118, 0.5);
 }
 
-.water-tank .sortable-card.sunk .card-icon {
+.water-tank .sortable-card.sunk .card-label {
   border-color: var(--color-red-bright);
-  background: rgba(45, 12, 12, 0.85);
-  box-shadow: 0 0 15px rgba(255, 23, 68, 0.5);
+  background: rgba(45, 12, 12, 0.9);
+  box-shadow: 0 0 12px rgba(255, 23, 68, 0.5);
 }
 
 /* SVG branch styling inside card-icon */
@@ -1368,9 +1379,9 @@ header {
 }
 
 @keyframes bobbing {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-4px) rotate(-1.5deg); }
-  100% { transform: translateY(1px) rotate(1deg); }
+  0% { transform: translateY(0) rotate(var(--tilt-angle, 0deg)); }
+  50% { transform: translateY(-6px) rotate(calc(var(--tilt-angle, 0deg) + 3deg)); }
+  100% { transform: translateY(2px) rotate(calc(var(--tilt-angle, 0deg) - 2deg)); }
 }
 
 .sink-impact {
