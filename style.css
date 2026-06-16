@@ -1142,44 +1142,80 @@ header {
   border-radius: 16px;
   padding: 20px;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
   min-height: 250px;
   justify-content: center;
+  align-items: center;
 }
 
 .sortable-card {
-  background: rgba(12, 25, 50, 0.85);
-  border: 1px solid var(--border-glass);
-  padding: 12px 20px;
-  border-radius: 30px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
   cursor: grab;
   user-select: none;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  font-weight: 500;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   position: relative;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 76px;
 }
 
-.sortable-card:hover {
-  background: var(--bg-glass-hover);
+.sortable-card .card-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem; /* Large emoji */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sortable-card .card-label {
+  font-family: var(--font-header);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-weight: 600;
+  max-width: 100%;
+  white-space: normal;
+  line-height: 1.2;
+  transition: color 0.3s;
+}
+
+/* Hover effects */
+.sortable-card:hover .card-icon {
+  background: rgba(0, 242, 254, 0.08);
   border-color: var(--color-cyan);
-  box-shadow: var(--shadow-glow);
-  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.35);
+  transform: translateY(-3px);
+}
+
+.sortable-card:hover .card-label {
+  color: var(--color-cyan);
+}
+
+.sortable-card.selected .card-icon {
+  background: rgba(0, 242, 254, 0.12);
+  border-color: var(--color-cyan);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.45);
+}
+
+.sortable-card.selected .card-label {
+  color: var(--color-cyan);
 }
 
 .sortable-card.dragging {
   opacity: 0.4;
-  cursor: grabbing;
-}
-
-.sortable-card.selected {
-  border-color: var(--color-cyan);
-  background: rgba(0, 242, 254, 0.15);
-  box-shadow: 0 0 12px rgba(0, 242, 254, 0.3);
 }
 
 /* Water Tank */
@@ -1284,24 +1320,47 @@ header {
 /* Dropped Cards in Tank */
 .water-tank .sortable-card {
   transition: top 1.2s cubic-bezier(0.25, 0.8, 0.25, 1.1), left 0.3s;
-  padding: 8px 14px;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  width: 68px; /* Narrower width inside tank */
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
   z-index: 4;
 }
 
-.water-tank .sortable-card.floated {
-  border-color: var(--color-success);
-  background: rgba(12, 45, 25, 0.9);
-  box-shadow: 0 0 10px rgba(0, 230, 118, 0.25);
+.water-tank .sortable-card .card-icon {
+  width: 54px;
+  height: 54px;
+  font-size: 2.5rem; /* Slightly smaller to fit tank perfectly */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.water-tank .sortable-card.sunk {
+.water-tank .sortable-card .card-label {
+  font-size: 0.62rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Buoyancy Tank validation glows on card-icon */
+.water-tank .sortable-card.floated .card-icon {
+  border-color: var(--color-success);
+  background: rgba(12, 45, 25, 0.85);
+  box-shadow: 0 0 15px rgba(0, 230, 118, 0.5);
+}
+
+.water-tank .sortable-card.sunk .card-icon {
   border-color: var(--color-red-bright);
-  background: rgba(45, 12, 12, 0.9);
-  box-shadow: 0 0 10px rgba(255, 23, 68, 0.25);
+  background: rgba(45, 12, 12, 0.85);
+  box-shadow: 0 0 15px rgba(255, 23, 68, 0.5);
+}
+
+/* SVG branch styling inside card-icon */
+.svg-branch {
+  width: 85%;
+  height: 85%;
+  display: block;
 }
 
 .float-bobbing {

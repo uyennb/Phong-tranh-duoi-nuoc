@@ -603,8 +603,15 @@ function initSortingGame() {
         if (itemState === 'float') {
           card.style.top = '95px';
           card.classList.add('floated', 'float-bobbing');
+          const delays = {
+            'jacket': '0s',
+            'log': '-0.8s',
+            'can': '-1.6s',
+            'branch': '-2.4s'
+          };
+          card.style.animationDelay = delays[itemId] || '0s';
         } else {
-          card.style.top = '262px';
+          card.style.top = '220px';
           card.classList.add('sunk');
         }
       }
@@ -712,7 +719,7 @@ function dropItemIntoTank(card, tank, leftPositions) {
   card.offsetHeight;
   
   // Set target positions
-  const targetTop = isFloat ? '95px' : '262px';
+  const targetTop = isFloat ? '95px' : '220px';
   playSound('correct');
   
   if (isFloat) {
@@ -727,6 +734,13 @@ function dropItemIntoTank(card, tank, leftPositions) {
   setTimeout(() => {
     if (isFloat) {
       card.classList.add('float-bobbing');
+      const delays = {
+        'jacket': '0s',
+        'log': '-0.8s',
+        'can': '-1.6s',
+        'branch': '-2.4s'
+      };
+      card.style.animationDelay = delays[itemId] || '0s';
     } else {
       card.classList.add('sink-impact');
     }
