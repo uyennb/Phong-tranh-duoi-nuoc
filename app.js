@@ -171,6 +171,9 @@ function updateSlideView() {
 
   // Trigger specific slide hooks
   onSlideEnter(state.slides[state.currentSlide].id);
+
+  // Update active sidebar item
+  updateSidebarActive();
 }
 
 // Hook to execute actions on slide entry
@@ -1035,6 +1038,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGearCollection();
   initDossierBoard();
   initNotebookControls();
+  initSidebar();
 });
 
 // Helper exit
@@ -1138,4 +1142,69 @@ function initDashboardBackground() {
 document.addEventListener('DOMContentLoaded', () => {
   initDashboardBackground();
 });
+
+// =========================================
+// Navigation Sidebar Logic
+// =========================================
+function initSidebar() {
+  const sidebar = document.getElementById('nav-sidebar');
+  const toggle = document.getElementById('sidebar-toggle');
+  const closeBtn = document.getElementById('btn-close-sidebar');
+  const items = document.querySelectorAll('.sidebar-item');
+
+  if (toggle && sidebar) {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playSound('click');
+      sidebar.classList.toggle('open');
+    });
+  }
+
+  if (closeBtn && sidebar) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      playSound('click');
+      sidebar.classList.remove('open');
+    });
+  }
+
+  // Click outside to close sidebar
+  document.addEventListener('click', (e) => {
+    if (sidebar && sidebar.classList.contains('open')) {
+      if (!sidebar.contains(e.target) && (!toggle || !toggle.contains(e.target))) {
+        sidebar.classList.remove('open');
+      }
+    }
+  });
+
+  // Sidebar item navigation
+  items.forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetIdx = parseInt(this.dataset.slide, 10);
+      playSound('click');
+      state.currentSlide = targetIdx;
+      updateSlideView();
+
+      // If mobile view, close sidebar on link selection
+      if (window.innerWidth < 768 && sidebar) {
+        sidebar.classList.remove('open');
+      }
+    });
+  });
+}
+
+function updateSidebarActive() {
+  const items = document.querySelectorAll('.sidebar-item');
+  items.forEach(item => {
+    const idx = parseInt(item.dataset.slide, 10);
+    if (idx === state.currentSlide) {
+      item.classList.add('active');
+      // Scroll inside sidebar scroll viewport
+      item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
 
