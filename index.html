@@ -446,14 +446,232 @@
                 </div>
               </div>
             </div>
-            <div class="slide-graphic">
-              <!-- Animated microphone visual -->
-              <svg viewBox="0 0 100 100" width="80" height="80" fill="var(--color-cyan)" style="margin: 30px auto;">
-                <rect x="42" y="50" width="16" height="30" rx="3"/>
-                <rect x="30" y="15" width="40" height="40" rx="20"/>
-                <path d="M25,35 A25,25 0 0,0 75,35" fill="none" stroke="var(--color-cyan)" stroke-width="5" stroke-linecap="round"/>
-                <line x1="50" y1="80" x2="50" y2="95" stroke="var(--color-cyan)" stroke-width="6"/>
-                <line x1="35" y1="95" x2="65" y2="95" stroke="var(--color-cyan)" stroke-width="6"/>
+            <div class="slide-graphic" style="background:#040d1c; padding:0; min-height:260px;">
+              <svg viewBox="0 0 260 220" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="glow-c2" x="-40%" y="-40%" width="180%" height="180%">
+                    <feGaussianBlur stdDeviation="3" result="blur"/>
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                  <filter id="glow-r2" x="-40%" y="-40%" width="180%" height="180%">
+                    <feGaussianBlur stdDeviation="2" result="blur"/>
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                  <radialGradient id="sky-bg" cx="50%" cy="30%" r="70%">
+                    <stop offset="0%" style="stop-color:#0a1a35"/>
+                    <stop offset="100%" style="stop-color:#020810"/>
+                  </radialGradient>
+                  <linearGradient id="water-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#0d3060"/>
+                    <stop offset="100%" style="stop-color:#020f28"/>
+                  </linearGradient>
+                  <linearGradient id="reporter-jacket" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#1a237e"/>
+                    <stop offset="100%" style="stop-color:#0d1454"/>
+                  </linearGradient>
+                  <style>
+                    .sound-ring-a { animation: soundOut 1.8s ease-out infinite; }
+                    .sound-ring-b { animation: soundOut 1.8s ease-out 0.4s infinite; }
+                    .sound-ring-c { animation: soundOut 1.8s ease-out 0.8s infinite; }
+                    @keyframes soundOut {
+                      0%   { opacity: 0.9; stroke-width: 2; }
+                      100% { opacity: 0;   stroke-width: 0.5; transform: scale(1.6); }
+                    }
+                    .water-wave { animation: waveFlow 3s ease-in-out infinite; }
+                    .water-wave2 { animation: waveFlow 3s ease-in-out 1s infinite; }
+                    @keyframes waveFlow {
+                      0%,100% { d: path("M0,0 Q30,-6 60,0 Q90,6 120,0 Q150,-6 180,0 Q210,6 260,0 L260,20 L0,20 Z"); }
+                      50%     { d: path("M0,0 Q30,6 60,0 Q90,-6 120,0 Q150,6 180,0 Q210,-6 260,0 L260,20 L0,20 Z"); }
+                    }
+                    .blink-r2  { animation: blinkR2 1s ease-in-out infinite; }
+                    @keyframes blinkR2 { 0%,100%{opacity:1;} 50%{opacity:0.1;} }
+                    .warning-flash { animation: warnFlash 2s ease-in-out infinite; }
+                    @keyframes warnFlash { 0%,100%{opacity:0.7;} 50%{opacity:1; filter:drop-shadow(0 0 6px #ff1744);} }
+                    .speech-pop { animation: speechBounce 2.5s ease-in-out infinite; }
+                    @keyframes speechBounce {
+                      0%,100% { transform: translateY(0) scale(1); }
+                      50% { transform: translateY(-4px) scale(1.03); }
+                    }
+                    .qmark-spin { animation: qSpin 4s ease-in-out infinite; }
+                    @keyframes qSpin {
+                      0%,100% { opacity:1; transform: rotate(-5deg); }
+                      50% { opacity:0.6; transform: rotate(5deg); }
+                    }
+                    .reporter-breathe { animation: breathe 3s ease-in-out infinite; }
+                    @keyframes breathe {
+                      0%,100% { transform: translateY(0); }
+                      50% { transform: translateY(-3px); }
+                    }
+                    .ticker2 { animation: tick2Run 9s linear infinite; }
+                    @keyframes tick2Run {
+                      0% { transform: translateX(0); }
+                      100% { transform: translateX(-50%); }
+                    }
+                    .signal-dot { animation: sigDot 1.5s ease-in-out infinite; }
+                    @keyframes sigDot { 0%,100%{r:3;opacity:1} 50%{r:5;opacity:0.4} }
+                  </style>
+                </defs>
+
+                <!-- ═══ BACKGROUND SCENE ═══ -->
+                <rect width="260" height="220" fill="url(#sky-bg)"/>
+
+                <!-- Stars in sky -->
+                <circle cx="20" cy="15" r="1" fill="white" opacity="0.5"/>
+                <circle cx="55" cy="8" r="1.5" fill="white" opacity="0.4"/>
+                <circle cx="90" cy="20" r="1" fill="white" opacity="0.6"/>
+                <circle cx="140" cy="10" r="1" fill="white" opacity="0.3"/>
+                <circle cx="200" cy="18" r="1.5" fill="white" opacity="0.5"/>
+                <circle cx="240" cy="7" r="1" fill="white" opacity="0.4"/>
+
+                <!-- Distant cityline / riverbank -->
+                <rect x="0" y="100" width="260" height="4" fill="#0a1e3d"/>
+                <rect x="10" y="80" width="15" height="24" rx="1" fill="#081428"/>
+                <rect x="30" y="88" width="12" height="16" rx="1" fill="#0a1830"/>
+                <rect x="210" y="75" width="18" height="29" rx="1" fill="#081428"/>
+                <rect x="235" y="85" width="14" height="19" rx="1" fill="#0a1830"/>
+                <!-- Building lights -->
+                <rect x="13" y="83" width="3" height="2" fill="#ffb300" opacity="0.6"/>
+                <rect x="18" y="87" width="3" height="2" fill="#ffb300" opacity="0.4"/>
+                <rect x="213" y="79" width="3" height="2" fill="#ffb300" opacity="0.5"/>
+                <rect x="220" y="84" width="3" height="2" fill="#ffb300" opacity="0.3"/>
+
+                <!-- River water -->
+                <rect x="0" y="104" width="260" height="50" fill="url(#water-grad)"/>
+                <!-- Wave lines -->
+                <path class="water-wave" d="M0,0 Q30,-6 60,0 Q90,6 120,0 Q150,-6 180,0 Q210,6 260,0 L260,20 L0,20 Z"
+                      transform="translate(0,104)" fill="none" stroke="rgba(0,150,255,0.25)" stroke-width="2"/>
+                <path class="water-wave2" d="M0,0 Q30,6 60,0 Q90,-6 120,0 Q150,6 180,0 Q210,-6 260,0 L260,20 L0,20 Z"
+                      transform="translate(0,114)" fill="none" stroke="rgba(0,100,200,0.2)" stroke-width="1.5"/>
+
+                <!-- Danger warning sign near water -->
+                <g class="warning-flash" transform="translate(200,85)">
+                  <polygon points="25,0 50,40 0,40" fill="#ff1744" stroke="#fff" stroke-width="1.5"/>
+                  <text x="25" y="32" text-anchor="middle" font-family="Arial Black" font-size="18" font-weight="900" fill="white">!</text>
+                </g>
+                <rect x="222" y="125" width="3" height="20" fill="#666"/>
+
+                <!-- Police/caution tape across scene -->
+                <rect x="0" y="102" width="205" height="5" rx="0" fill="#ffb300" opacity="0.15"/>
+                <text x="10" y="107" font-family="Arial" font-size="4" fill="#ffb300" opacity="0.5" letter-spacing="6">NGUY HIỂM  •  NGUY HIỂM  •  NGUY HIỂM  •  NGUY HIỂM  •</text>
+
+                <!-- Ground / riverbank -->
+                <rect x="0" y="154" width="260" height="66" fill="#0d1e38"/>
+                <rect x="0" y="154" width="260" height="4" fill="#1a3a6e" opacity="0.5"/>
+
+                <!-- ═══ REPORTER FIGURE ═══ -->
+                <g class="reporter-breathe" transform="translate(60,55)" style="transform-box:fill-box; transform-origin:center bottom;">
+                  <!-- Shadow -->
+                  <ellipse cx="40" cy="102" rx="22" ry="5" fill="rgba(0,0,0,0.4)"/>
+                  <!-- Legs -->
+                  <rect x="28" y="82" width="10" height="22" rx="3" fill="#0d1a3a"/>
+                  <rect x="44" y="82" width="10" height="22" rx="3" fill="#0d1a3a"/>
+                  <!-- Shoes -->
+                  <ellipse cx="33" cy="104" rx="8" ry="3" fill="#111"/>
+                  <ellipse cx="49" cy="104" rx="8" ry="3" fill="#111"/>
+                  <!-- Body / jacket -->
+                  <rect x="22" y="48" width="38" height="38" rx="5" fill="url(#reporter-jacket)"/>
+                  <!-- NOVA NEWS press badge on jacket -->
+                  <rect x="25" y="52" width="16" height="9" rx="1" fill="#b71c1c"/>
+                  <text x="33" y="59" text-anchor="middle" font-family="Arial" font-size="4" font-weight="900" fill="white">PRESS</text>
+                  <!-- Tie -->
+                  <polygon points="40,48 38,56 40,72 42,56" fill="#ff1744"/>
+                  <!-- Shirt collar -->
+                  <path d="M36,48 L40,54 L44,48" fill="white" opacity="0.9"/>
+                  <!-- Right arm holding mic OUT toward viewer -->
+                  <path d="M60,58 Q72,55 68,68" stroke="url(#reporter-jacket)" stroke-width="9" fill="none" stroke-linecap="round"/>
+                  <!-- Left arm normal -->
+                  <path d="M22,60 Q12,65 16,78" stroke="url(#reporter-jacket)" stroke-width="9" fill="none" stroke-linecap="round"/>
+                  <!-- Notepad in left hand -->
+                  <rect x="8" y="72" width="14" height="18" rx="2" fill="#fffde7" stroke="#ffb300" stroke-width="1"/>
+                  <line x1="10" y1="77" x2="20" y2="77" stroke="#aaa" stroke-width="1"/>
+                  <line x1="10" y1="81" x2="20" y2="81" stroke="#aaa" stroke-width="1"/>
+                  <line x1="10" y1="85" x2="17" y2="85" stroke="#ff1744" stroke-width="1"/>
+
+                  <!-- Head -->
+                  <circle cx="40" cy="32" r="16" fill="#f5c5a3"/>
+                  <!-- Hair -->
+                  <ellipse cx="40" cy="20" rx="16" ry="8" fill="#3e2000"/>
+                  <rect x="24" y="18" width="32" height="6" rx="3" fill="#3e2000"/>
+                  <!-- Earpiece (reporter earphone) -->
+                  <circle cx="56" cy="33" r="3" fill="#222"/>
+                  <path d="M56,36 Q58,42 56,46" fill="none" stroke="#222" stroke-width="1.5"/>
+                  <!-- Eyes -->
+                  <circle cx="35" cy="32" r="2.5" fill="#333"/>
+                  <circle cx="45" cy="32" r="2.5" fill="#333"/>
+                  <circle cx="36" cy="31" r="1" fill="white"/>
+                  <circle cx="46" cy="31" r="1" fill="white"/>
+                  <!-- Eyebrows (focused look) -->
+                  <path d="M32,27 Q35,25 38,27" fill="none" stroke="#3e2000" stroke-width="1.5"/>
+                  <path d="M42,27 Q45,25 48,27" fill="none" stroke="#3e2000" stroke-width="1.5"/>
+                  <!-- Mouth speaking -->
+                  <path d="M36,38 Q40,42 44,38" fill="none" stroke="#c0775a" stroke-width="1.5"/>
+                  <!-- Cheeks -->
+                  <circle cx="31" cy="36" r="3" fill="#f0a090" opacity="0.4"/>
+                  <circle cx="49" cy="36" r="3" fill="#f0a090" opacity="0.4"/>
+                </g>
+
+                <!-- ═══ MICROPHONE (extended toward viewer) ═══ -->
+                <g transform="translate(118,95) rotate(-20)">
+                  <!-- Mic body -->
+                  <rect x="-4" y="0" width="8" height="22" rx="2" fill="#2a2a2a"/>
+                  <!-- Mic capsule -->
+                  <rect x="-7" y="-14" width="14" height="16" rx="7" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
+                  <!-- Mic grill lines -->
+                  <line x1="-5" y1="-10" x2="5" y2="-10" stroke="#444" stroke-width="0.8"/>
+                  <line x1="-6" y1="-6" x2="6" y2="-6" stroke="#444" stroke-width="0.8"/>
+                  <line x1="-5" y1="-2" x2="5" y2="-2" stroke="#444" stroke-width="0.8"/>
+                  <!-- NOVA NEWS mic logo band -->
+                  <rect x="-7" y="2" width="14" height="6" rx="1" fill="#b71c1c"/>
+                  <text x="0" y="7" text-anchor="middle" font-family="Arial" font-size="3.5" font-weight="900" fill="white">NOVA</text>
+                  <!-- Mic cable -->
+                  <path d="M0,22 Q5,30 3,40" fill="none" stroke="#333" stroke-width="2"/>
+                </g>
+
+                <!-- ═══ SOUND WAVES from mic ═══ -->
+                <g transform="translate(125,88)" filter="url(#glow-c2)">
+                  <ellipse class="sound-ring-a" cx="0" cy="0" rx="12" ry="8" fill="none" stroke="#00f2fe" stroke-width="2" style="transform-box:fill-box;transform-origin:center;"/>
+                  <ellipse class="sound-ring-b" cx="0" cy="0" rx="12" ry="8" fill="none" stroke="#00f2fe" stroke-width="1.5" style="transform-box:fill-box;transform-origin:center;"/>
+                  <ellipse class="sound-ring-c" cx="0" cy="0" rx="12" ry="8" fill="none" stroke="#00f2fe" stroke-width="1" style="transform-box:fill-box;transform-origin:center;"/>
+                </g>
+
+                <!-- ═══ SPEECH BUBBLE with question ═══ -->
+                <g class="speech-pop" transform="translate(145,22)" style="transform-box:fill-box;transform-origin:center;">
+                  <!-- Bubble bg -->
+                  <rect x="0" y="0" width="95" height="52" rx="10" fill="rgba(0,242,254,0.08)" stroke="#00f2fe" stroke-width="1.5"/>
+                  <!-- Bubble tail -->
+                  <polygon points="15,52 8,65 28,52" fill="rgba(0,242,254,0.08)" stroke="#00f2fe" stroke-width="1.5"/>
+                  <!-- Question marks -->
+                  <text class="qmark-spin" x="12" y="36" font-family="Arial Black" font-size="26" font-weight="900" fill="#00f2fe" opacity="0.9" style="transform-box:fill-box;transform-origin:center;">?</text>
+                  <text x="38" y="32" font-family="Arial Black" font-size="20" font-weight="900" fill="#ffb300" opacity="0.7">?</text>
+                  <text x="60" y="40" font-family="Arial Black" font-size="16" font-weight="900" fill="#00f2fe" opacity="0.5">?</text>
+                  <text x="75" y="28" font-family="Arial Black" font-size="12" font-weight="900" fill="#ffb300" opacity="0.4">?</text>
+                  <!-- Label -->
+                  <text x="47" y="14" text-anchor="middle" font-family="Arial" font-size="6" font-weight="700" fill="rgba(0,242,254,0.7)" letter-spacing="1">GÓC NHÌN PHÓNG VIÊN</text>
+                </g>
+
+                <!-- ═══ BROADCAST HUD OVERLAY ═══ -->
+                <!-- Top left REC indicator -->
+                <circle class="blink-r2" cx="14" cy="14" r="5" fill="#ff1744" filter="url(#glow-r2)"/>
+                <text x="23" y="18" font-family="Arial" font-size="8" font-weight="900" fill="#ff1744">REC</text>
+                <!-- Signal dots -->
+                <circle class="signal-dot" cx="240" cy="10" r="3" fill="#00f2fe" filter="url(#glow-c2)"/>
+                <text x="220" y="14" font-family="Arial" font-size="6" fill="rgba(0,242,254,0.7)">SIGNAL</text>
+
+                <!-- Bottom ticker bar -->
+                <rect x="0" y="200" width="260" height="20" fill="#b71c1c" opacity="0.92"/>
+                <clipPath id="tc2"><rect x="0" y="200" width="260" height="20"/></clipPath>
+                <g clip-path="url(#tc2)">
+                  <text class="ticker2" x="0" y="214" font-family="Arial" font-size="7" font-weight="700" fill="white">
+                    🎙 GÓC NHÌN PHÓNG VIÊN  •  Nêu suy đoán ban đầu của bạn  •  Theo bạn, chuyện gì đang xảy ra?  •  🎙 GÓC NHÌN PHÓNG VIÊN  •  Nêu suy đoán ban đầu của bạn  •
+                  </text>
+                </g>
+
+                <!-- Location lower-third -->
+                <rect x="5" y="170" width="110" height="22" rx="2" fill="rgba(0,0,0,0.75)"/>
+                <rect x="5" y="170" width="35" height="22" rx="2" fill="#b71c1c"/>
+                <text x="22" y="185" text-anchor="middle" font-family="Arial" font-size="6.5" font-weight="900" fill="white">HIỆN TRƯỜNG</text>
+                <text x="78" y="181" font-family="Arial" font-size="5.5" font-weight="700" fill="#00f2fe">Phóng viên Nova News</text>
+                <text x="78" y="189" font-family="Arial" font-size="5" fill="rgba(255,255,255,0.6)">Khu vực sông nguy hiểm</text>
               </svg>
               <div class="graphic-caption">Bảng ghi chép phóng viên Nova News</div>
             </div>
