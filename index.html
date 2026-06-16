@@ -1522,7 +1522,7 @@
           </div>
         </section>
 
-        <!-- S5-04 Workspace: Vật nào giúp mình nổi? (Interactive sorting game) -->
+        <!-- S5-04 Workspace: Vật nào giúp mình nổi? (Interactive tank buoyancy experiment) -->
         <section class="slide" id="solution-float-slide">
           <div class="slide-grid centered">
             <div class="slide-info">
@@ -1531,33 +1531,63 @@
                 <h3>Thử nghiệm Sức nổi của Vật dụng</h3>
               </div>
               <div class="slide-content" style="width: 100%; text-align: left;">
-                <p style="text-align: center; margin-bottom: 15px;">Kéo thả (hoặc click rồi click vào giỏ) các vật dụng vào nhóm chính xác:</p>
+                <p style="text-align: center; margin-bottom: 15px;">Thử nghiệm kéo thả vật dụng từ kho bên trái vào bể nước bên phải để xem vật nào nổi/chìm:</p>
                 
-                <div class="sorting-game">
-                  <!-- Pool of items to drag -->
-                  <div class="sorting-pool">
-                    <div class="sortable-card" data-item="jacket">🦺 Áo phao</div>
-                    <div class="sortable-card" data-item="can">🛢️ Can nhựa rỗng</div>
-                    <div class="sortable-card" data-item="log">🪵 Khúc cây nổi</div>
-                    <div class="sortable-card" data-item="stone">🪨 Cục đá nặng</div>
-                    <div class="sortable-card" data-item="branch">🌿 Cành cây chìa ra bờ</div>
+                <div class="lab-workspace">
+                  <!-- Left side shelf -->
+                  <div class="lab-shelf-container">
+                    <div class="lab-title-header">
+                      <span>📋 Kho vật dụng</span>
+                    </div>
+                    <div class="sorting-pool lab-items-shelf" id="lab-items-shelf">
+                      <div class="sortable-card" data-item="jacket">🦺 Áo phao</div>
+                      <div class="sortable-card" data-item="log">🪵 Khúc cây khô</div>
+                      <div class="sortable-card" data-item="can">🛢️ Can nước rỗng</div>
+                      <div class="sortable-card" data-item="branch">🌿 Cành cây chìa ra bờ</div>
+                      <div class="sortable-card" data-item="stone">🪨 Cục đá</div>
+                    </div>
                   </div>
 
-                  <!-- Buckets -->
-                  <div class="sorting-buckets">
-                    <div class="sorting-bucket bucket-float" data-bucket="float">
-                      <div class="bucket-title">🟢 GIÚP NỔI / HỖ TRỢ NỔI</div>
-                      <!-- Target items go here -->
+                  <!-- Right side water tank -->
+                  <div class="lab-tank-container">
+                    <div class="lab-title-header">
+                      <span>🌊 Bể thử nghiệm sức nổi</span>
                     </div>
-                    <div class="sorting-bucket bucket-sink" data-bucket="sink">
-                      <div class="bucket-title">🔴 KHÔNG GIÚP NỔI</div>
-                      <!-- Target items go here -->
+                    <div class="water-tank" id="water-tank">
+                      <!-- Water line indicators -->
+                      <div class="water-line">
+                        <div class="water-line-label">MẶT NƯỚC / SURFACE</div>
+                      </div>
+
+                      <!-- Water body -->
+                      <div class="water-mass">
+                        <!-- Ripple wave SVG -->
+                        <svg class="water-wave-overlay" viewBox="0 0 300 20" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M0,10 Q25,5 50,10 T100,10 T150,10 T200,10 T250,10 T300,10 L300,20 L0,20 Z"/>
+                        </svg>
+
+                        <!-- Bubbles rising -->
+                        <div class="tank-bubble" style="left: 15%; width: 6px; height: 6px; animation-duration: 3s; animation-delay: 0.5s;"></div>
+                        <div class="tank-bubble" style="left: 35%; width: 4px; height: 4px; animation-duration: 4.5s; animation-delay: 1.2s;"></div>
+                        <div class="tank-bubble" style="left: 55%; width: 7px; height: 7px; animation-duration: 3.5s; animation-delay: 0.2s;"></div>
+                        <div class="tank-bubble" style="left: 75%; width: 5px; height: 5px; animation-duration: 5s; animation-delay: 2s;"></div>
+                        <div class="tank-bubble" style="left: 85%; width: 4px; height: 4px; animation-duration: 4s; animation-delay: 1.5s;"></div>
+                      </div>
+
+                      <!-- Tank bottom -->
+                      <div class="tank-floor"></div>
+
+                      <!-- Validation badge -->
+                      <div class="lab-validation-badge" id="lab-validation-badge">
+                        <div class="badge-icon">✓</div>
+                        <div class="badge-text">Hoàn thành Thử nghiệm</div>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div id="sorting-status" class="gear-status-msg" style="text-align: center;">
-                  Phân loại đúng cả 5 vật dụng để tiếp tục.
+                  Thử nghiệm cả 5 vật dụng để hoàn tất bài phân tích.
                 </div>
               </div>
             </div>

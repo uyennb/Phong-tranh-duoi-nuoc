@@ -1103,102 +1103,291 @@ header {
   z-index: 5;
 }
 
-/* Sorting Game (S5-04) */
-.sorting-game {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+/* Laboratory Buoyancy Tank Game (S5-04) */
+.lab-workspace {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
   margin: 20px 0;
 }
 
-.sorting-pool {
+@media (max-width: 900px) {
+  .lab-workspace {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.lab-shelf-container, .lab-tank-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lab-title-header {
+  font-family: var(--font-header);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lab-items-shelf {
   background: rgba(255, 255, 255, 0.02);
   border: 1px dashed rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 20px;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 12px;
-  min-height: 90px;
-  align-items: center;
+  min-height: 250px;
+  justify-content: center;
 }
 
 .sortable-card {
-  background: rgba(12, 25, 50, 0.8);
+  background: rgba(12, 25, 50, 0.85);
   border: 1px solid var(--border-glass);
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 30px;
   cursor: grab;
   user-select: none;
-  transition: var(--transition-smooth);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   font-weight: 500;
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .sortable-card:hover {
   background: var(--bg-glass-hover);
   border-color: var(--color-cyan);
   box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
 }
 
 .sortable-card.dragging {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: grabbing;
 }
 
-.sorting-buckets {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+.sortable-card.selected {
+  border-color: var(--color-cyan);
+  background: rgba(0, 242, 254, 0.15);
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.3);
 }
 
-.sorting-bucket {
-  background: rgba(12, 25, 50, 0.4);
-  border: 2px dashed rgba(255, 255, 255, 0.15);
+/* Water Tank */
+.water-tank {
+  position: relative;
+  height: 320px;
+  border: 2px solid rgba(0, 242, 254, 0.3);
+  background: #020915;
   border-radius: 16px;
-  padding: 25px;
-  min-height: 200px;
+  overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(0, 150, 255, 0.2), 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s;
+  cursor: pointer;
+}
+
+.water-tank.drag-hover {
+  border-color: var(--color-cyan);
+  background: #03122b;
+}
+
+/* Water body */
+.water-mass {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 130px;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 180, 255, 0.35) 0%, rgba(0, 70, 170, 0.65) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Animated Waves */
+.water-wave-overlay {
+  position: absolute;
+  left: -20px;
+  right: -20px;
+  top: -10px;
+  height: 20px;
+  fill: rgba(0, 180, 255, 0.35);
+  animation: waveMotion 4s linear infinite alternate;
+}
+
+@keyframes waveMotion {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(15px); }
+}
+
+.water-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 130px;
+  height: 0;
+  border-top: 1.5px dashed rgba(0, 242, 254, 0.6);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.water-line-label {
+  position: absolute;
+  right: 15px;
+  top: -15px;
+  font-family: var(--font-header);
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: rgba(0, 242, 254, 0.8);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.tank-floor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 24px;
+  background: linear-gradient(0deg, #18120a 0%, #261d0f 100%);
+  border-top: 2px solid #6d4c41;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Tank bubbles */
+.tank-bubble {
+  position: absolute;
+  bottom: 24px;
+  background: rgba(0, 242, 254, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  animation: bubbleRise 4s infinite linear;
+}
+
+@keyframes bubbleRise {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-160px) translateX(10px); opacity: 0; }
+}
+
+/* Dropped Cards in Tank */
+.water-tank .sortable-card {
+  transition: top 1.2s cubic-bezier(0.25, 0.8, 0.25, 1.1), left 0.3s;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 4;
+}
+
+.water-tank .sortable-card.floated {
+  border-color: var(--color-success);
+  background: rgba(12, 45, 25, 0.9);
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.25);
+}
+
+.water-tank .sortable-card.sunk {
+  border-color: var(--color-red-bright);
+  background: rgba(45, 12, 12, 0.9);
+  box-shadow: 0 0 10px rgba(255, 23, 68, 0.25);
+}
+
+.float-bobbing {
+  animation: bobbing 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes bobbing {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(-1.5deg); }
+  100% { transform: translateY(1px) rotate(1deg); }
+}
+
+.sink-impact {
+  animation: hitBottom 0.4s ease-out;
+}
+
+@keyframes hitBottom {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(0.85) translateY(2px); }
+  100% { transform: scaleY(1); }
+}
+/* Lab validation badge */
+.lab-validation-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: rgba(12, 45, 25, 0.95);
+  border: 2px solid var(--color-success);
+  padding: 16px 28px;
+  border-radius: 40px;
+  z-index: 10;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  transition: var(--transition-smooth);
-}
-
-.sorting-bucket.drag-hover {
-  background: rgba(0, 242, 254, 0.05);
-  border-color: var(--color-cyan);
-}
-
-.sorting-bucket.bucket-float.drag-hover {
-  background: rgba(0, 230, 118, 0.05);
-  border-color: var(--color-success);
-}
-
-.sorting-bucket.bucket-sink.drag-hover {
-  background: rgba(211, 47, 47, 0.05);
-  border-color: var(--color-red);
-}
-
-.bucket-title {
-  font-family: var(--font-header);
-  font-weight: 700;
-  font-size: 1.1rem;
-  display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 25px rgba(0, 230, 118, 0.4), inset 0 0 15px rgba(0, 230, 118, 0.2);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
 }
 
-.bucket-float .bucket-title {
-  color: var(--color-success);
+.lab-validation-badge:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  background: rgba(12, 60, 30, 0.98);
+  box-shadow: 0 0 30px rgba(0, 230, 118, 0.6), inset 0 0 20px rgba(0, 230, 118, 0.3);
 }
 
-.bucket-sink .bucket-title {
-  color: var(--color-red-bright);
+.lab-validation-badge.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
 }
+
+.lab-validation-badge .badge-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--color-success);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 0 15px var(--color-success);
+  animation: badgePop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) infinite alternate;
+}
+
+.lab-validation-badge .badge-text {
+  font-family: var(--font-header);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+@keyframes badgePop {
+  0% { transform: scale(1); box-shadow: 0 0 10px var(--color-success); }
+  100% { transform: scale(1.1); box-shadow: 0 0 20px var(--color-success); }
+}
+
 
 /* Sổ tay Phóng viên Compiler (S6-03) */
 .notebook-compiler {

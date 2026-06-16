@@ -563,120 +563,196 @@ function checkMatchingCompletion(gameId, matchState) {
 }
 
 // Drag & Drop Sorting Game (S5-04)
+// Drag & Drop Buoyancy Lab Game (S5-04)
 function initSortingGame() {
   const cards = document.querySelectorAll('.sortable-card');
-  const buckets = document.querySelectorAll('.sorting-bucket');
-  const pool = document.querySelector('.sorting-pool');
+  const tank = document.getElementById('water-tank');
+  const shelf = document.getElementById('lab-items-shelf');
+  const badge = document.getElementById('lab-validation-badge');
 
-  // Clear previous drops
+  const leftPositions = {
+    'jacket': '5%',
+    'log': '24%',
+    'can': '43%',
+    'branch': '62%',
+    'stone': '81%'
+  };
+
+  // Restore or set initial state for cards
   cards.forEach(card => {
-    card.setAttribute('draggable', 'true');
-    // Set styles back
-    card.style.opacity = '1';
-    card.style.cursor = 'grab';
-    
-    // Add touch click-to-sort alternative (for mobile compatibility)
-    card.addEventListener('click', function() {
-      // Clear selections
-      cards.forEach(c => c.classList.remove('selected'));
-      this.classList.add('selected');
-      playSound('click');
-    });
-  });
+    const itemId = card.dataset.item;
+    const itemState = state.sortingItems[itemId];
 
-  // Mobile accessibility: click bucket to move selected card
-  buckets.forEach(bucket => {
-    bucket.addEventListener('click', function() {
-      const selected = document.querySelector('.sortable-card.selected');
-      if (selected) {
-        handleItemDrop(selected, this);
-        selected.classList.remove('selected');
+    // Remove any selection/dragging classes
+    card.classList.remove('selected', 'dragging', 'floated', 'sunk', 'float-bobbing', 'sink-impact');
+    // Clear inline styles and event listeners
+    card.removeAttribute('style');
+    card.onclick = null;
+    card.ondragstart = null;
+    card.ondragend = null;
+
+    if (itemState) {
+      // If already dropped, place in the tank
+      if (tank) {
+        tank.appendChild(card);
+        card.setAttribute('draggable', 'false');
+        card.style.position = 'absolute';
+        card.style.left = leftPositions[itemId];
+        card.style.cursor = 'default';
+
+        if (itemState === 'float') {
+          card.style.top = '95px';
+          card.classList.add('floated', 'float-bobbing');
+        } else {
+          card.style.top = '262px';
+          card.classList.add('sunk');
+        }
       }
-    });
-  });
+    } else {
+      // If not yet dropped, place in the shelf
+      if (shelf) {
+        shelf.appendChild(card);
+        card.setAttribute('draggable', 'true');
+        card.style.cursor = 'grab';
 
-  // Drag listeners
-  cards.forEach(card => {
-    card.addEventListener('dragstart', function(e) {
-      this.classList.add('dragging');
-      e.dataTransfer.setData('text/plain', this.dataset.item);
-    });
-
-    card.addEventListener('dragend', function() {
-      this.classList.remove('dragging');
-    });
-  });
-
-  buckets.forEach(bucket => {
-    bucket.addEventListener('dragover', function(e) {
-      e.preventDefault();
-      this.classList.add('drag-hover');
-    });
-
-    bucket.addEventListener('dragleave', function() {
-      this.classList.remove('drag-hover');
-    });
-
-    bucket.addEventListener('drop', function(e) {
-      e.preventDefault();
-      this.classList.remove('drag-hover');
-      const itemId = e.dataTransfer.getData('text/plain');
-      const card = document.querySelector(`.sortable-card[data-item="${itemId}"]`);
-      if (card) {
-        handleItemDrop(card, this);
+        // Touch click-to-select alternative (for mobile compatibility)
+        card.onclick = function(e) {
+          e.stopPropagation();
+          // Clear other selections
+          cards.forEach(c => c.classList.remove('selected'));
+          card.classList.add('selected');
+          playSound('click');
+        };
       }
-    });
-  });
-}
-
-function handleItemDrop(card, bucket) {
-  const itemId = card.dataset.item;
-  const targetBucketId = bucket.dataset.bucket; // 'float' or 'sink'
-
-  // Correct categorizations:
-  // jacket (áo phao) -> float
-  // can (can rỗng) -> float
-  // log (khúc cây) -> float
-  // stone (cục đá) -> sink
-  // branch (cành cây chìa) -> float/assist (in description, cành cây is categorized in float/support)
-  const isFloat = (itemId === 'jacket' || itemId === 'can' || itemId === 'log' || itemId === 'branch');
-  const isCorrect = (isFloat && targetBucketId === 'float') || (!isFloat && targetBucketId === 'sink');
-
-  if (isCorrect) {
-    playSound('correct');
-    bucket.appendChild(card);
-    card.setAttribute('draggable', 'false');
-    card.style.cursor = 'default';
-    card.style.boxShadow = 'none';
-    card.style.borderColor = 'transparent';
-    card.classList.add('matched');
-
-    // Add checkmark inside card
-    if (!card.querySelector('.check')) {
-      const check = document.createElement('span');
-      check.className = 'check';
-      check.innerHTML = ' ✓';
-      check.style.color = 'var(--color-success)';
-      check.style.fontWeight = 'bold';
-      card.appendChild(check);
     }
 
-    state.sortingItems[itemId] = targetBucketId;
-    checkSortingCompletion();
-  } else {
-    playSound('incorrect');
-    card.classList.add('shake');
-    setTimeout(() => card.classList.remove('shake'), 500);
+    // Drag listeners (only active if draggable is true)
+    card.ondragstart = function(e) {
+      card.classList.add('dragging');
+      e.dataTransfer.setData('text/plain', itemId);
+    };
+
+    card.ondragend = function() {
+      card.classList.remove('dragging');
+    };
+  });
+
+  if (tank) {
+    // Drag over tank
+    tank.ondragover = function(e) {
+      e.preventDefault();
+      tank.classList.add('drag-hover');
+    };
+
+    tank.ondragleave = function() {
+      tank.classList.remove('drag-hover');
+    };
+
+    tank.ondrop = function(e) {
+      e.preventDefault();
+      tank.classList.remove('drag-hover');
+      const itemId = e.dataTransfer.getData('text/plain');
+      const card = document.querySelector(`.sortable-card[data-item="${itemId}"]`);
+      if (card && !state.sortingItems[itemId]) {
+        dropItemIntoTank(card, tank, leftPositions);
+      }
+    };
+
+    // Click tank to drop selected card
+    tank.onclick = function() {
+      const selected = document.querySelector('.sortable-card.selected');
+      if (selected) {
+        const itemId = selected.dataset.item;
+        if (!state.sortingItems[itemId]) {
+          dropItemIntoTank(selected, tank, leftPositions);
+          selected.classList.remove('selected');
+        }
+      }
+    };
   }
+
+  // Click validation badge to reset the experiment
+  if (badge) {
+    badge.onclick = function(e) {
+      e.stopPropagation();
+      playSound('click');
+      // Reset state
+      Object.keys(state.sortingItems).forEach(key => {
+        state.sortingItems[key] = null;
+      });
+      // Re-init game
+      initSortingGame();
+    };
+  }
+  
+  // Update status message and badge visibility
+  checkSortingCompletion();
+}
+
+function dropItemIntoTank(card, tank, leftPositions) {
+  const itemId = card.dataset.item;
+  const isFloat = (itemId === 'jacket' || itemId === 'can' || itemId === 'log' || itemId === 'branch');
+  
+  // Update state immediately
+  state.sortingItems[itemId] = isFloat ? 'float' : 'sink';
+  
+  // Set drag state off
+  card.setAttribute('draggable', 'false');
+  card.style.cursor = 'default';
+  
+  // Append to tank
+  tank.appendChild(card);
+  card.style.position = 'absolute';
+  card.style.left = leftPositions[itemId];
+  
+  // Position above the water line for transition start
+  card.style.top = '-50px';
+  
+  // Force reflow
+  card.offsetHeight;
+  
+  // Set target positions
+  const targetTop = isFloat ? '95px' : '262px';
+  playSound('correct');
+  
+  if (isFloat) {
+    card.classList.add('floated');
+  } else {
+    card.classList.add('sunk');
+  }
+  
+  card.style.top = targetTop;
+  
+  // When animation finishes, apply continuous effects
+  setTimeout(() => {
+    if (isFloat) {
+      card.classList.add('float-bobbing');
+    } else {
+      card.classList.add('sink-impact');
+    }
+  }, 1200); // matches the 1.2s transition in CSS
+  
+  checkSortingCompletion();
 }
 
 function checkSortingCompletion() {
   const completed = Object.values(state.sortingItems).every(v => v !== null);
+  const badge = document.getElementById('lab-validation-badge');
+  const msg = document.getElementById('sorting-status');
+  
   if (completed) {
     playSound('success');
-    const msg = document.getElementById('sorting-status');
-    msg.innerHTML = '✓ Phân loại chính xác toàn bộ vật dụng! Hãy nhấn nút <strong>"Tiếp theo"</strong>.';
-    msg.style.color = 'var(--color-success)';
+    if (badge) badge.classList.add('show');
+    if (msg) {
+      msg.innerHTML = '✓ Thử nghiệm chính xác toàn bộ vật dụng! Hãy nhấn nút <strong>"Tiếp theo"</strong>.';
+      msg.style.color = 'var(--color-success)';
+    }
+  } else {
+    if (badge) badge.classList.remove('show');
+    if (msg) {
+      msg.innerHTML = 'Thử nghiệm cả 5 vật dụng để hoàn tất bài phân tích.';
+      msg.style.color = 'var(--color-gold)';
+    }
   }
 }
 
