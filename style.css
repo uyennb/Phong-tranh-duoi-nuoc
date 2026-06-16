@@ -1255,8 +1255,8 @@ header {
 /* Animated Waves (Dual layer rolling waves) */
 .water-wave-overlay {
   position: absolute;
-  left: -60px;
-  width: calc(100% + 120px);
+  left: -100px;
+  width: calc(100% + 200px);
   top: -16px;
   height: 26px;
   z-index: 1;
