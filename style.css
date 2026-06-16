@@ -1960,7 +1960,8 @@ header {
 /* Sidebar toggle button tab */
 .sidebar-toggle-btn {
   position: fixed;
-  top: 100px;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   z-index: 1400; /* Floating tab */
   background: rgba(10, 25, 47, 0.9);
