@@ -185,12 +185,15 @@ function initNavigation() {
 }
 
 function updateSlideView() {
-  state.slides.forEach((slide, idx) => {
+  // Clear active class from all slides in the DOM to avoid overlapping between lessons
+  document.querySelectorAll('.slide').forEach(slide => {
     slide.classList.remove('active');
-    if (idx === state.currentSlide) {
-      slide.classList.add('active');
-    }
   });
+
+  // Activate the current slide in the active lesson
+  if (state.slides[state.currentSlide]) {
+    state.slides[state.currentSlide].classList.add('active');
+  }
 
   // Update Progress Track
   const progressPercent = (state.currentSlide / (state.slides.length - 1)) * 100;
